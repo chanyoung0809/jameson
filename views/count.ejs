@@ -1,0 +1,26 @@
+<% let count = 1; 
+    const minusBtn = document.querySelector(".minus");
+    const plusBtn = document.querySelector(".plus");
+    const countarea = document.querySelector(".count");
+
+    plusBtn.addEventListener("click",()=>{
+        (count === 12) ? count = 12 : count+=1;
+        countarea.innerText = count;
+    });
+
+    minusBtn.addEventListener("click",()=>{
+        (count === 1) ? count = 1 : count-=1;
+        countarea.innerText = count;
+    });
+%>
+
+    <div class="total_wrap">
+        <div class="count_wrap">
+            <button class="minus">-</button>
+            <span class="count"><%- count %></span>
+            <button class="plus">+</button>
+        </div>
+    </div>
+    <div class="price_wrap">
+        <p class="price">카트에 담기 : <span><%- Number(data.price) * count %></span>원</p>
+    </div> 

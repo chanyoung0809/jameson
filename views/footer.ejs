@@ -1,0 +1,77 @@
+<div id="footer">
+    <div class="left_img" data-aos="zoom-in-up" data-aos-duration="1000">
+        <img src="/img/foot_img2.jpg">
+    </div>
+    <div class="right_wrap" data-aos="fade-up"  data-aos-duration="1000">
+        <h4><img src="/img/star_marquee_DG.svg">MemberShips<img src="/img/star_marquee_DG.svg"></h5>
+        <h6>지금 멤버로 등록하세요. 오프라인 픽업 서비스, 각종 이벤트와 프로모션이 담긴 뉴스레터를 받아보세요. 연회비가 발생하지 않습니다.</h6>
+        <a href="#">멤버쉽 가입하기</a>
+        <ul class="sns_wrap">
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="bot_menus">
+            <li><a href="mailto:info@jamesonwhiskey.co.kr"><img src="/img/star_marquee_DG.svg">이메일</a></li>
+            <li><a href="#"><img src="/img/star_marquee_DG.svg">개인정보 이용약관</a></li>
+            <li><a href="#"><img src="/img/star_marquee_DG.svg">QnA</a></li>
+            <li><a href="#"><img src="/img/star_marquee_DG.svg">레시피</a></li>
+        </ul>
+    </div>
+</div>
+<div class="flow_icons">
+    <div class="flow_wrap">
+        <img src="/img/jameson_circle.png">
+        <img src="/img/ontherock.svg">
+        <img src="/img/bottle.svg">
+        <img src="/img/jameson_circle.png">
+        <img src="/img/ontherock.svg">
+        <img src="/img/bottle.svg">
+        <img src="/img/jameson_circle.png">
+        <img src="/img/ontherock.svg">
+        <img src="/img/bottle.svg">
+        <img src="/img/jameson_circle.png">
+        <img src="/img/ontherock.svg">
+        <img src="/img/bottle.svg">
+        <img src="/img/jameson_circle.png">
+        <img src="/img/ontherock.svg">
+        <img src="/img/bottle.svg">
+        <img src="/img/jameson_circle.png">
+        <img src="/img/ontherock.svg">
+        <img src="/img/bottle.svg">
+    </div>
+</div>
+<script src="/js/jquery-3.6.4.min.js"></script>
+<!-- 제이쿼리 js -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- swiper js -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- 스크롤이벤트 AOS js -->
+<script>
+    AOS.init();
+</script>
+<% if (jsFiles.length !== 0) { %>
+    <%# 보내준 jsFile 갯수만큼 반복문 돌려서 link 태그 생성 %>
+    <% jsFiles.forEach((js, idx) => { %>
+        <script src="/js/<%- js %>"></script>
+    <% }) %>
+<% } %>
+</body>
+</html>

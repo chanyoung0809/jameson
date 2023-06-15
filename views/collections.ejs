@@ -1,0 +1,38 @@
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css","collections.css"]}) %> 
+<div id="container">
+    <div class="navis_wrap">
+        <h2>Jameson Collections</h2>
+        <ul class="sorts">
+            <li>
+                <a href="#traditional">Traditional Collection</a>
+            </li>
+            <li>
+                <a href="#Flavorful">Flavorful Collection</a>
+            </li>
+        </ul>
+    </div>
+    <div class='collections_wrap'>
+        <div id="Traditional">
+            <div class="headline_wrap">
+                <h3>Traditional</h3>
+                <p>300년간의 전통을 지킵니다. 기본에 충실한 맛으로 감동을 드리겠습니다.</p>
+            </div>
+            <div class="collections">
+                <%- include("tradWhiskey.ejs") %>
+            </div>
+        </div>
+        <div id="Flavorful">
+            <div class="headline_wrap">
+                <h3>Flavorful</h3>
+                <p>위스키에 새로운 맛과 향을 더해 다채로운 맛과 향으로 기쁨을 선사합니다.</p>
+            </div>
+            <div class="collections">
+                <%- include("flavorWhiskey.ejs") %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('footer', {jsFiles:["tabMenu.js", "collections.js"]}) %> 
+<script>
+//2395
+</script>

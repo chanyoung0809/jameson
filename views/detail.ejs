@@ -1,0 +1,75 @@
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css","collections.css"]}) %> 
+<div id="container">
+    <div class="sitemap_wrap">
+        <h3 data-aos="fade-up" data-aos-duration="1000"><a href=/collections>Whiskey</a></h3>
+        <h5 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href=/collections?#<%- data.sort %>><%- data.sort %></a></h5>
+    </div>
+    <div class="product_wrap">
+        <div class="img_wrap" data-aos="fade-up" data-aos-duration="1000">
+            <img src="<%- data.nukkiImg %>"/>
+        </div>
+        <form class="info_wrap">
+            <h2 class="name" data-aos="fade-up" data-aos-duration="1000"><%- data.name %></h2>
+            <p class="context" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><%- data.context %></p>
+            <div class="total_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="count_wrap">
+                    <span class="minus">-</span>
+                    <input class="count" value="1"/>
+                    <span class="plus">+</span>
+                </div>
+            </div>
+            <div class="price_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <p class="cart">카트에 담기 : <span class="price"><%- Number(data.price).toLocaleString() %></span>원</p>
+            </div> 
+            <div class="attention_wrap" >
+                <div class="title" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="notify">
+                        <span>안내사항</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <ul class="sub_notice">
+                        <li>
+                            12병 이상의 대량구매는 <a href="#">픽업 가능한 매장</a>에 연락하거나 <a href="mailto:info@jamesonwhiskey.co.kr">이메일</a>로 문의 부탁드립니다.
+                        </li>
+                        <li>주류법상 온라인 쇼핑몰에서의 주류 직접 구매는 불가능합니다. 주변에 <a href="#">픽업 가능한 매장</a>이 있는지 알아보세요
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="detail_wrap">
+        <div class="nose_wrap" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="flex_box">
+                <h5 class="nose">향</h5>
+                <img src="/img/recipe_glass_ontherock.svg">
+            </div>
+            <ul class="noses" data-aos="fade-up" data-aos-duration="1000" >
+                <% data.nose.forEach((el, idx) => { %>
+                 <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<%- idx *100 %>"><%- el %></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="taste_wrap" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="flex_box">
+                <h5 class="taste">맛</h5>
+                <img src="/img/recipe_glass.png">
+            </div>
+            <ul class="tastes">
+                <% data.taste.forEach((el, idx) => { %>
+                 <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<%- idx *100 %>"><%- el %></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="finish_wrap" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="flex_box">
+                <h5 class="finish">마무리</h5>
+                <img src="/img/recipe_glassbig.png">
+            </div>
+            <ul class="noses">
+                 <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" ><%- data.finish %></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<%- include('footer', {jsFiles:["tabMenu.js","detail.js"]}) %> 

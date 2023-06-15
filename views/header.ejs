@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- google web font icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font-awsome web font icon -->
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <!-- 스와이퍼 css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- 스크롤 css -->
+    <% if (cssFiles.length !== 0) { %>
+        <%# 보내준 cssFiles 갯수만큼 반복문 돌려서 link 태그 생성 %>
+       <% for( let i = 0; i < cssFiles.length; i++ ) { %>
+           <link rel="stylesheet" href="/css/<%- cssFiles[i] %>">
+       <% } %>
+   <% } %>
+</head>
+<body>
+    <div id="header">
+        <div class="center">
+            <div class="menu_wrap">   
+                <button class="hbg_menu">
+                    <span class="one line"></span>
+                    <span class="two line"></span>
+                </button>
+                <a href="#">메뉴</a>
+            </div>
+            <h1 class="logo_wrap"><a href="/"><img src="/img/Jameson_logo.svg"></a></h1>
+            <div class="buy_wrap">
+                <a href="#">구매처</a>
+                <button class="buy_btn">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="slide_gnb">
+        <ul>
+            <li><a href="/collections"><img src="/img/star_marquee_DG.svg">종류</a></li>
+            <li><a href="#"><img src="/img/star_marquee_DG.svg">히스토리</a></li>
+            <li><a href="#"><img src="/img/star_marquee_DG.svg">구매처 찾기</a></li>
+        </ul>
+    </div>
