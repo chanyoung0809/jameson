@@ -71,5 +71,25 @@
             </ul>
         </div>
     </div>
+    <div class="recipe_wrap">
+        <h3 class="title">다양한 레시피를 만나보세요</h3>
+        <div class="swiper detailSwiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <% cocktails.forEach((el, idx)=> { %>
+                <div class="swiper-slide">
+                    <img src='<%- el.imgs %>'>
+                    <div class="texts">
+                        <h5><%- el.name %></h5>
+                        <a href="#">Go</a>
+                    </div>
+                </div>
+              <% }) %>
+        </div>
+        <div class="toAll">
+            <a href="/recipe">모든 레시피 보러가기</a>
+        </div>
+    </div>
 </div>
-<%- include('footer', {jsFiles:["tabMenu.js","detail.js"]}) %> 
+<%- include('footer', {jsFiles:["tabMenu.js","detail.js", "detailslide.js"]}) %> 

@@ -117,7 +117,6 @@ body.show {
   transform: translate(-50%, -50%);
 }
 .slide_gnb > ul li {
-  margin: 60px 0;
   display: flex;
   align-items: center;
 }
@@ -126,6 +125,9 @@ body.show {
   font-family: "HSBombaram21-Regular";
   color: #14402B;
   font-weight: normal;
+  line-height: 240%;
+  display: flex;
+  align-items: center;
 }
 .slide_gnb > ul li a img {
   width: 2.5vw;
@@ -402,6 +404,7 @@ body.show {
   display: flex;
   justify-content: center;
   background-color: #FDE390;
+  width: 100vw;
 }
 #container .cont3 .center {
   width: 70%;
@@ -613,6 +616,7 @@ body.show {
   justify-content: space-between;
   background-color: #f7e8bb;
   align-items: flex-start;
+  width: 100vw;
 }
 #footer .left_img {
   width: 50%;

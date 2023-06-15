@@ -142,7 +142,6 @@ body.show {
         left: 45%;
         transform: translate(-50%, -50%);
         li {
-            margin: 60px 0;
             display: flex;
             align-items: center;
             a {
@@ -150,6 +149,9 @@ body.show {
                 font-family: $headline;
                 color: $jDarkGreen;
                 font-weight: normal;
+                line-height: 240%;
+                display: flex;
+                align-items: center;
                 img{
                     width:2.5vw;
                     opacity: 0;
@@ -433,6 +435,7 @@ body.show {
         display: flex;
         justify-content: center;
         background-color: $jOnion;
+        width: 100vw;
         .center {
             width:70%;
             display: flex;
@@ -651,6 +654,7 @@ body.show {
     justify-content: space-between;
     background-color: $jBeige;
     align-items: flex-start;
+    width: 100vw;
     .left_img{
         width: 50%;
         display: flex;

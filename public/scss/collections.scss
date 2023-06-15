@@ -142,7 +142,6 @@ body.show {
         left: 45%;
         transform: translate(-50%, -50%);
         li {
-            margin: 60px 0;
             display: flex;
             align-items: center;
             a {
@@ -150,6 +149,9 @@ body.show {
                 font-family: $headline;
                 color: $jDarkGreen;
                 font-weight: normal;
+                line-height: 240%;
+                display: flex;
+                align-items: center;
                 img{
                     width:2.5vw;
                     opacity: 0;
@@ -246,12 +248,10 @@ body.show {
                             .prdBox {
                                 border-bottom: none;
                             }
-
                         }
                         .prdBox {
                             border-right: 1px solid $jGreen;
                             border-bottom: 1px solid $jGreen;
-
                             padding-bottom: 40px;
                             width: 100%;
                             display: flex;
@@ -291,7 +291,7 @@ body.show {
                                 color: $jGreen;
                             }
                             &:hover {
-                                background-color: $jLemon;
+                                background: linear-gradient($jBeige, $jLemon);
                                 .img_box {
                                     img {
                                         transform: translateY(-5%);
@@ -332,7 +332,7 @@ body.show {
             justify-content: space-between;
             .img_wrap {
                 width: 40%;
-                background-color: $jLemon;
+                background: linear-gradient($jBeige, $jLemon);
                 object-fit: cover;
                 display: flex;
                 justify-content: center;
@@ -509,6 +509,94 @@ body.show {
                     }
                 }
             }
+        }
+        &.recipe_wrap {
+            width: 100%;
+            margin-bottom: 50px;
+            border-top: 4px solid $jDarkGreen;
+            .title {
+                width: 92%;
+                margin: 0 auto;
+                font-family: $headline;
+                font-size: 4vw;
+                color: $jDarkGreen;
+                line-height: 200%;
+                text-align: center;
+            }
+            .swiper.detailSwiper {
+                width: 100%;
+                padding-top: 100px;
+                background: linear-gradient($jBeige, $jDarkGreen
+                70%);
+                .swiper-slide {
+                    width: 500px;
+                    height: 680px;
+                    background-color: $jBeige;
+                    > img {
+                        height: 460px;
+                        width: 92%;
+                        object-fit: cover;
+                        display: block;
+                        margin: 4% auto;
+                        border-radius: 10px;
+                    }
+                    .texts {
+                        width: 92%;
+                        margin: 4% auto;
+                        padding-bottom: 4%;
+                        > h5 {
+                            font-family: $headline;
+                            color: $jDarkGreen;
+                            font-size: 2vw;
+                            line-height: 200%;
+                        }
+                        > a {
+                            font-family: $context;
+                            color: $jBeige;
+                            background-color: $jDarkGreen;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 4vw;
+                            height: 4vw;
+                            font-size: 16px;
+                            margin-left: auto;
+                            margin-bottom: 4%;
+                            text-align: center;
+                            border-radius: 50%;
+                            transition: all .5s;
+                            transform: scale(1);
+                            &:hover {
+                                background-color: $jRed;
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+            .toAll {
+                background-color: $jBeige;
+                margin-top: 100px;
+                width: 100%;
+                padding: 40px 0;
+                display: flex;
+                justify-content: center;
+                border-bottom: 4px solid $jDarkGreen;
+                > a {
+                    display: block;
+                    font-family: $context;
+                    color: $jDarkGreen;
+                    text-align: center;
+                    width: 100%;
+                    font-weight: 800;
+                    font-size: 20px;
+                    line-height: 200%;
+                }
+                &:hover {
+                    background-color: $jDarkGreen;
+
+                }
+            } 
         }
     }
 }

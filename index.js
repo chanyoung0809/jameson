@@ -24,7 +24,7 @@ MongoClient.connect("mongodb+srv://cisalive:cisaliveS2@cluster0.cjlsn98.mongodb.
 
     //db연결이 제대로 됬다면 서버실행
     app.listen(port,()=>{
-        console.log("서버연결 성공");
+        console.log(`서버연결 성공, 포트 번호는 ${port}`);
     });
 
 });
@@ -37,9 +37,14 @@ app.get("/collections",(req,res)=>{
     res.render("collections.ejs");
 });
 
+app.get("/location",(req,res)=>{
+    res.render("location");
+});
+
 app.get("/product/:link", (req, res)=>{
-    db.collection("whiskey").findOne({link:req.params.link}, (err, result)=>{
-        // req.params.link에 맞는 데이터를 가져오기
-        res.render("detail.ejs", {data:result});
+    db.collection("whiskey").findOne({link:req.params.link}, (err, prdResult)=>{
+        db.collection("recipe").find({whiskey : req.params.link}).toArray((err, result)=>{
+            res.render("detail.ejs", {data:prdResult, cocktails:result});
+        })
     })
 })

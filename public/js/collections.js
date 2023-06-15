@@ -6,12 +6,10 @@ $(function(){
     console.log(top1);
     console.log(top2);
 
-    tradMenu.on("click",(e)=>{
-        // e.preventDefault();             // a 링크를 통해 이동하거나 창이 새로고침 되는것을 방지.
+    tradMenu.on("click",()=>{
         $("html, body").animate({scrollTop:top1}, 1000);	// 해시(#eu, #us, ...)가 있는 위치로 스크롤
     });
-    flavMenu.on("click",(e)=>{
-        e.preventDefault();             // a 링크를 통해 이동하거나 창이 새로고침 
+    flavMenu.on("click",()=>{
         $("html, body").animate({scrollTop:top2}, 1000);	
     });
 });

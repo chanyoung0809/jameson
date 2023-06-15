@@ -21,6 +21,7 @@ let swiper = new Swiper(".c3Swiper", {
 let swiper2 = new Swiper(".textSwiper", {
     direction: 'horizontal',
     loop: true, //무한반복 T/F
+    grabCursor:true,
 });
 //스와이퍼 1, 2를 연동
 swiper.controller.control = swiper2;

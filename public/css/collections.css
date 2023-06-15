@@ -117,7 +117,6 @@ body.show {
   transform: translate(-50%, -50%);
 }
 .slide_gnb > ul li {
-  margin: 60px 0;
   display: flex;
   align-items: center;
 }
@@ -126,6 +125,9 @@ body.show {
   font-family: "HSBombaram21-Regular";
   color: #14402B;
   font-weight: normal;
+  line-height: 240%;
+  display: flex;
+  align-items: center;
 }
 .slide_gnb > ul li a img {
   width: 2.5vw;
@@ -262,7 +264,7 @@ body.show {
   color: #0C592E;
 }
 #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox:hover {
-  background-color: #F9F69B;
+  background: linear-gradient(#f7e8bb, #F9F69B);
 }
 #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox:hover .img_box img {
   transform: translateY(-5%);
@@ -294,7 +296,7 @@ body.show {
 }
 #container > div.product_wrap .img_wrap {
   width: 40%;
-  background-color: #F9F69B;
+  background: linear-gradient(#f7e8bb, #F9F69B);
   -o-object-fit: cover;
      object-fit: cover;
   display: flex;
@@ -465,6 +467,93 @@ body.show {
   font-size: 1vw;
   font-weight: 700;
   line-height: 200%;
+}
+#container > div.recipe_wrap {
+  width: 100%;
+  margin-bottom: 50px;
+  border-top: 4px solid #14402B;
+}
+#container > div.recipe_wrap .title {
+  width: 92%;
+  margin: 0 auto;
+  font-family: "HSBombaram21-Regular";
+  font-size: 4vw;
+  color: #14402B;
+  line-height: 200%;
+  text-align: center;
+}
+#container > div.recipe_wrap .swiper.detailSwiper {
+  width: 100%;
+  padding-top: 100px;
+  background: linear-gradient(#f7e8bb, #14402B 70%);
+}
+#container > div.recipe_wrap .swiper.detailSwiper .swiper-slide {
+  width: 500px;
+  height: 680px;
+  background-color: #f7e8bb;
+}
+#container > div.recipe_wrap .swiper.detailSwiper .swiper-slide > img {
+  height: 460px;
+  width: 92%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  margin: 4% auto;
+  border-radius: 10px;
+}
+#container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts {
+  width: 92%;
+  margin: 4% auto;
+  padding-bottom: 4%;
+}
+#container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts > h5 {
+  font-family: "HSBombaram21-Regular";
+  color: #14402B;
+  font-size: 2vw;
+  line-height: 200%;
+}
+#container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts > a {
+  font-family: "Pretendard";
+  color: #f7e8bb;
+  background-color: #14402B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4vw;
+  height: 4vw;
+  font-size: 16px;
+  margin-left: auto;
+  margin-bottom: 4%;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+#container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts > a:hover {
+  background-color: #8C182D;
+  transform: scale(1.2);
+}
+#container > div.recipe_wrap .toAll {
+  background-color: #f7e8bb;
+  margin-top: 100px;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 4px solid #14402B;
+}
+#container > div.recipe_wrap .toAll > a {
+  display: block;
+  font-family: "Pretendard";
+  color: #14402B;
+  text-align: center;
+  width: 100%;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 200%;
+}
+#container > div.recipe_wrap .toAll:hover {
+  background-color: #14402B;
 }
 
 #footer {

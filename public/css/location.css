@@ -1,0 +1,679 @@
+@charset "UTF-8";
+body.show {
+  overflow-y: hidden;
+  transition: all 0.7s;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 76px;
+  background-color: #f7e8bb;
+  z-index: 10;
+}
+#header .center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+#header .center > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .center > div > a {
+  color: #14402B;
+  font-family: "Pretendard";
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-weight: 900;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+#header .center > div > button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+#header .center > div > button > span {
+  color: #14402B;
+  transition: all 0.5s;
+}
+#header .center .menu_wrap > a {
+  margin-left: 40px;
+}
+#header .center .menu_wrap button {
+  position: relative;
+  width: 40px;
+  height: 36px;
+  cursor: pointer;
+}
+#header .center .menu_wrap button .line {
+  display: block;
+  background-color: #14402B;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+}
+#header .center .menu_wrap button .line.one {
+  width: 36px;
+  transform: rotate(0deg);
+  top: 35%;
+}
+#header .center .menu_wrap button .line.two {
+  width: 28px;
+  transform: rotate(0deg);
+  top: 65%;
+}
+#header .center .menu_wrap button.show .line {
+  width: 28px;
+}
+#header .center .menu_wrap button.show .line.one {
+  transform: rotate(45deg);
+  top: 50%;
+}
+#header .center .menu_wrap button.show .line.two {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+#header .center .logo_wrap a img {
+  height: 56px;
+}
+#header .center .buy_wrap > a {
+  margin: 0 16px;
+}
+#header .center .buy_wrap button {
+  cursor: pointer;
+}
+#header .center .buy_wrap button > span {
+  font-size: 32px;
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+.slide_gnb {
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  width: 100%;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7e8bb;
+  transition: all 0.7s;
+  opacity: 0;
+  z-index: 0;
+}
+.slide_gnb > ul {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+.slide_gnb > ul li {
+  display: flex;
+  align-items: center;
+}
+.slide_gnb > ul li a {
+  font-size: 3.125vw;
+  font-family: "HSBombaram21-Regular";
+  color: #14402B;
+  font-weight: normal;
+  line-height: 240%;
+  display: flex;
+  align-items: center;
+}
+.slide_gnb > ul li a img {
+  width: 2.5vw;
+  opacity: 0;
+  transition: all 0.5s;
+  margin-right: 20px;
+}
+.slide_gnb > ul li a:hover img {
+  opacity: 1;
+}
+.slide_gnb.show {
+  top: 0;
+  height: 100%;
+  opacity: 1;
+  overflow: hidden;
+  width: 100%;
+  z-index: 9;
+}
+
+#container {
+  width: 100vw;
+  background-color: #f7e8bb;
+  margin-top: 76px;
+}
+#container > div {
+  width: 94%;
+  margin: 0 auto;
+}
+#container > div .title {
+  color: #14402B;
+  font-size: 4vw;
+  font-family: "HSBombaram21-Regular";
+  text-align: center;
+  line-height: 200%;
+}
+#container > div .map_wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50vw;
+}
+#container > div .map_wrap .left_map {
+  width: 30%;
+  margin: 0 10%;
+  height: 100%;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#container > div .map_wrap .left_map > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  filter: invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(20%) contrast(94%);
+}
+#container > div .map_wrap .left_map > span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+#container > div .map_wrap .left_map > span::before {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: " ";
+  display: block;
+  filter: invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(88%) contrast(94%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#container > div .map_wrap .left_map > span a {
+  text-align: center;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: "HallymMjo";
+  font-size: 0.8vw;
+  color: #14402B;
+  font-weight: 700;
+  top: 50%;
+  left: 50%;
+  transition: all 0.5s;
+}
+#container > div .map_wrap .left_map > span.on::before {
+  opacity: 1;
+}
+#container > div .map_wrap .left_map > span.on a {
+  color: #f7e8bb;
+}
+#container > div .map_wrap .left_map > span.busan {
+  top: 57.9%;
+  left: 67.7%;
+  width: 27%;
+  height: 9%;
+}
+#container > div .map_wrap .left_map > span.busan::before {
+  background-image: url("/img/maps/busan.png");
+}
+#container > div .map_wrap .left_map > span.busan a {
+  left: 60%;
+}
+#container > div .map_wrap .left_map > span.busan.on a {
+  left: 55%;
+}
+#container > div .map_wrap .left_map > span.chungbuk {
+  top: 25.9%;
+  left: 38.7%;
+  width: 36.5%;
+  height: 22.5%;
+}
+#container > div .map_wrap .left_map > span.chungbuk::before {
+  background-image: url("/img/maps/chungbuk.png");
+}
+#container > div .map_wrap .left_map > span.chungbuk a {
+  left: 25%;
+}
+#container > div .map_wrap .left_map > span.chungnam {
+  top: 30.4%;
+  left: 6.4%;
+  width: 42.7%;
+  height: 19%;
+}
+#container > div .map_wrap .left_map > span.chungnam::before {
+  background-image: url("/img/maps/chungnam.png");
+}
+#container > div .map_wrap .left_map > span.chungnam a {
+  left: 40%;
+}
+#container > div .map_wrap .left_map > span.daegu {
+  top: 47.2%;
+  left: 63.3%;
+  width: 14.9%;
+  height: 8%;
+}
+#container > div .map_wrap .left_map > span.daegu::before {
+  background-image: url("/img/maps/daegu.png");
+}
+#container > div .map_wrap .left_map > span.daejeon {
+  top: 36.3%;
+  left: 31.6%;
+  width: 11.9%;
+  height: 8%;
+}
+#container > div .map_wrap .left_map > span.daejeon::before {
+  background-image: url("/img/maps/daejeon.png");
+}
+#container > div .map_wrap .left_map > span.gangwon {
+  top: 0.3%;
+  left: 33.9%;
+  width: 57.9%;
+  height: 29.7%;
+}
+#container > div .map_wrap .left_map > span.gangwon::before {
+  background-image: url("/img/maps/gangwon.png");
+}
+#container > div .map_wrap .left_map > span.gwangju {
+  top: 60.6%;
+  left: 22.5%;
+  width: 12.4%;
+  height: 5.2%;
+}
+#container > div .map_wrap .left_map > span.gwangju::before {
+  background-image: url("/img/maps/gwangju.png");
+}
+#container > div .map_wrap .left_map > span.gyeongbuk {
+  top: 24.2%;
+  left: 52.5%;
+  width: 47.3%;
+  height: 31.9%;
+}
+#container > div .map_wrap .left_map > span.gyeongbuk::before {
+  background-image: url("/img/maps/gyeongbuk.png");
+}
+#container > div .map_wrap .left_map > span.gyeonggi {
+  top: 7.7%;
+  left: 19.4%;
+  width: 34.6%;
+  height: 24.9%;
+}
+#container > div .map_wrap .left_map > span.gyeonggi::before {
+  background-image: url("/img/maps/gyeonggi.png");
+}
+#container > div .map_wrap .left_map > span.gyeonggi a {
+  top: 60%;
+  left: 70%;
+}
+#container > div .map_wrap .left_map > span.gyeongnam {
+  top: 50%;
+  left: 46.4%;
+  width: 42.3%;
+  height: 22.6%;
+}
+#container > div .map_wrap .left_map > span.gyeongnam::before {
+  background-image: url("/img/maps/gyeongnam.png");
+}
+#container > div .map_wrap .left_map > span.incheon {
+  top: 15.2%;
+  left: 8%;
+  width: 21.1%;
+  height: 10.1%;
+}
+#container > div .map_wrap .left_map > span.incheon::before {
+  background-image: url("/img/maps/incheon.png");
+}
+#container > div .map_wrap .left_map > span.jeju {
+  top: 83.3%;
+  left: 7.7%;
+  width: 25.8%;
+  height: 9.5%;
+}
+#container > div .map_wrap .left_map > span.jeju::before {
+  background-image: url("/img/maps/jeju.png");
+}
+#container > div .map_wrap .left_map > span.jeonbuk {
+  top: 45.1%;
+  left: 13.5%;
+  width: 42%;
+  height: 16.5%;
+}
+#container > div .map_wrap .left_map > span.jeonbuk::before {
+  background-image: url("/img/maps/jeonbuk.png");
+}
+#container > div .map_wrap .left_map > span.jeonnam {
+  top: 57.7%;
+  left: -0.5%;
+  width: 56.6%;
+  height: 24.8%;
+}
+#container > div .map_wrap .left_map > span.jeonnam::before {
+  background-image: url("/img/maps/jeonnam.png");
+}
+#container > div .map_wrap .left_map > span.seoul {
+  top: 17.9%;
+  left: 24.4%;
+  width: 15.1%;
+  height: 6.1%;
+}
+#container > div .map_wrap .left_map > span.seoul::before {
+  background-image: url("/img/maps/seoul.png");
+}
+#container > div .map_wrap .left_map > span.sejong {
+  top: 32.3%;
+  left: 28.8%;
+  width: 11.9%;
+  height: 8%;
+}
+#container > div .map_wrap .left_map > span.sejong::before {
+  background-image: url("/img/maps/sejong.png");
+}
+#container > div .map_wrap .left_map > span.ulsan {
+  top: 51.9%;
+  left: 80.7%;
+  width: 17.4%;
+  height: 9.4%;
+}
+#container > div .map_wrap .left_map > span.ulsan::before {
+  background-image: url("/img/maps/ulsan.png");
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7e8bb;
+  align-items: flex-start;
+  width: 100vw;
+}
+#footer .left_img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: contrast(1.4) saturate(1.4);
+  overflow: hidden;
+}
+#footer .left_img > img {
+  width: 110%;
+}
+#footer .right_wrap {
+  color: #14402B;
+  text-align: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#footer .right_wrap > h4 {
+  font-size: 3.2vw;
+  font-family: "HSBombaram21-Regular";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+#footer .right_wrap > h4 > img {
+  width: 30px;
+}
+#footer .right_wrap > h6 {
+  font-family: "HallymMjo";
+  line-height: 200%;
+  width: 70%;
+  word-break: keep-all;
+  margin: 20px auto;
+  font-size: 16px;
+  font-weight: 300;
+}
+#footer .right_wrap > a {
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Pretendard";
+  font-weight: 900;
+  color: #14402B;
+  padding: 1vw 2vw;
+  border-radius: 60px;
+  border: 4px solid #14402B;
+  margin-bottom: 3%;
+  transition: all 0.5s;
+}
+#footer .right_wrap > a:hover {
+  color: #f7e8bb;
+  background-color: #8C182D;
+  border-color: #8C182D;
+}
+#footer .right_wrap .sns_wrap {
+  display: flex;
+  width: 25%;
+  margin: 0 auto 2vw;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer .right_wrap .sns_wrap > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.6vw;
+  height: 2.6vw;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#footer .right_wrap .sns_wrap > li > a {
+  color: #14402B;
+  font-size: 1.6vw;
+  transition: all 0.5s;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#footer .right_wrap .sns_wrap > li:hover {
+  background-color: #8C182D;
+}
+#footer .right_wrap .sns_wrap > li:hover > a {
+  color: #f7e8bb;
+}
+#footer .right_wrap .bot_menus {
+  font-family: "HSBombaram21-Regular";
+  font-size: 1.9vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: left;
+  gap: 1vw 0;
+  margin-bottom: 2vw;
+}
+#footer .right_wrap .bot_menus > li > a {
+  color: #14402B;
+  display: flex;
+  align-items: center;
+}
+#footer .right_wrap .bot_menus > li > a > img {
+  width: 1.7vw;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#footer .right_wrap .bot_menus > li:hover > a > img {
+  opacity: 1;
+}
+
+.flow_icons {
+  background-color: #f7e8bb;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100px;
+  opacity: 1;
+  padding: 40px 0;
+}
+.flow_icons .flow_wrap {
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap;
+  animation: bannermove 20s linear infinite;
+  width: 200%;
+}
+@keyframes bannermove {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.flow_icons .flow_wrap > img {
+  width: 11.11111%;
+  padding: 0 60px;
+}
+
+/* 미디어쿼리 1000 */
+@media screen and (max-width: 1000px) {
+  #header .center {
+    width: 95%;
+  }
+  #header .center > div > a {
+    display: none;
+  }
+  .slide_gnb > ul {
+    margin-right: 8%;
+  }
+  .slide_gnb > ul li {
+    margin: 60px 0;
+    justify-content: center;
+  }
+  .slide_gnb > ul li a {
+    font-size: 5vw;
+  }
+  .slide_gnb > ul li a img {
+    width: 4.5vw;
+    margin-right: 10px;
+  }
+  #footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #footer .left_img {
+    width: 90%;
+    border-radius: 10%;
+  }
+  #footer .left_img > img {
+    width: 120%;
+  }
+  #footer .right_wrap {
+    width: 90%;
+  }
+  #footer .right_wrap > h4 {
+    font-size: 8vw;
+    line-height: 150%;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  #footer .right_wrap > h4 > img {
+    margin: 10px;
+  }
+  #footer .right_wrap > h6 {
+    font-size: 3vw;
+    line-height: 200%;
+  }
+  #footer .right_wrap > a {
+    padding: 1em 2em;
+  }
+  #footer .right_wrap > a:hover {
+    color: #F9F69B;
+    background-color: #8C182D;
+    border-color: #8C182D;
+  }
+  #footer .right_wrap .sns_wrap {
+    width: 50%;
+    margin-bottom: 5%;
+  }
+  #footer .right_wrap .sns_wrap > li {
+    width: 5vw;
+    height: 5vw;
+    cursor: pointer;
+  }
+  #footer .right_wrap .sns_wrap > li > a {
+    font-size: 4vw;
+  }
+  #footer .right_wrap .bot_menus {
+    font-size: 4vw;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    gap: 6vw;
+  }
+  #footer .right_wrap .bot_menus > li {
+    width: 100%;
+  }
+  #footer .right_wrap .bot_menus > li > a {
+    justify-content: center;
+  }
+  #footer .right_wrap .bot_menus > li > a > img {
+    width: 1.5vw;
+  }
+  .flow_icons {
+    width: 100vw;
+  }
+  .flow_icons .flow_wrap > img {
+    width: 20%;
+  }
+}
+/* 미디어쿼리 500 */
+@media screen and (max-width: 500px) {
+  #header .center .menu_wrap > a {
+    margin-left: 20px;
+  }
+  #header .center > .logo_wrap {
+    margin-left: 10px;
+  }
+  #header .center .buy_wrap button {
+    margin-right: 10px;
+  }
+  .slide_gnb > ul {
+    margin-right: 0%;
+    left: 40%;
+  }
+  .slide_gnb > ul li {
+    width: 120%;
+  }
+  .slide_gnb > ul li a {
+    font-size: 10vw;
+  }
+  .slide_gnb > ul li a img {
+    width: 6vw;
+  }
+  #footer .right_wrap > h6 {
+    margin: 10px 0;
+    font-size: 3.5vw;
+  }
+  #footer .right_wrap > a {
+    font-size: 3vw;
+  }
+  .flow_icons {
+    width: 100vw;
+  }
+  .flow_icons .flow_wrap {
+    width: 600%;
+  }
+  .flow_icons .flow_wrap > img {
+    width: 25%;
+    padding: 0px 30px;
+  }
+}
