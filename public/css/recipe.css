@@ -4,17 +4,6 @@ body.show {
   transition: all 0.7s;
 }
 
-select::-ms-expand {
-  display: none;
-}
-
-.select {
-  -o-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 #header {
   position: fixed;
   top: 0;
@@ -161,335 +150,104 @@ select::-ms-expand {
 #container {
   width: 100vw;
   background-color: #f7e8bb;
-  margin-top: 76px;
+  margin-top: 75px;
+  background-color: #14402B;
 }
 #container > div {
-  width: 94%;
+  width: 100%;
   margin: 0 auto;
 }
-#container > div .title {
-  color: #14402B;
-  font-size: 4vw;
-  font-family: "HSBombaram21-Regular";
-  text-align: center;
-  line-height: 200%;
-}
-#container > div .map_wrap {
+#container > div.recipes_wrap {
+  width: 92%;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  height: 50vw;
-}
-#container > div .map_wrap .left_map {
-  width: 30%;
-  margin: 0 10%;
-  height: 100%;
+  flex-wrap: wrap;
+  overflow: hidden;
   position: relative;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
-#container > div .map_wrap .left_map > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+#container > div.recipes_wrap .recipes {
+  width: 28%;
+  background-color: #f7e8bb;
+  border-radius: 20px;
+  margin-bottom: 8%;
+  display: none;
+}
+#container > div.recipes_wrap .recipes:nth-child(1) {
   display: block;
-  margin: 0 auto;
-  filter: invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(20%) contrast(94%);
 }
-#container > div .map_wrap .left_map > span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: all 0.5s;
-}
-#container > div .map_wrap .left_map > span::before {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  content: " ";
+#container > div.recipes_wrap .recipes:nth-child(2) {
   display: block;
-  filter: invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(88%) contrast(94%);
+}
+#container > div.recipes_wrap .recipes:nth-child(3) {
+  display: block;
+}
+#container > div.recipes_wrap .recipes > img {
+  height: 460px;
+  width: 92%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: all 0.5s;
-}
-#container > div .map_wrap .left_map > span a {
-  text-align: center;
   display: block;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-family: "Pretendard";
-  font-size: 0.8vw;
+  margin: 4% auto;
+  border-radius: 10px;
+}
+#container > div.recipes_wrap .recipes .texts {
+  width: 92%;
+  margin: 4% auto;
+  padding-bottom: 4%;
+}
+#container > div.recipes_wrap .recipes .texts > h5 {
+  font-family: "HSBombaram21-Regular";
   color: #14402B;
-  font-weight: 700;
-  top: 50%;
-  left: 50%;
-  transition: all 0.5s;
-}
-#container > div .map_wrap .left_map > span:hover::before {
-  opacity: 1;
-}
-#container > div .map_wrap .left_map > span:hover a {
-  color: #f7e8bb;
-}
-#container > div .map_wrap .left_map > span.on::before {
-  opacity: 1;
-}
-#container > div .map_wrap .left_map > span.on a {
-  color: #f7e8bb;
-}
-#container > div .map_wrap .left_map > span.busan {
-  top: 57.9%;
-  left: 67.7%;
-  width: 27%;
-  height: 9%;
-}
-#container > div .map_wrap .left_map > span.busan::before {
-  background-image: url("/img/maps/busan.png");
-}
-#container > div .map_wrap .left_map > span.busan a {
-  left: 60%;
-}
-#container > div .map_wrap .left_map > span.chungbuk {
-  top: 25.9%;
-  left: 38.7%;
-  width: 36.5%;
-  height: 22.5%;
-}
-#container > div .map_wrap .left_map > span.chungbuk::before {
-  background-image: url("/img/maps/chungbuk.png");
-}
-#container > div .map_wrap .left_map > span.chungbuk a {
-  left: 25%;
-}
-#container > div .map_wrap .left_map > span.chungnam {
-  top: 30.4%;
-  left: 6.4%;
-  width: 42.7%;
-  height: 19%;
-}
-#container > div .map_wrap .left_map > span.chungnam::before {
-  background-image: url("/img/maps/chungnam.png");
-}
-#container > div .map_wrap .left_map > span.chungnam a {
-  left: 40%;
-}
-#container > div .map_wrap .left_map > span.daegu {
-  top: 47.2%;
-  left: 63.3%;
-  width: 14.9%;
-  height: 8%;
-}
-#container > div .map_wrap .left_map > span.daegu::before {
-  background-image: url("/img/maps/daegu.png");
-}
-#container > div .map_wrap .left_map > span.daejeon {
-  top: 36.3%;
-  left: 31.6%;
-  width: 11.9%;
-  height: 8%;
-}
-#container > div .map_wrap .left_map > span.daejeon::before {
-  background-image: url("/img/maps/daejeon.png");
-}
-#container > div .map_wrap .left_map > span.gangwon {
-  top: 0.3%;
-  left: 33.9%;
-  width: 57.9%;
-  height: 29.7%;
-}
-#container > div .map_wrap .left_map > span.gangwon::before {
-  background-image: url("/img/maps/gangwon.png");
-}
-#container > div .map_wrap .left_map > span.gwangju {
-  top: 60.6%;
-  left: 22.5%;
-  width: 12.4%;
-  height: 5.2%;
-}
-#container > div .map_wrap .left_map > span.gwangju::before {
-  background-image: url("/img/maps/gwangju.png");
-}
-#container > div .map_wrap .left_map > span.gyeongbuk {
-  top: 24.2%;
-  left: 52.5%;
-  width: 47.3%;
-  height: 31.9%;
-}
-#container > div .map_wrap .left_map > span.gyeongbuk::before {
-  background-image: url("/img/maps/gyeongbuk.png");
-}
-#container > div .map_wrap .left_map > span.gyeonggi {
-  top: 7.7%;
-  left: 19.4%;
-  width: 34.6%;
-  height: 24.9%;
-}
-#container > div .map_wrap .left_map > span.gyeonggi::before {
-  background-image: url("/img/maps/gyeonggi.png");
-}
-#container > div .map_wrap .left_map > span.gyeonggi a {
-  top: 60%;
-  left: 70%;
-}
-#container > div .map_wrap .left_map > span.gyeongnam {
-  top: 50%;
-  left: 46.4%;
-  width: 42.3%;
-  height: 22.6%;
-}
-#container > div .map_wrap .left_map > span.gyeongnam::before {
-  background-image: url("/img/maps/gyeongnam.png");
-}
-#container > div .map_wrap .left_map > span.gyeongnam a {
-  left: 45%;
-}
-#container > div .map_wrap .left_map > span.incheon {
-  top: 15.2%;
-  left: 8%;
-  width: 21.1%;
-  height: 10.1%;
-}
-#container > div .map_wrap .left_map > span.incheon::before {
-  background-image: url("/img/maps/incheon.png");
-}
-#container > div .map_wrap .left_map > span.jeju {
-  top: 83.3%;
-  left: 7.7%;
-  width: 25.8%;
-  height: 9.5%;
-}
-#container > div .map_wrap .left_map > span.jeju::before {
-  background-image: url("/img/maps/jeju.png");
-}
-#container > div .map_wrap .left_map > span.jeonbuk {
-  top: 45.1%;
-  left: 13.5%;
-  width: 42%;
-  height: 16.5%;
-}
-#container > div .map_wrap .left_map > span.jeonbuk::before {
-  background-image: url("/img/maps/jeonbuk.png");
-}
-#container > div .map_wrap .left_map > span.jeonnam {
-  top: 57.7%;
-  left: -0.5%;
-  width: 56.6%;
-  height: 24.8%;
-}
-#container > div .map_wrap .left_map > span.jeonnam::before {
-  background-image: url("/img/maps/jeonnam.png");
-}
-#container > div .map_wrap .left_map > span.seoul {
-  top: 17.9%;
-  left: 24.4%;
-  width: 15.1%;
-  height: 6.1%;
-}
-#container > div .map_wrap .left_map > span.seoul::before {
-  background-image: url("/img/maps/seoul.png");
-}
-#container > div .map_wrap .left_map > span.sejong {
-  top: 32.3%;
-  left: 28.8%;
-  width: 11.9%;
-  height: 8%;
-}
-#container > div .map_wrap .left_map > span.sejong::before {
-  background-image: url("/img/maps/sejong.png");
-}
-#container > div .map_wrap .left_map > span.ulsan {
-  top: 51.9%;
-  left: 80.7%;
-  width: 17.4%;
-  height: 9.4%;
-}
-#container > div .map_wrap .left_map > span.ulsan::before {
-  background-image: url("/img/maps/ulsan.png");
-}
-#container > div .map_wrap .right_find {
-  width: 50%;
-  text-align: center;
-}
-#container > div .map_wrap .right_find > h4 {
   font-size: 2vw;
-  font-family: "HallymMjo";
-  font-weight: 700;
-  color: #0C592E;
+  line-height: 200%;
 }
-#container > div .map_wrap .right_find .location_form {
-  margin-top: 1vw;
+#container > div.recipes_wrap .recipes .texts > a {
+  font-family: "Pretendard";
+  color: #f7e8bb;
+  background-color: #14402B;
   display: flex;
   justify-content: center;
-}
-#container > div .map_wrap .right_find .location_form > select {
-  font-family: "Pretendard";
+  align-items: center;
+  width: 4vw;
+  height: 4vw;
   font-size: 16px;
-  color: #14402B;
-  font-family: "Pretendard";
-  font-weight: 500;
-  height: 300%;
-  width: 15%;
-  background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png") calc(100% - 5px) center no-repeat;
-  background-size: 20px;
-  padding: 5px 30px 5px 10px;
-  border-radius: 4px;
-  outline: none;
-  cursor: pointer;
+  margin-left: auto;
+  margin-bottom: 4%;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.5s;
+  transform: scale(1);
 }
-#container > div .map_wrap .right_find .location_form > select > option {
-  color: #14402B;
-  font-family: "Pretendard";
-  font-weight: 500;
-  font-size: 16px;
-  height: 300%;
-  background-color: #f7e8bb;
-  cursor: pointer;
+#container > div.recipes_wrap .recipes .texts > a:hover {
+  background-color: #8C182D;
+  transform: scale(1.2);
 }
-#container > div .map_wrap .right_find .location_form > select > option:disabled {
-  font-weight: 400;
-  cursor: not-allowed;
+#container > div.recipes_wrap .more_wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#container > div .map_wrap .right_find .location_form > input {
-  outline: none;
-  border: 1px solid #666;
+#container > div.recipes_wrap .more_wrap > button {
   background-color: transparent;
-  font-family: "Pretendard";
-  color: #14402B;
-  font-size: 16px;
-  font-weight: 500;
-  text-indent: 8px;
-  line-height: 180%;
-  margin: 0 4px;
-  border-radius: 4px;
-}
-#container > div .map_wrap .right_find .location_form > input::-moz-placeholder {
-  color: #14402B;
-  font-family: "Pretendard";
-  font-size: 16px;
-  font-weight: 500;
-  text-indent: 8px;
-}
-#container > div .map_wrap .right_find .location_form > input::placeholder {
-  color: #14402B;
-  font-family: "Pretendard";
-  font-size: 16px;
-  font-weight: 500;
-  text-indent: 8px;
-}
-#container > div .map_wrap .right_find .location_form > button {
-  background-color: #14402B;
-  color: #f7e8bb;
-  font-weight: 800;
-  font-family: "Pretendard";
+  outline: none;
   border: none;
-  border-radius: 4px;
-  padding: 0 20px;
-  cursor: pointer;
+  color: #f7e8bb;
+  font-size: 2vw;
+  font-family: "HSBombaram21-Regular";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 300%;
+}
+#container > div.recipes_wrap .more_wrap > button > img {
+  width: 1.5vw;
+  vertical-align: middle;
+  margin: 0 10px;
 }
 
 #footer {
@@ -506,6 +264,7 @@ select::-ms-expand {
   align-items: center;
   filter: contrast(1.4) saturate(1.4);
   overflow: hidden;
+  margin-top: 50px;
 }
 #footer .left_img > img {
   width: 110%;
@@ -669,6 +428,7 @@ select::-ms-expand {
   #footer .left_img {
     width: 90%;
     border-radius: 10%;
+    margin-top: 0;
   }
   #footer .left_img > img {
     width: 120%;

@@ -19,16 +19,6 @@ body.show {
     transition: all .7s;
 }
 
-select::-ms-expand { 
-	display: none;
-}
-.select {
-  -o-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
 #header {
     position: fixed;
     top:0;
@@ -188,326 +178,98 @@ select::-ms-expand {
 #container {
     width: 100vw;
     background-color: $jBeige;
-    margin-top:76px;
+    margin-top:75px;
+    background-color: $jDarkGreen;
     > div {
-        width: 94%;
+        width: 100%;
         margin: 0 auto;
-        .title {
-            color: $jDarkGreen;
-            font-size: 4vw;
-            font-family: $headline;
-            text-align: center;
-            line-height: 200%;
-        }
-        .map_wrap {
+        &.recipes_wrap {
+            width: 92%;
             display: flex;
             justify-content: space-between;
-            width: 100%;
-            height: 50vw;
-            .left_map {
-                width: 30%;
-                margin: 0 10%;
-                height: 100%;
-                position: relative;
-                object-fit: contain;
-                > img {
-                    position: absolute;
-                    top:0;
-                    left: 0;
-                    width: 100%;
+            flex-wrap: wrap;
+            overflow: hidden;
+            position: relative;
+            .recipes {
+                width: 28%;
+                background-color: $jBeige;
+                border-radius: 20px;
+                margin-bottom: 8%;
+                display: none;
+                &:nth-child(1) {
                     display: block;
-                    margin: 0 auto;
-                    filter:invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(20%) contrast(94%);
                 }
-                > span {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    transition: all .5s;
-                    &::before {
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        content: " ";
-                        display: block;
-                        filter:invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(88%) contrast(94%);
-                        object-fit: cover;
-                        width: 100%;
-                        height: 100%;
-                        opacity: 0;
-                        transition: all .5s;
+                &:nth-child(2) {
+                    display: block;
+                }
+                &:nth-child(3) {
+                    display: block;
+                }
+                > img {
+                    height: 460px;
+                    width: 92%;
+                    object-fit: cover;
+                    display: block;
+                    margin: 4% auto;
+                    border-radius: 10px;
+                }
+                .texts {
+                    width: 92%;
+                    margin: 4% auto;
+                    padding-bottom: 4%;
+                    > h5 {
+                        font-family: $headline;
+                        color: $jDarkGreen;
+                        font-size: 2vw;
+                        line-height: 200%;
                     }
-                    a {
-                        text-align: center;
-                        display: block;
-                        position: absolute;
-                        transform: translate(-50%, -50%);
+                    > a {
                         font-family: $context;
-                        font-size: .8vw;
-                        color:$jDarkGreen;
-                        font-weight: 700;
-                        top:50%;
-                        left:50%;
+                        color: $jBeige;
+                        background-color: $jDarkGreen;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 4vw;
+                        height: 4vw;
+                        font-size: 16px;
+                        margin-left: auto;
+                        margin-bottom: 4%;
+                        text-align: center;
+                        border-radius: 50%;
                         transition: all .5s;
-                    }
-                    &:hover {
-                        &::before {
-                            opacity: 1;
-                        }
-                        a {
-                            color:$jBeige;
-                        }
-                    }
-                    &.on {
-                        &::before {
-                            opacity: 1;
-                        }
-                        a {
-                            color:$jBeige;
-                        }
-                    }
-                    //공통요소 끝
-                    &.busan {
-                        top: 57.9%;
-                        left: 67.7%;
-                        width: 27%;
-                        height: 9%;
-                        &::before {
-                            background-image: url("/img/maps/busan.png");
-                        }
-                        a {
-                            left:60%;
-                        }
-                    }
-                    &.chungbuk {
-                        top: 25.9%;
-                        left: 38.7%;
-                        width: 36.5%;
-                        height: 22.5%;
-                        &::before {
-                            background-image: url("/img/maps/chungbuk.png");
-                        }
-                        a {
-                            left:25%;
-                        }
-                    }
-                    &.chungnam {
-                        top: 30.4%;
-                        left: 6.4%;
-                        width: 42.7%;
-                        height: 19%;
-                        &::before {
-                            background-image: url("/img/maps/chungnam.png");
-                        }
-                        a {
-                            left:40%;
-                        }
-                    }
-                    &.daegu {
-                        top: 47.2%;
-                        left: 63.3%;
-                        width: 14.9%;
-                        height: 8%;
-                        &::before {
-                            background-image: url("/img/maps/daegu.png");
-                        }
-                    }
-                    &.daejeon {
-                        top: 36.3%;
-                        left: 31.6%;
-                        width: 11.9%;
-                        height: 8%;
-                        &::before {
-                            background-image: url("/img/maps/daejeon.png");
-                        }
-                    }
-                    &.gangwon {
-                        top: 0.3%;
-                        left: 33.9%;
-                        width: 57.9%;
-                        height: 29.7%;
-                        &::before {
-                            background-image: url("/img/maps/gangwon.png");
-                        }
-                    }
-                    &.gwangju {
-                        top: 60.6%;
-                        left: 22.5%;
-                        width: 12.4%;
-                        height: 5.2%;
-                        &::before {
-                            background-image: url("/img/maps/gwangju.png");
-                        }
-                    }
-                    &.gyeongbuk {
-                        top: 24.2%;
-                        left: 52.5%;
-                        width: 47.3%;
-                        height: 31.9%;
-                        &::before {
-                            background-image: url("/img/maps/gyeongbuk.png");
-                        }
-                    }
-                    &.gyeonggi {
-                        top: 7.7%;
-                        left: 19.4%;
-                        width: 34.6%;
-                        height: 24.9%;
-                        &::before {
-                            background-image: url("/img/maps/gyeonggi.png");
-                        }
-                        a {
-                            top:60%;
-                            left:70%;
-                        }
-                    }
-                    &.gyeongnam {
-                        top: 50%;
-                        left: 46.4%;
-                        width: 42.3%;
-                        height: 22.6%;
-                        &::before {
-                            background-image: url("/img/maps/gyeongnam.png");
-                        }
-                        a {
-                            left:45%;
-                        }
-                    }
-                    &.incheon {
-                        top: 15.2%;
-                        left: 8%;
-                        width: 21.1%;
-                        height: 10.1%;
-                        &::before {
-                            background-image: url("/img/maps/incheon.png");
-                        }
-                    }
-                    &.jeju {
-                        top: 83.3%;
-                        left: 7.7%;
-                        width: 25.8%;
-                        height: 9.5%;
-                        &::before {
-                            background-image: url("/img/maps/jeju.png");
-                        }
-                    }
-                    &.jeonbuk {
-                        top: 45.1%;
-                        left: 13.5%;
-                        width: 42%;
-                        height: 16.5%;
-                        &::before {
-                            background-image: url("/img/maps/jeonbuk.png");
-                        }
-                    }
-                    &.jeonnam {
-                        top: 57.7%;
-                        left: -0.5%;
-                        width: 56.6%;
-                        height: 24.8%;
-                        &::before {
-                            background-image: url("/img/maps/jeonnam.png");
-                        }
-                    }
-                    &.seoul {
-                        top: 17.9%;
-                        left: 24.4%;
-                        width: 15.1%;
-                        height: 6.1%;
-                        &::before {
-                            background-image: url("/img/maps/seoul.png");
-                        }
-                    }
-                    &.sejong {
-                        top: 32.3%;
-                        left: 28.8%;
-                        width: 11.9%;
-                        height: 8%;
-                        &::before {
-                            background-image: url("/img/maps/sejong.png");
-                        }
-                    }
-                    &.ulsan {
-                        top: 51.9%;
-                        left: 80.7%;
-                        width: 17.4%;
-                        height: 9.4%;
-                        &::before {
-                            background-image: url("/img/maps/ulsan.png");
+                        transform: scale(1);
+                        &:hover {
+                            background-color: $jRed;
+                            transform: scale(1.2);
                         }
                     }
                 }
             }
-            .right_find {
-                width: 50%;
-                text-align: center;
-                > h4 {
+            .more_wrap {
+                position: absolute;
+                bottom:0;
+                left:0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > button {
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    color:$jBeige;
                     font-size: 2vw;
-                    font-family: $subHeadline;
-                    font-weight: 700;
-                    color: $jGreen;
-                }
-                .location_form {
-                    margin-top: 1vw;
+                    font-family: $headline;
                     display: flex;
                     justify-content: center;
-                    > select {
-                        font-family: $context;
-                        font-size: 16px;
-                        color: $jDarkGreen;
-                        font-family: $context;
-                        font-weight: 500;
-                        height: 300%;
-                        width: 15%;
-                        background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
-                        background-size: 20px;
-                        padding: 5px 30px 5px 10px;
-                        border-radius: 4px;
-                        outline: none;
-                        cursor: pointer;
-                        > option {
-                            color: $jDarkGreen;
-                            font-family: $context;
-                            font-weight: 500;
-                            font-size: 16px;
-                            height: 300%;
-                            background-color: $jBeige;
-                            cursor: pointer;
-                            &:disabled {
-                                font-weight: 400;
-                                cursor: not-allowed;
-                            }
-                        }
-                    }
-                    > input {
-                        outline: none;
-                        border: 1px solid #666;
-                        background-color: transparent;
-                        font-family: $context;
-                        color: $jDarkGreen;
-                        font-size: 16px;
-                        font-weight: 500;
-                        text-indent: 8px;
-                        line-height: 180%;
-                        margin: 0 4px;
-                        border-radius: 4px;
-                        &::placeholder {
-                            color: $jDarkGreen;
-                            font-family: $context;
-                            font-size: 16px;
-                            font-weight: 500;
-                            text-indent: 8px;
-                        }
-                    }
-                    > button {
-                        background-color: $jDarkGreen;
-                        color: $jBeige;
-                        font-weight: 800;
-                        font-family: $context;
-                        border: none;
-                        border-radius: 4px;
-                        padding: 0 20px;
-                        cursor: pointer;
+                    align-items: center;
+                    text-align: center;
+                    line-height: 300%;
+                    > img {
+                        width: 1.5vw;
+                        vertical-align: middle;
+                        margin: 0 10px;
                     }
                 }
             }
@@ -527,6 +289,7 @@ select::-ms-expand {
         align-items: center;
         filter: contrast(1.4) saturate(1.4);
         overflow: hidden;
+        margin-top: 50px;
         > img{
             width: 110%;
         }
@@ -700,6 +463,7 @@ select::-ms-expand {
         .left_img{
             width: 90%;
             border-radius: 10%;
+            margin-top: 0;
             > img{
                 width: 120%;
                 

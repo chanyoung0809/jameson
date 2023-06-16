@@ -1,0 +1,28 @@
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css","recipe.css"]}) %> 
+    <div id="container">
+        <div class="flowText">
+            <!--반복문 처리 구간-->
+            <p>Signiture Recipes<img src="/img/recipe_glass.png"></p>
+        </div>
+        <div class="headlines">
+            <img src="/img/star_marquee_Lemon.svg">
+            <h6 class="sub_headline">다양한 칵테일을 만나보세요</h6>
+            <h2>Jameson Signiture Recipes</h2>
+            <img src="/img/recipe_glassbig.png" /><!-- 레몬색으로 변경 -->
+        </div>
+        <div class="recipes_wrap">
+            <% recipes.forEach((recipe, idx)=> { %>
+                <div class="recipes">
+                    <img src='<%- recipe.imgs %>'>
+                    <div class="texts">
+                        <h5><%- recipe.name %></h5>
+                        <a href="/recipe/<%- recipe.link %>">Go</a>
+                    </div>
+                </div>
+            <% }) %>
+            <div class="more_wrap">
+                <button type="button"><img src="/img/star_marquee_Lemon.svg">더보기<img src="/img/star_marquee_Lemon.svg"></button>
+            </div>
+        </div>
+    </div>   
+<%- include('footer', {jsFiles:["tabMenu.js"]}) %> 

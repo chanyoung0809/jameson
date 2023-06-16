@@ -216,6 +216,7 @@ body.show {
             }
         }
         &.collections_wrap {
+            padding-bottom: 50px;
             > div {
                 .headline_wrap {
                     background-color: $jDarkGreen;
@@ -332,7 +333,7 @@ body.show {
             justify-content: space-between;
             .img_wrap {
                 width: 40%;
-                background: linear-gradient($jBeige, $jLemon);
+                background: linear-gradient($jBeige, $jOnion);
                 object-fit: cover;
                 display: flex;
                 justify-content: center;
@@ -455,6 +456,10 @@ body.show {
                                 > a {
                                     color: $jGreen;
                                     text-decoration: underline;
+                                    transition: all .5s;
+                                    &:hover {
+                                        color: $jRed;
+                                    }
                                 } 
                             }
                         }
@@ -512,22 +517,28 @@ body.show {
         }
         &.recipe_wrap {
             width: 100%;
-            margin-bottom: 50px;
-            border-top: 4px solid $jDarkGreen;
+            margin: 50px 0;
             .title {
-                width: 92%;
+                width: 100%;
                 margin: 0 auto;
                 font-family: $headline;
-                font-size: 4vw;
-                color: $jDarkGreen;
-                line-height: 200%;
+                font-size: 3.5vw;
+                color: $jOnion;
+                line-height: 240%;
                 text-align: center;
+                background-color: $jDarkGreen;
+                border-top: 4px solid $jDarkGreen;
+                border-bottom: 4px solid $jDarkGreen;
+                > img {
+                    width: 3vw;
+                    vertical-align: middle;
+                    margin: 0 1vw;
+                }
             }
             .swiper.detailSwiper {
                 width: 100%;
                 padding-top: 100px;
-                background: linear-gradient($jBeige, $jDarkGreen
-                70%);
+                background-color:$jDarkGreen;
                 .swiper-slide {
                     width: 500px;
                     height: 680px;
@@ -575,26 +586,40 @@ body.show {
                 }
             }
             .toAll {
-                background-color: $jBeige;
                 margin-top: 100px;
                 width: 100%;
-                padding: 40px 0;
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 border-bottom: 4px solid $jDarkGreen;
+                border-top: 4px solid $jDarkGreen;
+                transition: all .5s;
                 > a {
-                    display: block;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     font-family: $context;
-                    color: $jDarkGreen;
-                    text-align: center;
-                    width: 100%;
+                    background-color: $jDarkGreen;
+                    color: $jOnion;
                     font-weight: 800;
                     font-size: 20px;
-                    line-height: 200%;
-                }
-                &:hover {
-                    background-color: $jDarkGreen;
-
+                    line-height: 400%;
+                    margin-bottom: 4vw;
+                    border: 4px solid $jOnion;
+                    border-radius: 10px;
+                    transition: all .5s;
+                    > img {
+                        width: 20px;
+                        margin: 0 10px;
+                        transition: all .5s;
+                    }
+                    &:hover {
+                        background-color: $jOnion;
+                        color: $jDarkGreen;
+                        > img {
+                            content: url("/img/star_marquee_DG.svg");
+                        }
+                    }
                 }
             } 
         }

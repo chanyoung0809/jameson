@@ -48,3 +48,9 @@ app.get("/product/:link", (req, res)=>{
         })
     })
 })
+
+app.get("/recipe",(req,res)=>{
+    db.collection("recipe").find().toArray((err, recipes)=>{
+        res.render("recipe",{recipes:recipes});
+    })
+});
