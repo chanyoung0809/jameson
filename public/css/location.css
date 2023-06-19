@@ -165,7 +165,7 @@ select::-ms-expand {
 }
 #container > div {
   width: 94%;
-  margin: 0 auto;
+  margin: 0 auto 50;
 }
 #container > div .title {
   color: #14402B;
@@ -351,8 +351,8 @@ select::-ms-expand {
 #container > div .map_wrap .left_map > span.incheon {
   top: 15.2%;
   left: 8%;
-  width: 21.1%;
-  height: 10.1%;
+  width: 20.8%;
+  height: 9.4%;
 }
 #container > div .map_wrap .left_map > span.incheon::before {
   background-image: url("/img/maps/incheon.png");
@@ -414,6 +414,9 @@ select::-ms-expand {
 #container > div .map_wrap .right_find {
   width: 50%;
   text-align: center;
+  border: 4px solid #14402B;
+  padding: 1vw 0;
+  overflow: hidden;
 }
 #container > div .map_wrap .right_find > h4 {
   font-size: 2vw;
@@ -422,21 +425,21 @@ select::-ms-expand {
   color: #0C592E;
 }
 #container > div .map_wrap .right_find .location_form {
-  margin-top: 1vw;
+  margin: 1vw 0;
   display: flex;
   justify-content: center;
 }
 #container > div .map_wrap .right_find .location_form > select {
   font-family: "Pretendard";
-  font-size: 16px;
+  font-size: 13px;
   color: #14402B;
   font-family: "Pretendard";
   font-weight: 500;
   height: 300%;
-  width: 15%;
+  width: 20%;
   background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png") calc(100% - 5px) center no-repeat;
   background-size: 20px;
-  padding: 5px 30px 5px 10px;
+  padding: 1% 4% 1% 1%;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
@@ -445,7 +448,7 @@ select::-ms-expand {
   color: #14402B;
   font-family: "Pretendard";
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
   height: 300%;
   background-color: #f7e8bb;
   cursor: pointer;
@@ -460,7 +463,7 @@ select::-ms-expand {
   background-color: transparent;
   font-family: "Pretendard";
   color: #14402B;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   text-indent: 8px;
   line-height: 180%;
@@ -470,14 +473,14 @@ select::-ms-expand {
 #container > div .map_wrap .right_find .location_form > input::-moz-placeholder {
   color: #14402B;
   font-family: "Pretendard";
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   text-indent: 8px;
 }
 #container > div .map_wrap .right_find .location_form > input::placeholder {
   color: #14402B;
   font-family: "Pretendard";
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   text-indent: 8px;
 }
@@ -490,6 +493,32 @@ select::-ms-expand {
   border-radius: 4px;
   padding: 0 20px;
   cursor: pointer;
+}
+#container > div .map_wrap .right_find .store_area .stores .store_wrap {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1vw;
+  line-height: 200%;
+  border: 1px solid #14402B;
+  border-left: none;
+  border-right: none;
+  font-family: "Pretendard";
+  text-indent: 5px;
+}
+#container > div .map_wrap .right_find .store_area .stores .store_wrap .store_city {
+  background-color: #14402B;
+  color: #f7e8bb;
+  font-weight: 800;
+}
+#container > div .map_wrap .right_find .store_area .stores .store_wrap .store_name {
+  color: #14402B;
+  font-weight: 500;
+}
+#container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate {
+  color: #14402B;
+  font-weight: 500;
 }
 
 #footer {

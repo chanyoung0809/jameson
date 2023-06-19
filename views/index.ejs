@@ -18,26 +18,17 @@
         <div class="cont2">
             <div class="flowText">
                 <div class="flowTextTop">
-                    <!-- ejs로 반복문 처리-->
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
-                    <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
+                    <% for( let i = 0; i < 8; i++ ) { %>
+                        <span><img src="/img/star_marquee_1.svg">Perfect Irish Whiskey</span>
+                    <% } %>
                 </div>
             </div>
             <div class="center">
                 <div class="swiper c2swiper" data-aos="fade-up" data-aos-duration="1000">
                     <div class="swiper-wrapper">
-                        <img class="swiper-slide" src="/img/recipe_ipa_highball.webp">
-                        <img class="swiper-slide" src="/img/recipe_orange_cosmopolitan.webp">
-                        <img class="swiper-slide" src="/img/recipe_The_Bumble_Bea_card.webp">
-                        <img class="swiper-slide" src="/img/recipe_strawberry_field.webp">
-                        <img class="swiper-slide" src="/img/recipe_dalgona_coffee2.webp">
-                        <img class="swiper-slide" src="/img/recipe_highball.webp">
+                        <% recipes.forEach((el, idx) => { %>
+                            <img class="swiper-slide" src="<%- el.imgs %>">
+                        <% }) %>
                     </div>
                     <div class="btn_wrap">
                         <button class="swiper-button-prev">이전</button>                        
@@ -46,68 +37,24 @@
                 </div>
                 <div class="swiper c2textswiper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <h6>SIGNITURE COCKTAIL</h6>
-                            <h3>트로피컬 제임슨 IPA</h3>
-                            <p>미네랄 솔트를 곁들인 이 코코넛 위스키 칵테일로 열대 지방의 맛을 만끽하세요.</p>
-                            <div class="recipe_wrap">
-                                <a href="#">레시피 보기</a>
+                        <% recipes.forEach((el, idx) => { %>
+                            <div class="swiper-slide">
+                                <h6>SIGNITURE COCKTAIL</h6>
+                                <h3><%- el.name %></h3>
+                                <p><%- el.info %></p>
+                                <div class="recipe_wrap">
+                                    <a href="/recipe/<%- el.link %>">레시피 보기</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h6>SIGNITURE COCKTAIL</h6>
-                            <h3>오렌지 코스모</h3>
-                            <p>석양을 닮은 코스모폴리탄과 제임슨 위스키의 새로운 조합입니다.</p>
-                            <div class="recipe_wrap">
-                                <a href="#">레시피 보기</a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h6>SIGNITURE COCKTAIL</h6>
-                            <h3>제임슨 범블비</h3>
-                            <p>스피루리나로 색을 내고 홈메이드 바닐라 허니 시럽으로 맛을 낸 위스키 사워입니다.</p>
-                            <div class="recipe_wrap">
-                                <a href="#">레시피 보기</a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h6>SIGNITURE COCKTAIL</h6>
-                            <h3>스트로베리 필드</h3>
-                            <p>딸기와 사과로 아일랜드의 여름을 담았습니다. 여름의 무더위와 스트레스를 날려줄 것입니다.</p>
-                            <div class="recipe_wrap">
-                                <a href="#">레시피 보기</a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h6>SIGNITURE COCKTAIL</h6>
-                            <h3>달고나 라떼 칵테일</h3>
-                            <p>아이리쉬 커피와 달고나 커피의 환상적인 조합입니다. 간단한 재료로 편하게 즐기세요.</p>
-                            <div class="recipe_wrap">
-                                <a href="#">레시피 보기</a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <h6>SIGNITURE COCKTAIL</h6>
-                            <h3>진저 & 라임 하이볼</h3>
-                            <p>어떤 날이든, 누구와 함께든 항상 정답이 될 수 있는 레시피입니다. 쉽고 간편합니다.</p>
-                            <div class="recipe_wrap">
-                                <a href="#">레시피 보기</a>
-                            </div>
-                        </div>
+                        <% }) %>
                     </div>
                 </div>
             </div>
             <div class="flowText">
                 <div class="flowTextBot">
-                    <!-- ejs로 반복문 처리-->
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
-                    <span><img src="/img/ontherock.svg">Featured Recipes</span>
+                    <% for( let i = 0; i < 8; i++ ) { %>
+                        <span><img src="/img/ontherock.svg">Featured Recipes</span>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -117,67 +64,22 @@
                     <h2 data-aos="fade-up" data-aos-duration="2000">더 다양해진 제임슨 위스키를 살펴보세요</h2>
                     <div class="swiper textSwiper" data-aos="fade-up" data-aos-duration="1000">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <h5>제임슨 오리지날</h5>
-                                <a href="/product/original">Go</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5>제임슨 블랙베럴</h5>
-                                <a href="/product/black-barrel">Go</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5>제임슨 IPA</h5>
-                                <a href="/product/ipa">Go</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5>제임슨 콜드브루</h5>
-                                <a href="/pruduct/coldbrew">Go</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5>제임슨 오렌지</h5>
-                                <a href="/product/orange">Go</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5>제임슨 스타우트</h5>
-                                <a href="/product/stout">Go</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5>제임슨 싱글팟스틸</h5>
-                                <a href="/product/single-pot-still">Go</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <h5>제임슨 크레스티드</h5>
-                                <a href="/product/crested">Go</a>
-                            </div>
+                            <% whiskey.forEach((product, idx) => { %>
+                                <div class="swiper-slide">
+                                    <h5><%- product.name %></h5>
+                                    <a href="/product/<%- product.link %>">Go</a>
+                                </div>
+                            <% }) %>
                         </div>
                     </div>
                 </div>
                 <div class="swiper c3Swiper" data-aos="flip-right" data-aos-duration="1000">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="/img/slide_originalJameson.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/slide_blackbarrelJameson.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/slide_ipaJameson.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/slide_coldbrewJameson.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/slide_orangeJameson.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/slide_stoutJameson.webp">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/slide_singlepotstillJameson.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/img/slide_crestedJameson.webp">
-                        </div>
+                        <% whiskey.forEach((product, idx) => { %>
+                            <div class="swiper-slide">
+                                <img src="<%- product.nukkiImg %>">
+                            </div>
+                        <% }) %>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>

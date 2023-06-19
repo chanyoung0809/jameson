@@ -30,7 +30,16 @@ MongoClient.connect("mongodb+srv://cisalive:cisaliveS2@cluster0.cjlsn98.mongodb.
 });
 
 app.get("/",(req,res)=>{
-    res.render("index.ejs");
+    db.collection("whiskey").find().toArray((err, whiskey)=>{
+        db.collection("recipe").find().toArray((err, recipe)=>{
+            let recipes = [];
+            for(let i=0; i<recipe.length; i+=3){
+                recipes.push(recipe[i]);
+            }
+            res.render("index", {whiskey:whiskey, recipes:recipes})
+        });
+    });
+    
 });
 
 app.get("/collections",(req,res)=>{
@@ -38,7 +47,20 @@ app.get("/collections",(req,res)=>{
 });
 
 app.get("/location",(req,res)=>{
-    res.render("location");
+    db.collection("cities").find().toArray((err, cities)=>{    
+        let citiesSort = cities.slice(); //배열 복제본
+        // cities.clone() 안먹는 이유?
+        citiesSort = citiesSort.sort((a, b)=>{
+            // 오름차순 정렬한 새로운 배열 생성
+            if(a.korName > b.korName) return 1;
+            if(a.korName < b.korName) return -1;
+            return 0;
+        });
+        db.collection("store").find().toArray((err, stores)=>{    
+            res.render("location.ejs", {cities:cities, citiesSort:citiesSort, stores: stores});
+        })
+    });
+    
 });
 
 app.get("/product/:link", (req, res)=>{

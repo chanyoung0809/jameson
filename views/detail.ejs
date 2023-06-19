@@ -77,7 +77,7 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <% cocktails.forEach((el, idx)=> { %>
+            <% cocktails.forEach((el, idx)=> { %>
                 <div class="swiper-slide">
                     <img src='<%- el.imgs %>'>
                     <div class="texts">
@@ -85,7 +85,7 @@
                         <a href="/recipe/<%- el.link %>">Go</a>
                     </div>
                 </div>
-              <% }) %>
+            <% }) %>
         </div>
         <div class="toAll">
             <a href="/recipe"><img src="/img/star_marquee_onion.svg">모든 레시피 보기<img src="/img/star_marquee_onion.svg"></a>

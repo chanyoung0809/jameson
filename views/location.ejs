@@ -5,89 +5,39 @@
         <h2 class="title">구매처 찾기</h2>
         <div class="map_wrap">
             <div class="left_map">
-                <img src="/img/maps/korea_map.png">        
-                <span class="chungnam">
-                    <a href="#">충남</a>
-                </span>   
-                <span class="chungbuk">
-                    <a href="#">충북</a>
-                </span>     
-                <span class="sejong">
-                    <a href="#">세종</a>
-                </span> 
-                <span class="daejeon">
-                    <a href="#">대전</a>
-                </span> 
-                <span class="gangwon">
-                    <a href="#">강원</a>
-                </span> 
-                <span class="gyeongbuk">
-                    <a href="#">경북</a>
-                </span>
-                <span class="incheon">
-                    <a href="#">인천</a>
-                </span>    
-                <span class="gyeonggi">
-                    <a href="#">경기</a>
-                </span>
-                <span class="gyeongnam">
-                    <a href="#">경남</a>
-                </span>
-                <span class="daegu">
-                    <a href="#">대구</a>
-                </span>  
-                <span class="busan">
-                    <a href="#">부산</a>
-                </span>    
-                <span class="jeju">
-                    <a href="#">제주</a>
-                </span>    
-                <span class="jeonbuk">
-                    <a href="#">전북</a>
-                </span>   
-                <span class="jeonnam">
-                    <a href="#">전남</a>
-                </span> 
-                <span class="gwangju">
-                    <a href="#">광주</a>
-                </span>
-                <span class="seoul">
-                    <a href="#">서울</a>
-                </span> 
-                <span class="ulsan">
-                    <a href="#">울산</a>
-                </span> 
+                <img src="/img/maps/korea_map.png">    
+                <% cities.forEach((city) => { %>
+                    <span class="<%- city.engName %>">
+                        <a href="/location/<%- city.engName %>"><%- city.korName %></a>
+                    </span>  
+                <% }) %>    
             </div>
             <div class="right_find">
                 <h4>픽업 가능한 매장을 찾아보세요</h4>
                 <form class="location_form">
                     <select class="location">
-                        <option selected disabled>지역 선택</option>
-                        <option>서울</option>
-                        <option>인천</option>
-                        <option>경기</option>
-                        <option>충북</option>
-                        <option>세종</option>
-                        <option>대전</option>
-                        <option>충남</option>
-                        <option>전북</option>
-                        <option>광주</option>
-                        <option>전남</option>
-                        <option>경북</option>
-                        <option>대구</option>
-                        <option>울산</option>
-                        <option>경남</option>
-                        <option>제주</option>
-                        <option>부산</option>
+                        <option value="*" selected disabled>지역선택</option>
+                        <% citiesSort.forEach((city) => { %>
+                            <option value="<%- city.engName %>"><%- city.korName %></option>
+                        <% }) %>    
                     </select>
                     <input type="text" placeholder="검색어를 입력해주세요" />
                     <button type="submit">검색</button>
                 </form>
-                <div>검색 결과가 없습니다.</div>
+                <div class="store_area">
+                    <ul class="stores">
+                        <% stores.forEach((store, idx) => { %>
+                        <li class="store_wrap">
+                            <p class="store_city"><%- store.korName  %></p>
+                            <p class="store_name"><%- store.storeName  %></p>
+                            <p class="store_locate"><%- store.location  %></p>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    
+    </div> 
 </div>
 <script>
 

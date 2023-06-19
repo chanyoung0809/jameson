@@ -249,7 +249,7 @@ body.show {
         }
     }
     .cont2 {
-        overflow-x: hidden; 
+        overflow: hidden; 
         background-color: $jBeige;
         width: 100vw;
         .flowText {
@@ -310,29 +310,30 @@ body.show {
             width: 75%;
             height: max-content;
             > .swiper.c2swiper {
-                height: 108%;
                 width: 50%;
                 position: relative;
                 border-radius: 80px;
                 border: 8px solid $jDarkGreen;
                 overflow: hidden;
                 > .swiper-wrapper {
-                    >.swiper-slide {
+                    >  img.swiper-slide {
                         object-fit: cover;
-                        height: auto;
+                        width: 100% !important; 
+                        height: 100%;
                     }
                 }
                 > .btn_wrap {
                     display: flex;
                     position: absolute;
                     justify-content: space-between;
-                    width: 34.1%;
+                    align-items: center;
                     bottom:100px;
                     right:5%;
+                    width: calc(160px + 5vw);
                     z-index: 8;
                     > button {
-                        width: 5vw;
-                        height: 5vw;
+                        width: calc(80px  + 1vw);
+                        height: calc(80px  + 1vw);
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -358,21 +359,16 @@ body.show {
                             content: "";
                         }
                     }
-                    .swiper-button-next.swiper-navigation-disabled {
-                        opacity: .5;
-                    }
-                    .swiper-button-prev.swiper-navigation-disabled {
-                        opacity: .5;
-                    }
                 }    
             }
             .swiper.c2textswiper {
                 border: 8px solid $jDarkGreen;
                 width: 36%;
                 border-radius: 80px;
-                height: min-content;
+                height: auto;
                 > .swiper-wrapper {
                     > .swiper-slide {
+                        width: 100% !important;
                         color:$jDarkGreen;
                         text-align: right;
                         display: flex;
@@ -385,19 +381,17 @@ body.show {
                             letter-spacing: -1px;
                             color: $jRed;
                             width:70%;
-                            margin-top: 10%;
-                            margin-left: 20%;
-                            margin-bottom: 6%;
+                            margin: 12% auto 4%;
                         }
                         > h3 {
                             font-family: $headline;
                             font-size: 4vw;
-                            width:90%;
+                            width:85%;
                             word-break: keep-all;
                             line-height: 120%;
                             letter-spacing: 1px;
                             font-weight: normal;
-                            margin-bottom: 5%;
+                            margin:0 auto 4%;
                         }
                         > p {
                             font-size: 1.25vw;
@@ -820,6 +814,7 @@ body.show {
         }
     }             
     #container {
+        width:100vw;
         .cont1 {
             display: flex;
             justify-content: center;
@@ -869,26 +864,24 @@ body.show {
                 flex-wrap: wrap;
                 margin: 2% auto;
                 width: 90%;
+                margin-left: 7%;
                 > .swiper.c2swiper {
                     width: 100%;
                     height: 60vh;
                     margin-bottom: 4%;
-                    border-radius: 60px;
+                    border-radius: 40px;
                     > .swiper-wrapper {
                         >.swiper-slide {
                             width: 100%;
                             height: revert;
                         }
                     }
-                    > .btn_wrap {
-                        display: none;
-                    }    
                 }
                 .swiper.c2textswiper {
                     width: 100%;
                     height: auto;
                     text-align: center;
-                    border-radius: 60px;
+                    border-radius: 40px;
                     > .swiper-wrapper {
                         > .swiper-slide {
                             > h6 {
@@ -1074,7 +1067,7 @@ body.show {
         }
     }
     #footer {
-        width: 100%;
+        width: 100vw;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -1185,7 +1178,9 @@ body.show {
         }
     }   
     #container {
+        width:100vw;
         .cont1 {
+            width: 100%;
             .center {
                 width: 95%;
                 .c1_left {
@@ -1240,10 +1235,21 @@ body.show {
                 height: auto;
                 flex-wrap: wrap;
                 margin: 2% auto;
+                margin-left: 7%;
                 > .swiper.c2swiper {
                     height: 40vh;
                     border: 6px solid $jDarkGreen;
                     border-radius: 40px;
+                    .btn_wrap {
+                        width: calc(140px + 5vw);
+                        right: 2%;
+                        bottom: 60px;
+                        > button {
+                            font-size: 13px;
+                            width: calc(60px + 1vw);
+                            height: calc(60px + 1vw);
+                        }
+                    }
                 }
                 .swiper.c2textswiper {
                     border: 6px solid $jDarkGreen;

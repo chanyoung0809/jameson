@@ -220,7 +220,7 @@ body.show {
   filter: contrast(1.1) saturate(1.1) brightness(1.1);
 }
 #container .cont2 {
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #f7e8bb;
   width: 100vw;
 }
@@ -283,30 +283,31 @@ body.show {
   height: max-content;
 }
 #container .cont2 .center > .swiper.c2swiper {
-  height: 108%;
   width: 50%;
   position: relative;
   border-radius: 80px;
   border: 8px solid #14402B;
   overflow: hidden;
 }
-#container .cont2 .center > .swiper.c2swiper > .swiper-wrapper > .swiper-slide {
+#container .cont2 .center > .swiper.c2swiper > .swiper-wrapper > img.swiper-slide {
   -o-object-fit: cover;
      object-fit: cover;
-  height: auto;
+  width: 100% !important;
+  height: 100%;
 }
 #container .cont2 .center > .swiper.c2swiper > .btn_wrap {
   display: flex;
   position: absolute;
   justify-content: space-between;
-  width: 34.1%;
+  align-items: center;
   bottom: 100px;
   right: 5%;
+  width: calc(160px + 5vw);
   z-index: 8;
 }
 #container .cont2 .center > .swiper.c2swiper > .btn_wrap > button {
-  width: 5vw;
-  height: 5vw;
+  width: calc(80px + 1vw);
+  height: calc(80px + 1vw);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -332,20 +333,14 @@ body.show {
 #container .cont2 .center > .swiper.c2swiper > .btn_wrap > button::after {
   content: "";
 }
-#container .cont2 .center > .swiper.c2swiper > .btn_wrap .swiper-button-next.swiper-navigation-disabled {
-  opacity: 0.5;
-}
-#container .cont2 .center > .swiper.c2swiper > .btn_wrap .swiper-button-prev.swiper-navigation-disabled {
-  opacity: 0.5;
-}
 #container .cont2 .center .swiper.c2textswiper {
   border: 8px solid #14402B;
   width: 36%;
   border-radius: 80px;
-  height: -moz-min-content;
-  height: min-content;
+  height: auto;
 }
 #container .cont2 .center .swiper.c2textswiper > .swiper-wrapper > .swiper-slide {
+  width: 100% !important;
   color: #14402B;
   text-align: right;
   display: flex;
@@ -359,19 +354,17 @@ body.show {
   letter-spacing: -1px;
   color: #8C182D;
   width: 70%;
-  margin-top: 10%;
-  margin-left: 20%;
-  margin-bottom: 6%;
+  margin: 12% auto 4%;
 }
 #container .cont2 .center .swiper.c2textswiper > .swiper-wrapper > .swiper-slide > h3 {
   font-family: "HSBombaram21-Regular";
   font-size: 4vw;
-  width: 90%;
+  width: 85%;
   word-break: keep-all;
   line-height: 120%;
   letter-spacing: 1px;
   font-weight: normal;
-  margin-bottom: 5%;
+  margin: 0 auto 4%;
 }
 #container .cont2 .center .swiper.c2textswiper > .swiper-wrapper > .swiper-slide > p {
   font-size: 1.25vw;
@@ -771,6 +764,9 @@ body.show {
     width: 4.5vw;
     margin-right: 10px;
   }
+  #container {
+    width: 100vw;
+  }
   #container .cont1 {
     display: flex;
     justify-content: center;
@@ -821,25 +817,23 @@ body.show {
     flex-wrap: wrap;
     margin: 2% auto;
     width: 90%;
+    margin-left: 7%;
   }
   #container .cont2 .center > .swiper.c2swiper {
     width: 100%;
     height: 60vh;
     margin-bottom: 4%;
-    border-radius: 60px;
+    border-radius: 40px;
   }
   #container .cont2 .center > .swiper.c2swiper > .swiper-wrapper > .swiper-slide {
     width: 100%;
     height: revert;
   }
-  #container .cont2 .center > .swiper.c2swiper > .btn_wrap {
-    display: none;
-  }
   #container .cont2 .center .swiper.c2textswiper {
     width: 100%;
     height: auto;
     text-align: center;
-    border-radius: 60px;
+    border-radius: 40px;
   }
   #container .cont2 .center .swiper.c2textswiper > .swiper-wrapper > .swiper-slide > h6 {
     font-size: 2vw;
@@ -1011,7 +1005,7 @@ body.show {
     margin-top: 1vw;
   }
   #footer {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -1106,6 +1100,12 @@ body.show {
   .slide_gnb > ul li a img {
     width: 6vw;
   }
+  #container {
+    width: 100vw;
+  }
+  #container .cont1 {
+    width: 100%;
+  }
   #container .cont1 .center {
     width: 95%;
   }
@@ -1157,11 +1157,22 @@ body.show {
     height: auto;
     flex-wrap: wrap;
     margin: 2% auto;
+    margin-left: 7%;
   }
   #container .cont2 .center > .swiper.c2swiper {
     height: 40vh;
     border: 6px solid #14402B;
     border-radius: 40px;
+  }
+  #container .cont2 .center > .swiper.c2swiper .btn_wrap {
+    width: calc(140px + 5vw);
+    right: 2%;
+    bottom: 60px;
+  }
+  #container .cont2 .center > .swiper.c2swiper .btn_wrap > button {
+    font-size: 13px;
+    width: calc(60px + 1vw);
+    height: calc(60px + 1vw);
   }
   #container .cont2 .center .swiper.c2textswiper {
     border: 6px solid #14402B;

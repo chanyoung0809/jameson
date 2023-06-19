@@ -152,18 +152,72 @@ body.show {
   background-color: #f7e8bb;
   margin-top: 75px;
   background-color: #14402B;
+  overflow-x: hidden;
 }
 #container > div {
   width: 100%;
   margin: 0 auto;
+}
+#container > div.flowText {
+  display: flex;
+  align-items: center;
+  width: 514%;
+  animation: bannermove 50s linear infinite;
+}
+@keyframes bannermove {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+#container > div.flowText > p {
+  display: flex;
+  font-size: 5vw;
+  align-items: center;
+  font-family: "HSBombaram21-Regular";
+  color: #f7e8bb;
+  padding: 4vw 1vw;
+  letter-spacing: -3px;
+}
+#container > div.flowText > img {
+  width: 4vw;
+  padding: 4vw 1vw;
+}
+#container > div.headlines {
+  color: #f7e8bb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.2vw;
+  font-family: "HSBombaram21-Regular";
+}
+#container > div.headlines img:nth-child(1) {
+  width: 3vw;
+  margin-bottom: 3%;
+}
+#container > div.headlines .sub_headline {
+  font-size: 2vw;
+  font-weight: 500;
+}
+#container > div.headlines > h2 {
+  font-size: 7vw;
+  line-height: 200%;
+}
+#container > div.headlines img:nth-child(4) {
+  width: 3vw;
+  margin-bottom: 3%;
 }
 #container > div.recipes_wrap {
   width: 92%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  overflow: hidden;
+  overflow-y: hidden;
   position: relative;
+  padding-top: 50px;
 }
 #container > div.recipes_wrap .recipes {
   width: 28%;
@@ -171,6 +225,8 @@ body.show {
   border-radius: 20px;
   margin-bottom: 8%;
   display: none;
+  transform: translateY(0%);
+  transition: all 0.5s;
 }
 #container > div.recipes_wrap .recipes:nth-child(1) {
   display: block;
@@ -182,7 +238,7 @@ body.show {
   display: block;
 }
 #container > div.recipes_wrap .recipes > img {
-  height: 460px;
+  height: 60%;
   width: 92%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -222,6 +278,9 @@ body.show {
   background-color: #8C182D;
   transform: scale(1.2);
 }
+#container > div.recipes_wrap .recipes:hover {
+  transform: translateY(-4%);
+}
 #container > div.recipes_wrap .more_wrap {
   position: absolute;
   bottom: 0;
@@ -242,12 +301,18 @@ body.show {
   justify-content: center;
   align-items: center;
   text-align: center;
+  cursor: pointer;
   line-height: 300%;
 }
 #container > div.recipes_wrap .more_wrap > button > img {
-  width: 1.5vw;
-  vertical-align: middle;
+  width: 1.75vw;
+  vertical-align: top;
   margin: 0 10px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#container > div.recipes_wrap .more_wrap:hover > button > img {
+  opacity: 1;
 }
 
 #footer {

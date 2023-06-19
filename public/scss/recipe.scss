@@ -180,22 +180,78 @@ body.show {
     background-color: $jBeige;
     margin-top:75px;
     background-color: $jDarkGreen;
+    overflow-x: hidden;
     > div {
         width: 100%;
         margin: 0 auto;
+        &.flowText {
+            display: flex;
+            align-items: center;
+            width: 514%;
+            animation: bannermove 50s linear infinite;
+            @keyframes bannermove {
+                0% {
+                  transform: translateX(0%);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+            }
+            > p {
+                display: flex;
+                font-size: 5vw;
+                align-items: center;
+                font-family: $headline;
+                color: $jBeige;
+                padding:4vw 1vw;
+                letter-spacing: -3px;
+            }
+            > img {
+                width: 4vw;
+                padding: 4vw 1vw;
+            }
+        }
+        &.headlines {
+            color:$jBeige;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: -.2vw;
+            font-family: $headline;
+            img:nth-child(1) {
+                width: 3vw;
+                margin-bottom: 3%;
+            }
+            .sub_headline {
+                font-size: 2vw;
+                font-weight: 500;
+            }
+            > h2 {
+                font-size: 7vw;
+                line-height: 200%;
+            }
+            img:nth-child(4) {
+                width: 3vw;
+                margin-bottom: 3%;
+            }
+        }
         &.recipes_wrap {
             width: 92%;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            overflow: hidden;
+            overflow-y: hidden;
             position: relative;
+            padding-top: 50px;
             .recipes {
                 width: 28%;
                 background-color: $jBeige;
                 border-radius: 20px;
                 margin-bottom: 8%;
                 display: none;
+                transform: translateY(0%);
+                transition: all .5s;
                 &:nth-child(1) {
                     display: block;
                 }
@@ -206,7 +262,7 @@ body.show {
                     display: block;
                 }
                 > img {
-                    height: 460px;
+                    height: 60%;
                     width: 92%;
                     object-fit: cover;
                     display: block;
@@ -245,6 +301,9 @@ body.show {
                         }
                     }
                 }
+                &:hover {
+                    transform: translateY(-4%);
+                }
             }
             .more_wrap {
                 position: absolute;
@@ -265,11 +324,21 @@ body.show {
                     justify-content: center;
                     align-items: center;
                     text-align: center;
+                    cursor: pointer;
                     line-height: 300%;
                     > img {
-                        width: 1.5vw;
-                        vertical-align: middle;
+                        width: 1.75vw;
+                        vertical-align: top;
                         margin: 0 10px;
+                        opacity: 0;
+                        transition: all .5s;
+                    }
+                }
+                &:hover {
+                    > button {
+                        > img { 
+                            opacity: 1;
+                        }
                     }
                 }
             }
