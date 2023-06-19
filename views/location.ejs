@@ -28,8 +28,10 @@
                     <ul class="stores">
                         <% stores.forEach((store, idx) => { %>
                         <li class="store_wrap">
-                            <p class="store_city"><%- store.korName  %></p>
-                            <p class="store_name"><%- store.storeName  %></p>
+                            <div class="city_name_wrap">
+                                <p class="store_city"><%- store.korName  %></p>
+                                <p class="store_name"><%- store.storeName  %></p>
+                            </div>
                             <p class="store_locate"><%- store.location  %></p>
                         </li>
                         <% }) %>
@@ -39,7 +41,4 @@
         </div>
     </div> 
 </div>
-<script>
-
-</script>
 <%- include('footer', {jsFiles:["tabMenu.js", "location.js"]}) %> 

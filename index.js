@@ -42,10 +42,46 @@ app.get("/",(req,res)=>{
     
 });
 
+// 위스키 전체목록 페이지
 app.get("/collections",(req,res)=>{
     res.render("collections.ejs");
 });
+// 위스키 상세 페이지
+app.get("/product/:link", (req, res)=>{
+    db.collection("whiskey").findOne({link:req.params.link}, (err, prdResult)=>{
+        db.collection("recipe").find({whiskey : req.params.link}).toArray((err, result)=>{
+            res.render("detail.ejs", {data:prdResult, cocktails:result});
+        })
+    })
+})
 
+// 레시피 전체 목록
+app.get("/recipes",(req,res)=>{
+    db.collection("recipe").find().toArray((err, recipes)=>{
+        db.collection("whiskey").find().toArray((err, whiskey)=>{
+            res.render("recipes",{recipes:recipes, whiskey:whiskey});
+        })  
+    })
+});
+// 레시피 전체 목록을 위스키별로 분류했을 때 페이지
+app.get("/recipes/:link",(req,res)=>{
+    db.collection("whiskey").find().toArray((err, whiskey)=>{
+        db.collection("recipe").find({"whiskey":req.params.link}).toArray((err, recipes)=>{
+            res.render("recipes",{recipes:recipes, whiskey:whiskey});
+        })
+    })    
+});
+// 레시피 상세페이지
+app.get("/recipe/:link",(req,res)=>{
+    db.collection("recipe").findOne({"link":req.params.link}, (err, recipe)=>{
+        db.collection("recipe").find().toArray((err, allRecipes)=>{
+            res.render("recipeDetail",{recipe:recipe, allRecipes:allRecipes});
+        });
+
+    })
+});
+
+// 판매처 페이지
 app.get("/location",(req,res)=>{
     db.collection("cities").find().toArray((err, cities)=>{    
         let citiesSort = cities.slice(); //배열 복제본
@@ -61,18 +97,4 @@ app.get("/location",(req,res)=>{
         })
     });
     
-});
-
-app.get("/product/:link", (req, res)=>{
-    db.collection("whiskey").findOne({link:req.params.link}, (err, prdResult)=>{
-        db.collection("recipe").find({whiskey : req.params.link}).toArray((err, result)=>{
-            res.render("detail.ejs", {data:prdResult, cocktails:result});
-        })
-    })
-})
-
-app.get("/recipe",(req,res)=>{
-    db.collection("recipe").find().toArray((err, recipes)=>{
-        res.render("recipe",{recipes:recipes});
-    })
 });

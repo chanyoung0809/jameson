@@ -13,6 +13,15 @@ $headline: 'HSBombaram21-Regular';
 $subHeadline:'HallymMjo';
 $context: "Pretendard";
 
+@keyframes bannermove {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+}
+
 // 헤더 드롭다운 메뉴 실행 시 스크롤 기능 막아줌
 body.show {
     overflow-y:hidden;
@@ -539,12 +548,13 @@ body.show {
                 width: 100%;
                 padding-top: 100px;
                 background-color:$jDarkGreen;
+                height: max-content;
                 .swiper-slide {
-                    width: 500px;
-                    height: 680px;
+                    width: 26vw;
+                    height: 36vw;
                     background-color: $jBeige;
                     > img {
-                        height: 460px;
+                        height: 60%;
                         width: 92%;
                         object-fit: cover;
                         display: block;
@@ -683,8 +693,8 @@ body.show {
             transition: all .5s;
             &:hover {
                 color: $jBeige;
-                background-color: $jRed;
-                border-color: $jRed;
+                background-color: $jGreen;
+                border-color: $jGreen;
             }
         }
         .sns_wrap {
@@ -708,7 +718,7 @@ body.show {
                     height: fit-content;
                 }
                 &:hover {
-                    background-color: $jRed;
+                    background-color: $jGreen;
                     > a {
                         color: $jBeige;
                     }
@@ -730,7 +740,7 @@ body.show {
                     display: flex;
                     align-items: center;
                     > img {
-                        width: 1.7vw;
+                        width: 1.9vw;
                         opacity: 0;
                         transition: all .5s;
                     }
@@ -759,14 +769,6 @@ body.show {
         height: 100%;
         flex-wrap: nowrap;
         animation: bannermove 20s linear infinite;
-        @keyframes bannermove {
-            0% {
-              transform: translateX(0%);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-        }
         width: 200%;
         > img {
             width: 11.11111%;
@@ -804,7 +806,7 @@ body.show {
         }
     }             
     #footer {
-        width: 100%;
+        width: 100vw;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -835,8 +837,8 @@ body.show {
                 padding:1em 2em;
                 &:hover {
                     color: $jLemon;
-                    background-color: $jRed;
-                    border-color: $jRed;
+                    background-color: $jGreen;
+                    border-color: $jGreen;
                 }
             }
             .sns_wrap {
@@ -862,7 +864,7 @@ body.show {
                     > a {
                         justify-content: center;
                         > img {
-                            width: 1.5vw;
+                            width: 4vw;
 
                         }
                     }
@@ -919,6 +921,9 @@ body.show {
             > h6 {
                 margin: 10px 0;
                 font-size: 3.5vw;
+            }
+            > ul.bot_menus {
+                margin-right: 5%;
             }
             > a {
                 font-size: 3vw;

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@keyframes bannermove {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 body.show {
   overflow-y: hidden;
   transition: all 0.7s;
@@ -165,7 +173,7 @@ select::-ms-expand {
 }
 #container > div {
   width: 94%;
-  margin: 0 auto 50;
+  margin: 0 auto;
 }
 #container > div .title {
   color: #14402B;
@@ -469,6 +477,7 @@ select::-ms-expand {
   line-height: 180%;
   margin: 0 4px;
   border-radius: 4px;
+  width: 30%;
 }
 #container > div .map_wrap .right_find .location_form > input::-moz-placeholder {
   color: #14402B;
@@ -494,31 +503,56 @@ select::-ms-expand {
   padding: 0 20px;
   cursor: pointer;
 }
-#container > div .map_wrap .right_find .store_area .stores .store_wrap {
-  display: block;
+#container > div .map_wrap .right_find .store_area {
+  height: 100%;
+}
+#container > div .map_wrap .right_find .store_area .stores {
+  height: 80%;
+  overflow-y: auto;
   width: 90%;
   margin: 0 auto;
+}
+#container > div .map_wrap .right_find .store_area .stores .store_wrap {
+  display: block;
+  width: 100%;
   text-align: left;
   font-size: 1vw;
   line-height: 200%;
-  border: 1px solid #14402B;
-  border-left: none;
-  border-right: none;
   font-family: "Pretendard";
-  text-indent: 5px;
 }
-#container > div .map_wrap .right_find .store_area .stores .store_wrap .store_city {
+#container > div .map_wrap .right_find .store_area .stores .store_wrap .city_name_wrap {
+  display: flex;
   background-color: #14402B;
   color: #f7e8bb;
-  font-weight: 800;
 }
-#container > div .map_wrap .right_find .store_area .stores .store_wrap .store_name {
-  color: #14402B;
+#container > div .map_wrap .right_find .store_area .stores .store_wrap .city_name_wrap .store_city {
+  color: #f7e8bb;
   font-weight: 500;
+  width: 12%;
+  text-align: center;
+}
+#container > div .map_wrap .right_find .store_area .stores .store_wrap .city_name_wrap .store_name {
+  font-weight: 700;
+  text-indent: 8px;
+  border-left: 4px solid #f7e8bb;
+  letter-spacing: 1px;
 }
 #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate {
   color: #14402B;
   font-weight: 500;
+  text-indent: 12px;
+}
+#container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar {
+  width: 1vw;
+  border-radius: 1vw;
+}
+#container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-thumb {
+  background-color: #14402B;
+  border-radius: 0.5vw;
+  border: 0.2vw solid rgba(247, 232, 187, 0.8);
+}
+#container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-track {
+  background-color: rgba(20, 64, 43, 0.2);
 }
 
 #footer {
@@ -582,8 +616,8 @@ select::-ms-expand {
 }
 #footer .right_wrap > a:hover {
   color: #f7e8bb;
-  background-color: #8C182D;
-  border-color: #8C182D;
+  background-color: #0C592E;
+  border-color: #0C592E;
 }
 #footer .right_wrap .sns_wrap {
   display: flex;
@@ -609,7 +643,7 @@ select::-ms-expand {
   height: fit-content;
 }
 #footer .right_wrap .sns_wrap > li:hover {
-  background-color: #8C182D;
+  background-color: #0C592E;
 }
 #footer .right_wrap .sns_wrap > li:hover > a {
   color: #f7e8bb;
@@ -630,7 +664,7 @@ select::-ms-expand {
   align-items: center;
 }
 #footer .right_wrap .bot_menus > li > a > img {
-  width: 1.7vw;
+  width: 1.9vw;
   opacity: 0;
   transition: all 0.5s;
 }
@@ -653,14 +687,6 @@ select::-ms-expand {
   flex-wrap: nowrap;
   animation: bannermove 20s linear infinite;
   width: 200%;
-}
-@keyframes bannermove {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 .flow_icons .flow_wrap > img {
   width: 11.11111%;
@@ -690,7 +716,7 @@ select::-ms-expand {
     margin-right: 10px;
   }
   #footer {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -723,8 +749,8 @@ select::-ms-expand {
   }
   #footer .right_wrap > a:hover {
     color: #F9F69B;
-    background-color: #8C182D;
-    border-color: #8C182D;
+    background-color: #0C592E;
+    border-color: #0C592E;
   }
   #footer .right_wrap .sns_wrap {
     width: 50%;
@@ -752,7 +778,7 @@ select::-ms-expand {
     justify-content: center;
   }
   #footer .right_wrap .bot_menus > li > a > img {
-    width: 1.5vw;
+    width: 4vw;
   }
   .flow_icons {
     width: 100vw;
@@ -788,6 +814,9 @@ select::-ms-expand {
   #footer .right_wrap > h6 {
     margin: 10px 0;
     font-size: 3.5vw;
+  }
+  #footer .right_wrap > ul.bot_menus {
+    margin-right: 5%;
   }
   #footer .right_wrap > a {
     font-size: 3vw;

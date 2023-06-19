@@ -186,252 +186,231 @@ body.show {
 }
 #container {
     width: 100vw;
-    margin-top:76px;
-    background-color: $jBeige;
-    overflow: hidden;
-    /* 레시피 세부 페이지 */
+    margin-top:75px;
+    background-color: $jDarkGreen;
+    overflow-x: hidden;
     > div {
         width: 100%;
-        > h2 {
-            font-family: $headline;
-            text-align: center;
-            color: $jDarkGreen;
-            font-size: 7vw;
-            line-height: 100%;
-            width: 80%;
-            margin: 40px auto 0px;
-        }
-        .img_wrap {
+        margin: 0 auto;
+        /* 레시피 전체 페이지 */
+        &.flowText {
             display: flex;
+            align-items: center;
+            width: 514%;
+            animation: bannermove 50s linear infinite;
+            @keyframes bannermove {
+                0% {
+                  transform: translateX(0%);
+                }
+                100% {
+                  transform: translateX(-50%);
+                }
+            }
+            > p {
+                display: flex;
+                font-size: 5vw;
+                align-items: center;
+                font-family: $headline;
+                color: $jBeige;
+                padding:4vw 1vw;
+                letter-spacing: -3px;
+            }
+            > img {
+                width: 4vw;
+                padding: 4vw 1vw;
+            }
+        }
+        &.headlines {
+            color:$jBeige;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            letter-spacing: -.2vw;
+            font-family: $headline;
+            img:nth-child(1) {
+                width: 3vw;
+                margin-bottom: 3%;
+            }
+            .sub_headline {
+                font-size: 2vw;
+                font-weight: 500;
+            }
+            > h2 {
+                font-size: 7vw;
+                line-height: 200%;
+            }
+            img:nth-child(4) {
+                width: 3vw;
+                margin-bottom: 3%;
+            }
+        }
+        &.sorting_wrap {
             width: 92%;
-            margin: 2% auto;
-            > a {
-                display: flex;
-                align-items: center;
-                > img {
-                    height: 5vw;         
-                }
-                > span {
-                    font-family: $headline;
-                    font-size: 1vw;
-                    color: $jDarkGreen;
-                    opacity: 0;
-                    transition: all .5s;
-                }
-                &:nth-child(1) {
-                    > img {
-                        margin-right: 3vw;
-                        margin-left: 1.5vw;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: top;
+            .whiskey {
+                font-size: 30px;
+                line-height: 200%;
+                font-family: $context;
+                font-weight: 800;
+                color: $jBeige;
+            }
+            .sorts {
+                width: 20%;
+                height: 32px;
+                overflow: hidden;
+                border: 1px solid $jBeige;
+                border-radius: 10px;
+                > li {
+                    &:nth-child(1) {
+                        position: relative;
+                        > span {
+                            position: absolute;
+                            top:50%;
+                            right: 10px;
+                            transform: translateY(-50%);
+                            color: $jBeige;
+                            cursor: pointer;
+                            width: 10%;
+                            text-align: center;
+                            font-size: 30px;
+                        }
+                    }
+                    > a {
+                        display: block;
+                        text-align: center;
+                        color: $jBeige;
+                        font-size: 16px;
+                        line-height: 200%;
+                        font-family: $context;
+                        font-weight: 800;
+                    }
+                    &:hover {
+                        background-color: #f7e8bb99;
+                        > a {
+                            color: $jDarkGreen;
+                        }
+                        > span {
+                            color: $jDarkGreen;
+                        }
                     }
                 }
+                &.on {
+                    height: 100%;
+                }
+            }
+        }
+        &.recipes_wrap {
+            width: 92%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            overflow-y: hidden;
+            position: relative;
+            padding-top: 50px;
+            .recipes {
+                width: 28%;
+                background-color: $jBeige;
+                border-radius: 20px;
+                margin-bottom: 8%;
+                display: none;
+                transform: translateY(0%);
+                transition: all .5s;
+                &:nth-child(1) {
+                    display: block;
+                }
+                &:nth-child(2) {
+                    display: block;
+                }
                 &:nth-child(3) {
-                    > img {
-                        margin-left: 3vw;
-                        margin-right: 1.5vw;
-                        transform:scaleX(-1);
+                    display: block;
+                }
+                > img {
+                    height: 60%;
+                    width: 92%;
+                    object-fit: cover;
+                    display: block;
+                    margin: 4% auto;
+                    border-radius: 10px;
+                }
+                .texts {
+                    width: 92%;
+                    margin: 4% auto;
+                    padding-bottom: 4%;
+                    > h5 {
+                        font-family: $headline;
+                        color: $jDarkGreen;
+                        font-size: 2vw;
+                        line-height: 200%;
+                    }
+                    > a {
+                        font-family: $context;
+                        color: $jBeige;
+                        background-color: $jDarkGreen;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 4vw;
+                        height: 4vw;
+                        font-size: 16px;
+                        margin-left: auto;
+                        margin-bottom: 4%;
+                        text-align: center;
+                        border-radius: 50%;
+                        transition: all .5s;
+                        transform: scale(1);
+                        &:hover {
+                            background-color: $jRed;
+                            transform: scale(1.2);
+                        }
                     }
                 }
                 &:hover {
-                    > span {
-                        opacity: 1;
-                    }
+                    transform: translateY(-4%);
                 }
             }
-            .thumbnail {
-                display: flex;
-                width: 50%;
-                height: 32vw;
-                border-radius: 12vw 12vw 0 0;
-                overflow: hidden;
-                > img {
-                    width: 100%;
-                    object-fit:cover;
-                }
-            }
-        }
-        .about_recipe_wrap {
-            display: flex;
-            width: 92%;
-            justify-content: space-between;
-            margin: 0 auto;
-            text-align: center;
-            > div {
-                width: 30%;
-                font-family: $subHeadline;
-                font-weight: 700;
-                color: $jDarkGreen;
-                word-break: keep-all;
-                font-size: 1.5vw;
-                line-height: 160%;
-                letter-spacing: -.1vw;
-                > h3 {
-                    font-family: $context;
-                    font-weight: 900;
-                    line-height: 400%;
-                    margin-bottom: 1%;
-                    font-size: .8vw;
-                    letter-spacing: .01vw;
-                } 
-                > ul {
-                    > li {
-                       > a {
-                            color: $jDarkGreen;
-                       }
-                    }
-                }
-            }
-        }
-        .share_wrap {
-            width: 92%;
-            margin: 0 auto 4%;
-            text-align: center;
-            > img {
-                width: 4vw;
-                display: block;
-                margin: 8% auto 4%;
-            }
-            > p {
-                width:50%;
-                margin: 0 auto 2%;
-                word-break: keep-all;
-                font-family: $context;
-                font-weight: 800;
-                font-size: 1vw;
-                color: $jDarkGreen;
-            }
-            > ul {
-                display: flex;
-                justify-content: center;
-                > button {
-                    cursor: pointer;
-                    border: none;
-                    outline: none;
-                    color:$jBeige;
-                    background-color: $jDarkGreen;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 2vw;
-                    height: 2vw;
-                    border-radius: 50%;
-                    margin: 1vw .5vw;
-                    transition: all .5s;
-                    > i {
-                        font-size: .8vw;
-                    }
-                    &:hover {
-                        background-color: $jGreen;
-                    }
-                }
-            }
-
-        }
-        .recipes_slide_wrap {
-            width: 100%;
-            background-color: $jDarkGreen;
-            padding-top: 4%;
-            .title {
-                width: 100%;
-                margin: 0 auto;
-                font-family: $headline;
-                font-size: 4vw;
-                color: $jOnion;
-                line-height: 240%;
-                text-align: center;
-                > img {
-                    width: 3.5vw;
-                    vertical-align: middle;
-                    margin: 0 1vw;
-                }
-            }
-            .swiper.recipesSwiper {
-                width: 100%;
-                padding: 4% 0 0;
-                .swiper-slide {
-                    width: 26vw;
-                    height: 36vw;
-                    background-color: $jBeige;
-                    > img {
-                        height: 60%;
-                        width: 92%;
-                        object-fit: cover;
-                        display: block;
-                        margin: 4% auto;
-                        border-radius: 10px;
-                    }
-                    .texts {
-                        width: 92%;
-                        margin: 4% auto;
-                        padding-bottom: 4%;
-                        > h5 {
-                            font-family: $headline;
-                            color: $jDarkGreen;
-                            font-size: 2vw;
-                            line-height: 200%;
-                        }
-                        > a {
-                            font-family: $context;
-                            color: $jBeige;
-                            background-color: $jDarkGreen;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 4vw;
-                            height: 4vw;
-                            font-size: 16px;
-                            margin-left: auto;
-                            margin-bottom: 4%;
-                            text-align: center;
-                            border-radius: 50%;
-                            transition: all .5s;
-                            transform: scale(1);
-                            &:hover {
-                                background-color: $jRed;
-                                transform: scale(1.2);
-                            }
-                        }
-                    }
-                }
-            }
-            .toAll {
-                margin-top: 100px;
+            .more_wrap {
+                position: absolute;
+                bottom:0;
+                left:0;
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: all .5s;
-                > a {
+                > button {
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    color:$jBeige;
+                    font-size: 2vw;
+                    font-family: $headline;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-family: $context;
-                    background-color: $jDarkGreen;
-                    color: $jOnion;
-                    font-weight: 800;
-                    font-size: 20px;
-                    line-height: 400%;
-                    margin-bottom: 4vw;
-                    border: 4px solid $jOnion;
-                    border-radius: 10px;
-                    transition: all .5s;
+                    text-align: center;
+                    cursor: pointer;
+                    line-height: 300%;
                     > img {
-                        width: 20px;
+                        width: 1.75vw;
+                        vertical-align: top;
                         margin: 0 10px;
+                        opacity: 0;
                         transition: all .5s;
                     }
-                    &:hover {
-                        background-color: $jOnion;
-                        color: $jDarkGreen;
-                        > img {
-                            content: url("/img/star_marquee_DG.svg");
+                }
+                &:hover {
+                    > button {
+                        > img { 
+                            opacity: 1;
                         }
                     }
                 }
-            } 
-        } 
-    }  
+            }
+        }
+    }
 }
 #footer {
     display: flex;

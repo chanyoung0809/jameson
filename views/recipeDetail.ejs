@@ -1,0 +1,85 @@
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "recipe.css"]}) %> 
+<div id="container">
+    <div class="recipe_wrap">
+        <h2 data-aos="fade-up"  data-aos-duration="1000"><%- recipe.link.toUpperCase().replaceAll("-", " ") %></h2>
+        <div class="img_wrap" data-aos="fade-up"  data-aos-duration="1000" data-aos-delay="100">
+            <a href="/recipes" class="go_back">
+                <span>뒤로가기</span>
+                <img src="/img/recipe_glass_ontherock.svg" />
+            </a>           
+            <div class="thumbnail">
+                <img src="<%- recipe.imgs %>" />
+            </div>
+            <a href="/product/<%- recipe.whiskey %>">
+                <img src="/img/recipe_glass_DG.svg" />
+                <span>위스키 구매하기</span>
+            </a> 
+        </div>
+        <div class="about_recipe_wrap">
+            <div class="ingridiants">
+                <h3 data-aos="fade-up"  data-aos-duration="1000">INGREDIENTS</h3>
+                <ul class="ingredients">
+                    <% recipe.Ingredients.forEach((el, idx) => { %>
+                        <% if (idx == 0) { %>
+                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<%- idx*50 %>">
+                                <a href="/product/<%- recipe.whiskey %>"><%- el %></a>
+                            </li>
+                        <% } else { %>
+                            <li data-aos="fade-up"  data-aos-duration="1000" data-aos-delay="<%- idx*50 %>"><%- el %></li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            </div>
+            <div class="process">
+                <h3 data-aos="fade-up" data-aos-duration="1000">DIRECTIONS</h3>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><%- recipe.process %></p>
+            </div>
+            <div class="info">
+                <h3 data-aos="fade-up"  data-aos-duration="1000">ABOUT</h3>
+                <p data-aos="fade-up"  data-aos-duration="1000" data-aos-delay="100" ><%- recipe.info %></p>
+            </div>
+        </div>
+        <div class="share_wrap" >
+            <img src="/img/ontherock.svg" data-aos="fade-up" data-aos-duration="1000">
+            <p class="share_msg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><%- recipe.name %> 칵테일이 맘에 드셨나요? 이 레시피를 모두와 공유하세요!</p>
+            <ul class="sns_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+                <button class="copy" onClick="copyUrl()">
+                    <i class="fa-solid fa-link"></i>
+                </button>
+                <button class="facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </button>
+                <button class="twitter">
+                    <i class="fa-brands fa-twitter"></i>
+                </button>
+            </ul>
+        </div>
+        <div class="recipes_slide_wrap">
+            <h3 class="title" data-aos="fade-up" data-aos-duration="1000">
+                <img src="/img/star_marquee_onion.svg">
+                다양한 레시피를 만나보세요
+                <img src="/img/star_marquee_onion.svg">
+            </h3>
+            <div class="swiper recipesSwiper" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                <% allRecipes.forEach((el, idx)=> { %>
+                    <% if (el.name != recipe.name ) { %>
+                        <div class="swiper-slide">
+                            <img src='<%- el.imgs %>'>
+                            <div class="texts">
+                                <h5><%- el.name %></h5>
+                                <a href="/recipe/<%- el.link %>">Go</a>
+                            </div>
+                        </div>
+                    <% } %>
+                <% }) %>
+            </div>
+            <div class="toAll" data-aos="fade-up" data-aos-duration="1000">
+                <a href="/recipe"><img src="/img/star_marquee_onion.svg">모든 레시피 보기<img src="/img/star_marquee_onion.svg"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('footer', {jsFiles:["tabMenu.js","recipe.js"]}) %> 

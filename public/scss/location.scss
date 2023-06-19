@@ -13,6 +13,15 @@ $headline: 'HSBombaram21-Regular';
 $subHeadline:'HallymMjo';
 $context: "Pretendard";
 
+@keyframes bannermove {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+}
+
 // 헤더 드롭다운 메뉴 실행 시 스크롤 기능 막아줌
 body.show {
     overflow-y:hidden;
@@ -191,7 +200,7 @@ select::-ms-expand {
     margin-top:76px;
     > div {
         width: 94%;
-        margin: 0 auto 50;
+        margin: 0 auto;
         .title {
             color: $jDarkGreen;
             font-size: 4vw;
@@ -494,6 +503,7 @@ select::-ms-expand {
                         line-height: 180%;
                         margin: 0 4px;
                         border-radius: 4px;
+                        width: 30%;
                         &::placeholder {
                             color: $jDarkGreen;
                             font-family: $context;
@@ -514,32 +524,53 @@ select::-ms-expand {
                     }
                 }
                 .store_area {
+                    height: 100%;
                     .stores{
+                        height: 80%;
+                        overflow-y: auto;
+                        width: 90%;
+                        margin: 0 auto;
                         .store_wrap {
                             display: block;
-                            width: 90%;
-                            margin: 0 auto;
+                            width: 100%;
                             text-align: left;
                             font-size: 1vw;
                             line-height: 200%;
-                            border: 1px solid $jDarkGreen;
-                            border-left: none;
-                            border-right: none;
                             font-family: $context;
-                            text-indent: 5px;
-                            .store_city {
+                            .city_name_wrap {
+                                display: flex;
                                 background-color: $jDarkGreen;
                                 color: $jBeige;
-                                font-weight: 800;
-                            }
-                            .store_name {
-                                color: $jDarkGreen;
-                                font-weight: 500;
+                                .store_city {
+                                    color: $jBeige;
+                                    font-weight: 500;
+                                    width: 12%;
+                                    text-align: center;
+                                }
+                                .store_name {
+                                    font-weight: 700;
+                                    text-indent: 8px;
+                                    border-left: 4px solid $jBeige;
+                                    letter-spacing: 1px;
+                                }
                             }
                             .store_locate {
                                 color: $jDarkGreen;
                                 font-weight: 500;
+                                text-indent: 12px;
                             }
+                        }
+                        &::-webkit-scrollbar { 
+                            width: 1vw;
+                            border-radius: 1vw;
+                        }
+                        &::-webkit-scrollbar-thumb { 
+                            background-color: #14402B;
+                            border-radius: .5vw;
+                            border: .2vw solid #F7E8BBCC;
+                        }
+                        &::-webkit-scrollbar-track { 
+                            background-color: #14402B33;
                         }
                     }
                 }
@@ -605,8 +636,8 @@ select::-ms-expand {
             transition: all .5s;
             &:hover {
                 color: $jBeige;
-                background-color: $jRed;
-                border-color: $jRed;
+                background-color: $jGreen;
+                border-color: $jGreen;
             }
         }
         .sns_wrap {
@@ -630,7 +661,7 @@ select::-ms-expand {
                     height: fit-content;
                 }
                 &:hover {
-                    background-color: $jRed;
+                    background-color: $jGreen;
                     > a {
                         color: $jBeige;
                     }
@@ -652,7 +683,7 @@ select::-ms-expand {
                     display: flex;
                     align-items: center;
                     > img {
-                        width: 1.7vw;
+                        width: 1.9vw;
                         opacity: 0;
                         transition: all .5s;
                     }
@@ -681,14 +712,6 @@ select::-ms-expand {
         height: 100%;
         flex-wrap: nowrap;
         animation: bannermove 20s linear infinite;
-        @keyframes bannermove {
-            0% {
-              transform: translateX(0%);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-        }
         width: 200%;
         > img {
             width: 11.11111%;
@@ -726,7 +749,7 @@ select::-ms-expand {
         }
     }             
     #footer {
-        width: 100%;
+        width: 100vw;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -757,8 +780,8 @@ select::-ms-expand {
                 padding:1em 2em;
                 &:hover {
                     color: $jLemon;
-                    background-color: $jRed;
-                    border-color: $jRed;
+                    background-color: $jGreen;
+                    border-color: $jGreen;
                 }
             }
             .sns_wrap {
@@ -784,7 +807,7 @@ select::-ms-expand {
                     > a {
                         justify-content: center;
                         > img {
-                            width: 1.5vw;
+                            width: 4vw;
 
                         }
                     }
@@ -841,6 +864,9 @@ select::-ms-expand {
             > h6 {
                 margin: 10px 0;
                 font-size: 3.5vw;
+            }
+            > ul.bot_menus {
+                margin-right: 5%;
             }
             > a {
                 font-size: 3vw;

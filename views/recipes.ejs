@@ -1,4 +1,4 @@
-<%- include('header', {title:"Jameson",  cssFiles:["reset.css","recipe.css"]}) %> 
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "recipes.css"]}) %> 
     <div id="container">
         <div class="flowText" data-aos="fade-up" data-aos-duration="1000">
             <% for( let i = 0; i < 10; i++ ) { %>
@@ -11,6 +11,18 @@
             <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Jameson's Signitures</h2>
             <img src="/img/recipe_glassbig.svg"  data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" /><!-- 레몬색으로 변경 -->
         </div>
+        <div class="sorting_wrap">
+            <span class="whiskey"><%- (recipes.length < 4 ) ? recipes[0].whiskey.toUpperCase() : "ALL" %> JAMESON RECIPES</span>
+            <ul class="sorts">
+                <li>
+                    <a href="/recipes">모든 레시피 보기</a>
+                    <span class="material-symbols-outlined more">expand_more</span>
+                </li>
+                <% whiskey.forEach((el, idx) => { %>
+                    <li><a href="/recipes/<%- el.link %>"><%- el.name %></a></li>
+                <% }) %>
+            </ul>
+        </div>
         <div class="recipes_wrap">
             <% recipes.forEach((recipe, idx)=> { %>
                 <div class="recipes" data-aos="zoom-in" data-aos-duration="1000">
@@ -21,9 +33,11 @@
                     </div>
                 </div>
             <% }) %>
+            <% if (recipes.length > 4 ) {%>
             <div class="more_wrap">
                 <button type="button"><img src="/img/star_marquee_beige.svg"><span>더보기</span><img src="/img/star_marquee_beige.svg"></button>
             </div>
+            <% } %>
         </div>
     </div>   
 <%- include('footer', {jsFiles:["tabMenu.js","recipe.js"]}) %> 

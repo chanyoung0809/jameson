@@ -665,8 +665,8 @@ body.show {
 }
 #footer .right_wrap > a:hover {
   color: #f7e8bb;
-  background-color: #8C182D;
-  border-color: #8C182D;
+  background-color: #0C592E;
+  border-color: #0C592E;
 }
 #footer .right_wrap .sns_wrap {
   display: flex;
@@ -692,7 +692,7 @@ body.show {
   height: fit-content;
 }
 #footer .right_wrap .sns_wrap > li:hover {
-  background-color: #8C182D;
+  background-color: #0C592E;
 }
 #footer .right_wrap .sns_wrap > li:hover > a {
   color: #f7e8bb;
@@ -713,7 +713,7 @@ body.show {
   align-items: center;
 }
 #footer .right_wrap .bot_menus > li > a > img {
-  width: 1.7vw;
+  width: 1.9vw;
   opacity: 0;
   transition: all 0.5s;
 }
@@ -817,7 +817,7 @@ body.show {
     flex-wrap: wrap;
     margin: 2% auto;
     width: 90%;
-    margin-left: 7%;
+    margin-left: 4%;
   }
   #container .cont2 .center > .swiper.c2swiper {
     width: 100%;
@@ -1038,8 +1038,8 @@ body.show {
   }
   #footer .right_wrap > a:hover {
     color: #F9F69B;
-    background-color: #8C182D;
-    border-color: #8C182D;
+    background-color: #0C592E;
+    border-color: #0C592E;
   }
   #footer .right_wrap .sns_wrap {
     width: 50%;
@@ -1067,7 +1067,7 @@ body.show {
     justify-content: center;
   }
   #footer .right_wrap .bot_menus > li > a > img {
-    width: 1.5vw;
+    width: 4vw;
   }
   .flow_icons {
     width: 100vw;
@@ -1111,7 +1111,7 @@ body.show {
   }
   #container .cont1 .center .c1_left {
     width: 100%;
-    margin-left: 4%;
+    margin-left: 0;
   }
   #container .cont1 .center .c1_left > h2 {
     font-size: 13vw;
@@ -1132,7 +1132,7 @@ body.show {
   }
   #container .cont1 .center .c1_right {
     width: 100%;
-    margin-right: unset;
+    margin-right: 0;
   }
   #container .cont2 {
     width: 100%;
@@ -1157,12 +1157,12 @@ body.show {
     height: auto;
     flex-wrap: wrap;
     margin: 2% auto;
-    margin-left: 7%;
+    margin-left: 5%;
   }
   #container .cont2 .center > .swiper.c2swiper {
     height: 40vh;
     border: 6px solid #14402B;
-    border-radius: 40px;
+    border-radius: 20px;
   }
   #container .cont2 .center > .swiper.c2swiper .btn_wrap {
     width: calc(140px + 5vw);
@@ -1176,7 +1176,7 @@ body.show {
   }
   #container .cont2 .center .swiper.c2textswiper {
     border: 6px solid #14402B;
-    border-radius: 40px;
+    border-radius: 20px;
   }
   #container .cont2 .center .swiper.c2textswiper > .swiper-wrapper > .swiper-slide > h6 {
     font-size: 13px;
@@ -1218,7 +1218,7 @@ body.show {
     align-items: center;
   }
   #container .cont3 .center .left_msg {
-    width: 90%;
+    width: 98%;
     margin: 0px 0 20px;
   }
   #container .cont3 .center .left_msg > h2 {
@@ -1231,7 +1231,7 @@ body.show {
   #container .cont3 .center .left_msg .textSwiper {
     width: 95%;
     border: 6px solid #14402B;
-    border-radius: 40px;
+    border-radius: 20px;
   }
   #container .cont3 .center .left_msg .textSwiper > .swiper-wrapper > .swiper-slide {
     display: flex;
@@ -1260,6 +1260,7 @@ body.show {
     margin: 0;
     margin-left: unset;
     border: 6px solid #14402B;
+    border-radius: 20px;
   }
   #container .cont3 .center > .swiper.c3Swiper .swiper-wrapper {
     display: flex;
@@ -1348,6 +1349,9 @@ body.show {
   #footer .right_wrap > h6 {
     margin: 10px 0;
     font-size: 3.5vw;
+  }
+  #footer .right_wrap > ul.bot_menus {
+    margin-right: 5%;
   }
   #footer .right_wrap > a {
     font-size: 3vw;
