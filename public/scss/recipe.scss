@@ -364,7 +364,10 @@ body.show {
                     .texts {
                         width: 92%;
                         margin: 4% auto;
-                        padding-bottom: 4%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
                         > h5 {
                             font-family: $headline;
                             color: $jDarkGreen;
@@ -373,23 +376,22 @@ body.show {
                         }
                         > a {
                             font-family: $context;
+                            font-weight: 800;
+                            font-size: 1vw;
                             color: $jBeige;
                             background-color: $jDarkGreen;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            width: 4vw;
+                            width: 8vw;
                             height: 4vw;
                             font-size: 16px;
-                            margin-left: auto;
-                            margin-bottom: 4%;
                             text-align: center;
-                            border-radius: 50%;
                             transition: all .5s;
-                            transform: scale(1);
+                            margin-top: 10%;
                             &:hover {
-                                background-color: $jRed;
-                                transform: scale(1.2);
+                                background-color: $jGreen;
+                                border-radius: 5vw;
                             }
                         }
                     }

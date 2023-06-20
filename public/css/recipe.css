@@ -331,7 +331,10 @@ body.show {
 #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide .texts {
   width: 92%;
   margin: 4% auto;
-  padding-bottom: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide .texts > h5 {
   font-family: "HSBombaram21-Regular";
@@ -341,24 +344,23 @@ body.show {
 }
 #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide .texts > a {
   font-family: "Pretendard";
+  font-weight: 800;
+  font-size: 1vw;
   color: #f7e8bb;
   background-color: #14402B;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4vw;
+  width: 8vw;
   height: 4vw;
   font-size: 16px;
-  margin-left: auto;
-  margin-bottom: 4%;
   text-align: center;
-  border-radius: 50%;
   transition: all 0.5s;
-  transform: scale(1);
+  margin-top: 10%;
 }
 #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide .texts > a:hover {
-  background-color: #8C182D;
-  transform: scale(1.2);
+  background-color: #0C592E;
+  border-radius: 5vw;
 }
 #container > div .recipes_slide_wrap .toAll {
   margin-top: 100px;

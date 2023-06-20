@@ -24,7 +24,7 @@ MongoClient.connect("mongodb+srv://cisalive:cisaliveS2@cluster0.cjlsn98.mongodb.
 
     //db연결이 제대로 됬다면 서버실행
     app.listen(port,()=>{
-        console.log(`서버연결 성공, 포트 번호는 ${port}`);
+        console.log(`서버연결 성공, http://localhost:${port} 로 접속하세요`);
     });
 
 });
