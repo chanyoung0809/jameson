@@ -1,0 +1,202 @@
+// 컬러 팔레트 변수
+$jDarkGreen: #14402B;
+$jGreen:#0C592E;
+$jWine:#402826;
+$jRed:#8C182D;
+$jBeige:#f7e8bb;
+$jLemon:#F9F69B;
+$jOnion:#FDE390;
+$jKhaki:#E3D681;
+
+// 폰트 이름 변수
+$headline: 'HSBombaram21-Regular';
+$subHeadline:'HallymMjo';
+$context: "Pretendard";
+
+@keyframes bannermove {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+}
+
+// 헤더 드롭다운 메뉴 실행 시 스크롤 기능 막아줌
+body.show {
+    overflow-y:hidden;
+    transition: all .7s;
+}
+
+#container {
+    width: 100vw;
+    background-color: $jBeige;
+    margin-top:75px;
+    > div {
+        width: 100%;
+        margin: 0 auto;
+        // 히스토리
+        &.title {
+            width: 100%;
+            font-family: $headline;       
+            color:$jDarkGreen;
+            > h2 {
+                letter-spacing: -8px;
+                font-size: 6vw;
+                line-height: 150%;
+                text-align: center;
+            }
+            > .titles {
+                &.history {
+                    > li {
+                        width: 33.333333%;
+                    }
+                }
+                &.craft {
+                    > li {
+                        width: 20%;
+                    }
+                }
+                display: flex;
+                justify-content: space-between;
+                border: 2px solid #14402B;
+                > li {
+                    transition: all .5s;
+                    > a {
+                        display: block;
+                        line-height: 280%;
+                        font-size: 1.5vw;
+                        color: $jDarkGreen;
+                        text-align: center;
+                    }
+                    &:hover {
+                        background-color: $jGreen;
+                        > a {
+                            color: $jBeige;
+                        }
+                    }
+                }
+            }
+        }
+        &.wrap {
+            display: flex;
+            justify-content: center;
+            padding: 4% 0;
+            > .center {
+                width: 92%;
+                display: flex;
+                justify-content: space-between;
+                .image-container {
+                    width:50%;
+                    object-fit: cover;
+                    > img {
+                        display: block;
+                        width: 80%;
+                        margin-right:auto;
+                        margin-left: unset;
+                    }
+                }
+                .text-container {
+                    width: 50%;
+                    color: $jDarkGreen;
+                    > h6 {
+                        font-family: $context;
+                        font-weight: 900;
+                        font-size: 1vw;
+                        line-height: 200%;
+                    }
+                    > h2 {
+                        font-family: $headline;
+                        font-size: 4vw;
+                        line-height: 160%;
+                        text-indent: -1%;
+                    }
+                    > p {
+                        font-family: $subHeadline;
+                        font-weight: 500;
+                        width: 80%;
+                        text-align: left;
+                        word-break: keep-all;
+                        font-size: 1vw;
+                        line-height: 200%;
+                        letter-spacing: -.01vw;
+                    }
+                }
+            } 
+            &.on {
+                background-color: $jDarkGreen;
+                > .center {
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    .image-container {
+                        > img {
+                            display: block;
+                            width: 80%;
+                            margin-right:unset;
+                            margin-left: auto;
+                        }
+                    }
+                    .text-container {
+                        width: 50%;
+                        color: $jBeige;
+                    }
+                }
+            }        
+        }
+        &.move_wrap {
+            width: 92%;
+            margin: 0 auto;
+            padding: 1% 0 2%;
+            a {
+                &.go_craft {
+                    margin-left: auto;
+                    > img {
+                        width: 4vw;
+                        margin-left: 1vw;
+                        transition: all .5s;
+                    }
+                    &:hover {
+                        > img {
+                            transform: translateY(-25%); 
+                        }
+                    }
+                }
+                &.go_history {
+                    margin-right: auto;
+                    > img {
+                        transform:scaleX(-1);
+                        width: 4.5vw;
+                        margin-right: 1vw;
+                        transition: all .5s;
+                    }
+                    &:hover {
+                        > img {
+                            transform: scaleX(-1) translateY(-25%); 
+                        }
+                    }
+                }
+                width: max-content;
+                display: flex;
+                align-items: center;
+                font-family: $headline;
+                color: $jDarkGreen;
+                font-size: 1.5vw;
+                > span {
+                    opacity: 1;
+                    transition: all .5s;
+                }
+            }
+        }
+    }
+}
+
+/* 미디어쿼리 1000 */
+
+@media screen and (max-width:1000px){
+   
+}    
+
+/* 미디어쿼리 500 */
+@media screen and (max-width:500px){
+    
+}

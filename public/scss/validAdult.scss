@@ -1,0 +1,106 @@
+// 컬러 팔레트 변수
+$jDarkGreen: #14402B;
+$jGreen:#0C592E;
+$jWine:#402826;
+$jRed:#8C182D;
+$jBeige:#f7e8bb;
+$jLemon:#F9F69B;
+$jOnion:#FDE390;
+$jKhaki:#E3D681;
+
+// 폰트 이름 변수
+$headline: 'HSBombaram21-Regular';
+$subHeadline:'HallymMjo';
+$context: "Pretendard";
+
+.wrap {
+    background-color: $jDarkGreen;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/img/validAdultBg.jpg");
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .logo_wrap {
+        width: 100%;
+        height: 76px;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top:0;
+        left: 0;
+        align-items: center;
+        > img {
+            height: 100%;
+        }
+    }
+    .title {
+        text-align: center;
+        color: $jLemon;
+        > h3 {
+            width: 80%;
+            font-size: 4vw;
+            font-family: $headline;
+            letter-spacing: -.1vw;
+            word-break: keep-all;
+            margin: 0 auto;
+            line-height: 120%;
+            
+        }
+        > p {
+            font-size: 1vw;
+            font-family: $context;
+            font-weight: 700;
+            line-height: 120%;
+            color: $jKhaki;
+        }
+    }
+    .input_area {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        margin: 2% 0;
+        > input {
+            width: 11vw;
+            height: 13vw;
+            background-color: $jBeige;
+            font-size: 8vw;
+            border: none;
+            outline: none;
+            text-align: center;
+            border-radius: 2vw;
+            font-family: $subHeadline;
+            font-weight: 700;
+            color: #14402B;
+        }
+    }
+    > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5vw;
+        font-family: $headline;
+        color: $jDarkGreen;
+        background-color: $jLemon;
+        border-radius: 5vw;
+        padding: 1.5vw 0;
+        transition: all .5s;
+        > img {
+            width: 1.5vw;
+            margin: 0 1vw;
+            opacity: 0;
+            transition: all .5s;
+        }
+        &:hover {
+            background-color: $jKhaki;
+            > img {
+                opacity: 1;
+            }
+        }
+    }
+}

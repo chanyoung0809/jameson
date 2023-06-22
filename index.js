@@ -29,6 +29,7 @@ MongoClient.connect("mongodb+srv://cisalive:cisaliveS2@cluster0.cjlsn98.mongodb.
 
 });
 
+// 메인 페이지
 app.get("/",(req,res)=>{
     db.collection("whiskey").find().toArray((err, whiskey)=>{
         db.collection("recipe").find().toArray((err, recipe)=>{
@@ -93,8 +94,116 @@ app.get("/location",(req,res)=>{
             return 0;
         });
         db.collection("store").find().toArray((err, stores)=>{    
-            res.render("location.ejs", {cities:cities, citiesSort:citiesSort, stores: stores});
+            res.render("location.ejs", {cities:cities, citiesSort:citiesSort, stores: stores,test:"noselect"});
         })
     });
+});
+
+//매장명,지역검색 db요청
+app.get("/storelocation",(req,res)=>{
+    // 지역명으로 검색한 경우
+   
+        db.collection("cities").find().toArray((err, cities)=>{    
+            let citiesSort = cities.slice(); //배열 복제본
+            citiesSort = citiesSort.sort((a, b)=>{
+                // 오름차순 정렬한 새로운 배열 생성
+                if(a.korName > b.korName) return 1;
+                if(a.korName < b.korName) return -1;
+                return 0;
+            });
+        //지역명으로 검색해서 데이터가 전달된 경우
+            if(req.query.storeLegion !== "noselect"){
+                db.collection("store").find({engName:req.query.storeLegion}).toArray((err,stores)=>{
+                    res.render("location.ejs",{
+                        cities:cities, 
+                        citiesSort:citiesSort,
+                        stores: stores,
+                        test:req.query.storeLegion
+                    })
+                })
+            }
+            //지역명 선택안한경우 -> 매장 목록 페이지 경로로 요청
+            else {
+                res.redirect("/location");
+            }
+        });
     
+    // 매장명으로 검색한 경우, 
+
+    // 입력값이 정의되었고, 해당 정규식을 통과하였을 경우
+   
+        // 정규표현식에 맞게 검색한 경우
+
+})
+
+
+app.get("/storename",(req,res)=>{
+    let check = [
+        {
+            // $search:{ 뭘 어떻게 찾을 건지?
+            $search:{
+                
+                index: "locationSearch", //db사이트에서 설정한 index 이름
+                text:{
+                    query: req.query.searchWord,
+                    // 검색단어 입력단어값 (query:명령을 내리다, 질의하다)
+                    path: req.query.search,
+                    // 어떤 항목을 검색할 것인지?
+                    // 여러 개 설정할 때는 배열로 설정
+                }   
+            }
+        },
+        {
+            // 어떻게 정렬할 것인가? 1-> 오름차순, -1 -> 내림차순
+            $sort:{num:-1}
+        },
+    ]
+    
+    db.collection("cities").find().toArray((err, cities)=>{    
+        let citiesSort = cities.slice(); //배열 복제본
+        // citiesSort는 오름차순 정렬한 새료운 배열
+        citiesSort = citiesSort.sort((a, b)=>{
+            // 오름차순 정렬한 새로운 배열 생성
+            if(a.korName > b.korName) return 1;
+            if(a.korName < b.korName) return -1;
+            return 0;
+        });
+        //위에서 설정한 변수 check를 aggregate 매개변수로 가져옴
+        db.collection("store").aggregate(check).toArray((err,stores)=>{
+            // stores 배열 형태로 가져옴. 없을 땐 빈 배열이 출력됨
+            if(stores.length > 0){
+                res.render("location.ejs",{
+                    cities:cities, 
+                    citiesSort:citiesSort,
+                    stores: stores,
+                    test:stores[0].engName
+                })
+            }
+            else {
+                res.render("location.ejs",{
+                    cities:cities, 
+                    citiesSort:citiesSort,
+                    stores: undefined,
+                    test: "noselect"
+                })
+            }
+        })
+    });
+})
+
+// 히스토리 페이지
+app.get("/history",(req,res)=>{
+    db.collection("history").find().toArray((err, history)=>{
+        res.render("history", {history:history});
+    })
+});
+// 양조장 페이지
+app.get("/craft",(req,res)=>{
+    db.collection("craft").find().toArray((err, craft)=>{
+        res.render("craft", {craft:craft});
+    })
+});
+// 성인인증 페이지
+app.get("/validAdult",(req,res)=>{
+    res.render("validAdult");
 });

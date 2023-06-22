@@ -1,22 +1,32 @@
-$(function(){
-    const moreBtn  =  $(".more_wrap > button");
-    const toggletext =  $(".more_wrap > button > span");
-    const recipes = $(".recipes_wrap .recipes");
-    let startidx = 3;
-    // 레시피 전체페이지 더보기 버튼 구현
-    moreBtn.on("click",function(){
-        recipes.slice(startidx, startidx+3).show();
-        startidx += 3;
-        if(startidx == recipes.length){
-            toggletext.html("숨기기");
-        }
-        else if(startidx > recipes.length){
-            recipes.hide();
-            startidx = 3;
-            recipes.slice(0, startidx).show();
-            toggletext.html("더보기");
+const moreBtn = document.querySelector(".more_wrap > button");
+const toggletext = document.querySelector(".more_wrap > button > span");
+const recipes = document.querySelectorAll(".recipes_wrap .recipes");
+let startidx = 3;
+
+// 레시피 전체 페이지 더보기 버튼 구현
+moreBtn.addEventListener("click",()=>{
+    recipes.forEach((recipe, idx)=>{
+        if (idx >= startidx && idx < startidx + 3) {
+            recipe.style.display = "block";
         }
     });
+    startidx += 3;
+    if (startidx >= recipes.length) {
+        toggletext.textContent = "숨기기";
+    } else if (startidx > 3 && startidx < recipes.length) {
+        toggletext.textContent = "더보기";
+    } else {
+        toggletext.textContent = "더보기";
+        recipes.forEach((recipe, index)=>{
+        if (index >= 3) {
+            recipe.style.display = "none";
+        }
+    });
+    startidx = 3;
+  }
+});
+
+$(function(){
 
     const sortsBtn = $(".sorting_wrap > .sorts > li:nth-child(1) > span");
     const nameArea = $(".sorting_wrap > .whiskey");

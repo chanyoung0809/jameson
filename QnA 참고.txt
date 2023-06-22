@@ -1,0 +1,7 @@
+
+
+                        <!-- 내가 작성한 글만 수정 삭제 가능하게 -->
+                        <% if (login.userNickName === data.userNickName) { %>
+                            <a href="/media/update/<%- data.num %>">수정하기</a>
+                            <a href="/dbdelete/<%- data.num %>">삭제하기</a>
+                        <% } %>

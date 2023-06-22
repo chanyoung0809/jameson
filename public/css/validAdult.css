@@ -1,0 +1,90 @@
+.wrap {
+  background-color: #14402B;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("/img/validAdultBg.jpg");
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.wrap .logo_wrap {
+  width: 100%;
+  height: 76px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+}
+.wrap .logo_wrap > img {
+  height: 100%;
+}
+.wrap .title {
+  text-align: center;
+  color: #F9F69B;
+}
+.wrap .title > h3 {
+  width: 80%;
+  font-size: 4vw;
+  font-family: "HSBombaram21-Regular";
+  letter-spacing: -0.1vw;
+  word-break: keep-all;
+  margin: 0 auto;
+  line-height: 120%;
+}
+.wrap .title > p {
+  font-size: 1vw;
+  font-family: "Pretendard";
+  font-weight: 700;
+  line-height: 120%;
+  color: #E3D681;
+}
+.wrap .input_area {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 0;
+}
+.wrap .input_area > input {
+  width: 11vw;
+  height: 13vw;
+  background-color: #f7e8bb;
+  font-size: 8vw;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-radius: 2vw;
+  font-family: "HallymMjo";
+  font-weight: 700;
+  color: #14402B;
+}
+.wrap > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  font-family: "HSBombaram21-Regular";
+  color: #14402B;
+  background-color: #F9F69B;
+  border-radius: 5vw;
+  padding: 1.5vw 0;
+  transition: all 0.5s;
+}
+.wrap > a > img {
+  width: 1.5vw;
+  margin: 0 1vw;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.wrap > a:hover {
+  background-color: #E3D681;
+}
+.wrap > a:hover > img {
+  opacity: 1;
+}

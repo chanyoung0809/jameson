@@ -1,40 +1,58 @@
-<%- include('header', {title:"Jameson",  cssFiles:["reset.css","location.css"]}) %> 
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "HeaderFooter.css", "location.css"]}) %> 
 <!-- https://yhb.kr/customer-service/national-branch-network/ -->
 <div id="container">
     <div class="center">
         <h2 class="title">구매처 찾기</h2>
         <div class="map_wrap">
             <div class="left_map">
-                <img src="/img/maps/korea_map.png">    
-                <% cities.forEach((city) => { %>
-                    <span class="<%- city.engName %>">
-                        <a href="/location/<%- city.engName %>"><%- city.korName %></a>
-                    </span>  
-                <% }) %>    
+                <img src="/img/maps/korea_map.png">
+                    <% cities.forEach((city) => { %>
+                        <span id="<%- city.engName %>" class="<%- (city.engName === test) ? 'on' : '' %>">
+                            <a href="/storelocation?storeLegion=<%- city.engName %>"><%- city.korName %></a>
+                        </span>
+                    <% }) %>  
             </div>
             <div class="right_find">
                 <h4>픽업 가능한 매장을 찾아보세요</h4>
-                <form class="location_form">
-                    <select class="location">
-                        <option value="*" selected disabled>지역선택</option>
+                <form class="location_form" id="locationForm" action="/storelocation" method="get">
+                    <select class="location" name="storeLegion">
+                            <option value="noselect" selected>지역선택</option>
                         <% citiesSort.forEach((city) => { %>
                             <option value="<%- city.engName %>"><%- city.korName %></option>
                         <% }) %>    
                     </select>
-                    <input type="text" placeholder="검색어를 입력해주세요" />
-                    <button type="submit">검색</button>
+                    <button type="submit" class="submitBtn">검색</button>
+                    <button type="button" class="reset_btn"><a href="/location">검색 초기화</a></button>
+                </form>
+                <form class="location_form" id="searchForm" action="/storename" method="get">
+                    <select name="search">
+                        <option value="storeName" selected>매장명</option>
+                        <option value="location">도로명주소</option>
+                        <option value="postLocation">지번주소</option>
+                    </select>
+                    <input type="text" name="searchWord" id="searchWord" placeholder="검색어를 입력해주세요" />
+                    <button type="submit" class="submitBtn btn2">검색</button>
                 </form>
                 <div class="store_area">
                     <ul class="stores">
-                        <% stores.forEach((store, idx) => { %>
-                        <li class="store_wrap">
-                            <div class="city_name_wrap">
-                                <p class="store_city"><%- store.korName  %></p>
-                                <p class="store_name"><%- store.storeName  %></p>
-                            </div>
-                            <p class="store_locate"><%- store.location  %></p>
-                        </li>
-                        <% }) %>
+                        <% if (stores) { %>
+                            <% if (stores.length > 0) { %>
+                                <% stores.forEach((store, idx) => { %>
+                                    <li class="store_wrap">
+                                        <div class="city_name_wrap">
+                                            <p class="store_city"><%- store.korName  %></p>
+                                            <p class="store_name"><%- store.storeName  %></p>
+                                        </div>
+                                        <p class="store_locate"><span class=""></span> <%- store.location  %></p>
+                                        <p class="store_locate">지번 주소 : <%- store.postLocation  %></p>
+                                    </li>
+                                <% }) %>
+                            <% } else { %>
+                                <p>검색결과가 없습니다</p>
+                            <% } %>
+                        <% } else { %>
+                            <p>검색결과가 없습니다</p>
+                        <% } %>
                     </ul>
                 </div>
             </div>

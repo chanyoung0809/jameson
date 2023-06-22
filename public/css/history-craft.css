@@ -1,0 +1,169 @@
+@charset "UTF-8";
+@keyframes bannermove {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+body.show {
+  overflow-y: hidden;
+  transition: all 0.7s;
+}
+
+#container {
+  width: 100vw;
+  background-color: #f7e8bb;
+  margin-top: 75px;
+}
+#container > div {
+  width: 100%;
+  margin: 0 auto;
+}
+#container > div.title {
+  width: 100%;
+  font-family: "HSBombaram21-Regular";
+  color: #14402B;
+}
+#container > div.title > h2 {
+  letter-spacing: -8px;
+  font-size: 6vw;
+  line-height: 150%;
+  text-align: center;
+}
+#container > div.title > .titles {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #14402B;
+}
+#container > div.title > .titles.history > li {
+  width: 33.333333%;
+}
+#container > div.title > .titles.craft > li {
+  width: 20%;
+}
+#container > div.title > .titles > li {
+  transition: all 0.5s;
+}
+#container > div.title > .titles > li > a {
+  display: block;
+  line-height: 280%;
+  font-size: 1.5vw;
+  color: #14402B;
+  text-align: center;
+}
+#container > div.title > .titles > li:hover {
+  background-color: #0C592E;
+}
+#container > div.title > .titles > li:hover > a {
+  color: #f7e8bb;
+}
+#container > div.wrap {
+  display: flex;
+  justify-content: center;
+  padding: 4% 0;
+}
+#container > div.wrap > .center {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+}
+#container > div.wrap > .center .image-container {
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#container > div.wrap > .center .image-container > img {
+  display: block;
+  width: 80%;
+  margin-right: auto;
+  margin-left: unset;
+}
+#container > div.wrap > .center .text-container {
+  width: 50%;
+  color: #14402B;
+}
+#container > div.wrap > .center .text-container > h6 {
+  font-family: "Pretendard";
+  font-weight: 900;
+  font-size: 1vw;
+  line-height: 200%;
+}
+#container > div.wrap > .center .text-container > h2 {
+  font-family: "HSBombaram21-Regular";
+  font-size: 4vw;
+  line-height: 160%;
+  text-indent: -1%;
+}
+#container > div.wrap > .center .text-container > p {
+  font-family: "HallymMjo";
+  font-weight: 500;
+  width: 80%;
+  text-align: left;
+  word-break: keep-all;
+  font-size: 1vw;
+  line-height: 200%;
+  letter-spacing: -0.01vw;
+}
+#container > div.wrap.on {
+  background-color: #14402B;
+}
+#container > div.wrap.on > .center {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+#container > div.wrap.on > .center .image-container > img {
+  display: block;
+  width: 80%;
+  margin-right: unset;
+  margin-left: auto;
+}
+#container > div.wrap.on > .center .text-container {
+  width: 50%;
+  color: #f7e8bb;
+}
+#container > div.move_wrap {
+  width: 92%;
+  margin: 0 auto;
+  padding: 1% 0 2%;
+}
+#container > div.move_wrap a {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  font-family: "HSBombaram21-Regular";
+  color: #14402B;
+  font-size: 1.5vw;
+}
+#container > div.move_wrap a.go_craft {
+  margin-left: auto;
+}
+#container > div.move_wrap a.go_craft > img {
+  width: 4vw;
+  margin-left: 1vw;
+  transition: all 0.5s;
+}
+#container > div.move_wrap a.go_craft:hover > img {
+  transform: translateY(-25%);
+}
+#container > div.move_wrap a.go_history {
+  margin-right: auto;
+}
+#container > div.move_wrap a.go_history > img {
+  transform: scaleX(-1);
+  width: 4.5vw;
+  margin-right: 1vw;
+  transition: all 0.5s;
+}
+#container > div.move_wrap a.go_history:hover > img {
+  transform: scaleX(-1) translateY(-25%);
+}
+#container > div.move_wrap a > span {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+/* 미디어쿼리 1000 */
+/* 미디어쿼리 500 */

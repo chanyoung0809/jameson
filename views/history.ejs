@@ -1,0 +1,32 @@
+<%- include('header', {title: "Jameson", cssFiles: ["reset.css", "HeaderFooter.css", "history-craft.css"]}) %>
+<div id="container">
+    <div class="title">
+        <h2 data-aos="fade-up" data-aos-duration="1000">Jameson History</h2>
+        <ul class="titles history" data-aos="fade-up" data-aos-duration="1000">
+            <% history.forEach((el, idx)=>{ %>
+                <li data-target="#history<%- idx %>"><a href="#" ><%- el.title %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+    <% history.forEach((el, idx)=>{ %>
+        <div class="wrap <%- (idx%2 != 0) ? 'on' : null %>" id="history<%- idx %>" data-aos="fade-up" data-aos-duration="1000">
+            <div class="center">
+                <div class="image-container" data-aos="<%- (idx % 2 !== 0) ? 'fade-right' : 'fade-left' %>" data-aos-duration="1000">
+                    <img src="/img/<%- el.image %>" alt="Section Image">
+                </div>
+                <div class="text-container">
+                    <h6 data-aos="<%- (idx % 2 !== 0) ? 'fade-right' : 'fade-left' %>" data-aos-duration="1000"><%- el.century %></h6>
+                    <h2 data-aos="<%- (idx % 2 !== 0) ? 'fade-right' : 'fade-left' %>" data-aos-duration="1000" data-aos-delay="100"><%- el.title %></h2>
+                    <p data-aos="<%- (idx % 2 !== 0) ? 'fade-right' : 'fade-left' %>" data-aos-duration="1000" data-aos-delay="200"><%- el.context %></p>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    <div class="move_wrap" data-aos="fade-up" data-aos-duration="1000">
+        <a href="/craft" class="go_craft">
+            <span>양조장 소개</span>
+            <img src="/img/recipe_glass_DG.svg" />
+        </a> 
+    </div>
+</div>
+<%- include('footer', {jsFiles:["tabMenu.js","history-craft.js"]}) %> 

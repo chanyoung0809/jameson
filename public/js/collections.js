@@ -1,15 +1,20 @@
-$(function(){
-    let tradMenu = $("#container > div.navis_wrap > ul > li:nth-child(1)");
-    let flavMenu = $("#container > div.navis_wrap > ul > li:nth-child(2)");
-    let top1 = $("#Traditional").offset().top - 76;
-    let top2 = $("#Flavorful").offset().top - 76;
-    console.log(top1);
-    console.log(top2);
-
-    tradMenu.on("click",()=>{
-        $("html, body").animate({scrollTop:top1}, 1000);	// 해시(#eu, #us, ...)가 있는 위치로 스크롤
+$(function() {
+    const menuItems = $("#container .navis_wrap .sorts li a");
+    const scrollOffsets = {};
+  
+    // 각 메뉴 아이템에 대해 스크롤 위치 계산
+    menuItems.each(function() {
+      const target = $(this).attr("href");
+      const offset = $(target).offset().top - 76;
+      scrollOffsets[target] = offset;
     });
-    flavMenu.on("click",()=>{
-        $("html, body").animate({scrollTop:top2}, 1000);	
+  
+    // 메뉴 아이템 클릭 이벤트 처리
+    menuItems.on("click", function(e) {
+      e.preventDefault();
+      const target = $(this).attr("href");
+      const scrollPosition = scrollOffsets[target];
+  
+      $("html, body").animate({ scrollTop: scrollPosition }, 1000);
     });
 });
