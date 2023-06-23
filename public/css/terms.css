@@ -1,0 +1,37 @@
+#container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #f7e8bb;
+  margin-top: 76px;
+}
+#container .terms_wrap {
+  color: #14402B;
+  width: 50%;
+}
+#container .terms_wrap .title {
+  text-align: center;
+  font-size: 5vw;
+  line-height: 200%;
+  font-family: "HSBombaram21-Regular";
+}
+#container .terms_wrap .center > section {
+  margin-bottom: 2vw;
+}
+#container .terms_wrap .center > section > h3 {
+  font-size: 2vw;
+  line-height: 160%;
+  font-family: "HSBombaram21-Regular";
+  color: #14402B;
+}
+#container .terms_wrap .center > section > p {
+  font-size: 1vw;
+  line-height: 200%;
+  font-family: "Pretendard";
+  font-weight: 500;
+  word-break: keep-all;
+  color: #14402B;
+}
+#container .terms_wrap .center > section > p > a {
+  color: #0C592E;
+}

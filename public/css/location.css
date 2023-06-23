@@ -411,7 +411,19 @@ select::-ms-expand {
 #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate {
   color: #14402B;
   font-weight: 500;
-  text-indent: 12px;
+  display: flex;
+  align-items: center;
+  margin: 0.5% 1% 0.5% 0;
+  text-indent: 0.5vw;
+}
+#container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate > span {
+  color: #f7e8bb;
+  font-weight: 500;
+  text-align: center;
+  background-color: #0C592E;
+  line-height: 200%;
+  width: 15%;
+  text-indent: 0;
 }
 #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar {
   width: 1vw;
@@ -424,6 +436,13 @@ select::-ms-expand {
 }
 #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-track {
   background-color: rgba(20, 64, 43, 0.2);
+}
+#container > div .map_wrap .right_find .store_area .stores .err_msg {
+  font-weight: 700;
+  color: #14402B;
+  font-family: "HallymMjo";
+  line-height: 400%;
+  font-size: 1vw;
 }
 
 /* 미디어쿼리 1000 */

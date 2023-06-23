@@ -1,0 +1,290 @@
+#container {
+  width: 100vw;
+  background-color: #f7e8bb;
+  margin-top: 76px;
+}
+#container .qna_wrap {
+  color: #14402B;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qna_wrap .title {
+  font-size: 5vw;
+  line-height: 200%;
+  font-family: "HSBombaram21-Regular";
+  letter-spacing: -0.1vw;
+}
+#container .qnas {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 4%;
+}
+#container .qnas .t_header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #14402B;
+  border-bottom: 2px solid #f7e8bb;
+}
+#container .qnas .t_header > p {
+  text-align: center;
+  color: #f7e8bb;
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-size: 1vw;
+  line-height: 200%;
+}
+#container .qnas .t_header > p.Q_checkbox {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qnas .t_header > p.Q_num {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid #f7e8bb;
+  border-right: 2px solid #f7e8bb;
+}
+#container .qnas .t_header > p.Q_title {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #f7e8bb;
+}
+#container .qnas .t_header > p.Q_author {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #f7e8bb;
+}
+#container .qnas .t_header > p.Q_date {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qnas .t_notice {
+  display: flex;
+  justify-content: space-between;
+  background-color: #14402B;
+  border-bottom: 2px solid #f7e8bb;
+  transition: all 0.5s;
+}
+#container .qnas .t_notice:hover {
+  background-color: #0C592E;
+}
+#container .qnas .t_notice > p {
+  text-align: center;
+  color: #f7e8bb;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1vw;
+  line-height: 200%;
+}
+#container .qnas .t_notice > p.Q_checkbox {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qnas .t_notice > p.Q_num {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid #f7e8bb;
+  border-right: 2px solid #f7e8bb;
+}
+#container .qnas .t_notice > p.Q_num > img {
+  width: 1vw;
+}
+#container .qnas .t_notice > p.Q_title {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #f7e8bb;
+}
+#container .qnas .t_notice > p.Q_title > a {
+  display: block;
+  width: 100%;
+  color: #FDE390;
+}
+#container .qnas .t_notice > p.Q_author {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #f7e8bb;
+}
+#container .qnas .t_notice > p.Q_date {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qnas .t_body {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7e8bb;
+  border-bottom: 2px solid #14402B;
+  transition: all 0.5s;
+}
+#container .qnas .t_body:hover {
+  background-color: #FDE390;
+}
+#container .qnas .t_body > p {
+  text-align: center;
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-size: 1vw;
+  line-height: 200%;
+  color: #14402B;
+}
+#container .qnas .t_body > p.Q_checkbox {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qnas .t_body > p.Q_checkbox > input {
+  text-align: center;
+}
+#container .qnas .t_body > p.Q_num {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid #14402B;
+}
+#container .qnas .t_body > p.Q_num > img {
+  height: 1vw;
+}
+#container .qnas .t_body > p.Q_title {
+  width: 60%;
+  border-left: 2px solid #14402B;
+  border-right: 2px solid #14402B;
+}
+#container .qnas .t_body > p.Q_title > a {
+  color: #14402B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.01vw;
+}
+#container .qnas .t_body > p.Q_author {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #14402B;
+}
+#container .qnas .t_body > p.Q_date {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qna_detail {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 4%;
+}
+#container .qna_detail .detail_head {
+  display: flex;
+  background-color: #14402B;
+  font-family: "Pretendard";
+  font-weight: 700;
+  color: #FDE390;
+  line-height: 200%;
+  font-size: 1vw;
+}
+#container .qna_detail .detail_head .Q_num {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qna_detail .detail_head .Q_num > img {
+  height: 1vw;
+}
+#container .qna_detail .detail_head .Q_title {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.01vw;
+  border-left: 2px solid #f7e8bb;
+  border-right: 2px solid #f7e8bb;
+}
+#container .qna_detail .detail_head .Q_date {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container .qna_detail .detail_author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  border-bottom: 2px solid #14402B;
+  color: #14402B;
+  font-weight: 700;
+  font-size: 1vw;
+  padding: 0 2%;
+}
+#container .qna_detail .detail_author > span {
+  font-family: "HallymMjo";
+  letter-spacing: -0.1vw;
+}
+#container .qna_detail .detail_author > p {
+  text-align: right;
+  line-height: 200%;
+  font-family: "Pretendard";
+}
+#container .qna_detail .context {
+  padding: 1% 2%;
+  border-bottom: 2px solid #14402B;
+}
+#container .qna_detail .context > p {
+  line-height: 200%;
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-size: 1vw;
+  color: #14402B;
+}
+#container .qna_detail .context > p > a {
+  color: #8C182D;
+  text-decoration: underline;
+}
+#container .qna_detail .btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Pretendard";
+  font-weight: 700;
+  padding: 1% 0;
+  border-bottom: 2px solid #14402B;
+  background-color: #14402B;
+}
+#container .qna_detail .btn_wrap > a {
+  color: #14402B;
+  font-size: 0.8vw;
+  border: 2px solid #14402B;
+  margin-right: 0.5vw;
+  line-height: 200%;
+  padding: 0 0.5vw;
+  border-radius: 0.5vw;
+  transition: all 0.5s;
+  background-color: #f7e8bb;
+}
+#container .qna_detail .btn_wrap > a:hover {
+  background-color: #FDE390;
+}

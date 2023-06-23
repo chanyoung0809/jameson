@@ -1,0 +1,313 @@
+// 컬러 팔레트 변수
+$jDarkGreen: #14402B;
+$jGreen:#0C592E;
+$jWine:#402826;
+$jRed:#8C182D;
+$jBeige:#f7e8bb;
+$jLemon:#F9F69B;
+$jOnion:#FDE390;
+$jKhaki:#E3D681;
+
+// 폰트 이름 변수
+$headline: 'HSBombaram21-Regular';
+$subHeadline:'HallymMjo';
+$context: "Pretendard";
+
+#container {
+    width: 100vw;
+    background-color: $jBeige;
+    margin-top:76px;
+    .qna_wrap {
+        color: $jDarkGreen;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .title {
+            font-size: 5vw;
+            line-height: 200%;
+            font-family: $headline;
+            letter-spacing: -.1vw;
+        }
+    }
+    // qna 게시판 전체 목록
+    .qnas {
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 4%;
+        .t_header {
+            display: flex;
+            justify-content: space-between;
+            background-color: $jDarkGreen;
+            border-bottom: 2px solid $jBeige;
+            > p {
+                text-align: center;
+                color: $jBeige;
+                font-family: $context;
+                font-weight: 800;
+                font-size: 1vw;
+                line-height: 200%;
+                &.Q_checkbox {
+                    width: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // > input {
+                    //     display: none;
+                    // }
+                }
+                &.Q_num {
+                    width: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-left: 2px solid $jBeige;
+                    border-right: 2px solid $jBeige;
+                }
+                &.Q_title {
+                    width: 60%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-right: 2px solid $jBeige;
+                }
+                &.Q_author {
+                    width: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-right: 2px solid $jBeige;
+                }
+                &.Q_date {
+                    width: 25%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .t_notice {
+            display: flex;
+            justify-content: space-between;
+            background-color: $jDarkGreen;
+            border-bottom: 2px solid $jBeige;
+            transition: all .5s;
+            &:hover {
+                background-color: $jGreen;
+            }
+            > p {
+                text-align: center;
+                color: $jBeige;
+                font-family: $context;
+                font-weight: 600;
+                font-size: 1vw;
+                line-height: 200%;
+                &.Q_checkbox {
+                    width: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // > input {
+                    //     display: none;
+                    // }
+                }
+                &.Q_num {
+                    width: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-left: 2px solid $jBeige;
+                    border-right: 2px solid $jBeige;
+                    > img {
+                        width: 1vw;
+                    }
+                }
+                &.Q_title {
+                    width: 60%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-right: 2px solid $jBeige;
+                    > a {
+                        display: block;
+                        width: 100%;
+                        color: $jOnion;
+                    }
+                }
+                &.Q_author {
+                    width: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-right: 2px solid $jBeige;
+                }
+                &.Q_date {
+                    width: 25%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .t_body {
+            display: flex;
+            justify-content: space-between;
+            background-color: $jBeige;
+            border-bottom: 2px solid $jDarkGreen;
+            transition: all .5s;
+            &:hover {
+                background-color: $jOnion;
+            }
+            > p {
+                text-align: center;
+                font-family: $context;
+                font-weight: 600;
+                font-size: 1vw;
+                line-height: 200%;
+                color: $jDarkGreen;
+                &.Q_checkbox {
+                    width: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    > input {
+                        text-align: center;
+                    } 
+                }
+                &.Q_num {
+                    width: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-left: 2px solid $jDarkGreen;
+                    > img {
+                        height: 1vw;
+                    }
+                }
+                &.Q_title {
+                    width: 60%;
+                    border-left: 2px solid $jDarkGreen;
+                    border-right: 2px solid $jDarkGreen;
+                    > a {
+                        color: $jDarkGreen;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;                    letter-spacing: .01vw;
+                    }
+                }
+                &.Q_author {
+                    width: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-right: 2px solid $jDarkGreen;
+                }
+                &.Q_date {
+                    width: 25%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+            }
+        }
+    }
+    // qna 세부 게시글 디자인
+    .qna_detail {
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 4%;
+        .detail_head {
+            display: flex;
+            background-color: $jDarkGreen;
+            font-family: $context;
+            font-weight: 700;
+            color: $jOnion;
+            line-height: 200%;
+            font-size: 1vw;
+            .Q_num {
+                width: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                > img {
+                    height: 1vw;
+                }
+            }
+            .Q_title {
+                width: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;                    
+                letter-spacing: .01vw;
+                border-left: 2px solid $jBeige;
+                border-right: 2px solid $jBeige;
+            }
+            .Q_date {
+                width: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .detail_author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 96%;
+            border-bottom: 2px solid $jDarkGreen;
+            color: #14402B;
+            font-weight: 700;
+            font-size: 1vw;
+            padding: 0 2%;
+            > span {
+                font-family: $subHeadline;
+                letter-spacing: -.1vw;
+            }
+            > p {
+                text-align: right;
+                line-height: 200%;
+                font-family: $context;
+            }
+        }
+        .context {
+            padding: 1% 2%;
+            border-bottom: 2px solid $jDarkGreen;
+            > p {
+                line-height: 200%;
+                font-family: $context;
+                font-weight: 500;
+                font-size: 1vw;
+                color: #14402B;
+                > a {
+                    color: $jRed;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .btn_wrap {
+            display: flex;
+            justify-content: flex-end;
+            font-family: $context;
+            font-weight: 700;
+            padding: 1% 0;
+            border-bottom: 2px solid $jDarkGreen;
+            background-color: $jDarkGreen;
+            > a {
+                color: $jDarkGreen;
+                font-size: .8vw;
+                border: 2px solid $jDarkGreen;
+                margin-right: .5vw;
+                line-height: 200%;
+                padding: 0 .5vw;
+                border-radius: .5vw;
+                transition: all .5s;
+                background-color: $jBeige;
+                &:hover {
+                    background-color: $jOnion;
+                }
+            }
+        }
+    }
+}

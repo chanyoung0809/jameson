@@ -203,7 +203,27 @@ app.get("/craft",(req,res)=>{
         res.render("craft", {craft:craft});
     })
 });
-// 성인인증 페이지
+// 이용약관 페이지
+app.get("/terms",(req,res)=>{
+    res.render("terms");
+});
+
+// 회원전용 Qna 페이지
+app.get("/qna",(req,res)=>{
+    res.render("QnA");
+});
+
+// Qna 상세 글 페이지
+app.get("/qna/detail/0",(req,res)=>{
+    res.render("QnaDetail");
+});
+
+// 자주묻는 질문 페이지
+app.get("/faq",(req,res)=>{
+    res.render("faq");
+});
+
+// 성인인증 페이지(추후 첫 세션 접속시에만 등장하게 함)
 app.get("/validAdult",(req,res)=>{
     res.render("validAdult");
 });

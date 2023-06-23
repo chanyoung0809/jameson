@@ -1,7 +1,257 @@
 
 
-                        <!-- 내가 작성한 글만 수정 삭제 가능하게 -->
-                        <% if (login.userNickName === data.userNickName) { %>
-                            <a href="/media/update/<%- data.num %>">수정하기</a>
-                            <a href="/dbdelete/<%- data.num %>">삭제하기</a>
-                        <% } %>
+<!-- 내가 작성한 글만 수정 삭제 가능하게 -->
+<% if (login.userNickName === data.userNickName) { %>
+    <a href="/media/update/<%- data.num %>">수정하기</a>
+    <a href="/dbdelete/<%- data.num %>">삭제하기</a>
+<% } %>
+
+
+
+        ai가 짜준 날짜 자동 삽입 코드
+                function submitPost() {
+                    var date = new Date();
+                    var year = date.getFullYear();
+                    var month = ("0" + (date.getMonth() + 1)).slice(-2);
+                    var day = ("0" + date.getDate()).slice(-2);
+                    var formattedDate = year + "-" + month + "-" + day;
+                    
+                    document.getElementById("date").value = formattedDate;
+
+                    // 여기서 게시글을 서버로 전송하는 로직을 작성하면 됩니다.
+
+                    // 예시로 콘솔에 출력해보겠습니다.
+                    console.log("게시글 작성 날짜: " + formattedDate);
+                    </head>
+                    <body>
+                        <h1>게시글 등록</h1>
+                        <textarea id="content" rows="5" cols="50"></textarea><br>
+                        <input type="hidden" id="date">
+                        <button onclick="submitPost()">등록</button>
+                    </body>
+                    </html>
+
+
+
+넵, 이해했습니다. 아래 예시 코드는 사용자가 질문하는 페이지와 운영자가 답변을 작성하는 페이지를 구현하는 데 도움이 될 수 있습니다.
+db 하나만 가지고작업.
+
+1. HTML 코드 (질문 페이지):
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>질문 페이지</title>
+</head>
+<body>
+    <h1>질문하기</h1>
+    <form action="/submit-question" method="POST">
+        <textarea name="questionInput" rows="5" cols="50"></textarea><br>
+        <button type="submit">작성 완료</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>
+```
+
+2. HTML 코드 (답변 작성 페이지):
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>답변 작성 페이지</title>
+</head>
+<body>
+    <h1>답변 작성</h1>
+    <h2>질문:</h2>
+    <p id="question"></p>
+    
+    <form action="/submit-answer" method="POST">
+        <input type="hidden" id="questionId" name="questionId">
+        <textarea name="answerInput" rows="5" cols="50"></textarea><br>
+        <button type="submit">답변 전송</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>
+```
+
+3. index.js 파일 내 스크립트 구간:
+```javascript
+// 필요한 모듈을 임포트합니다.
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongodb = require('mongodb');
+
+// Express 애플리케이션을 생성합니다.
+const app = express();
+const port = 3000;
+
+// MongoDB 연결 정보를 설정합니다.
+const mongoURI = 'mongodb://localhost:27017'; // MongoDB URI
+const dbName = 'mydb'; // 데이터베이스 이름
+const collectionName = 'qna'; // 컬렉션 이름
+
+// MongoDB 클라이언트를 생성합니다.
+const MongoClient = mongodb.MongoClient;
+const client = new MongoClient(mongoURI, { useNewUrlParser: true });
+
+// JSON 요청을 파싱하기 위한 미들웨어를 등록합니다.
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// 질문 페이지의 GET 요청에 대한 핸들러를 작성합니다.
+app.get('/question', (req, res) => {
+    res.sendFile(__dirname + '/question.html');
+});
+
+// 질문 제출 요청에 대한 핸들러를 작성합니다.
+app.post('/submit-question', (req, res) => {
+    const question = req.body.questionInput;
+
+    // MongoDB에 질문을 저장합니다.
+    client.connect((err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('서버 오류');
+            return;
+        }
+        
+        const db = client.db(dbName);
+        const collection = db.collection(collectionName);
+        
+        collection.insertOne({ question: question }, (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('서버 오류');
+                return;
+            }
+
+            res.redirect('/question');
+        });
+    });
+
+
+});
+
+// 답변 작성 페이지의 GET 요청에 대한 핸들러를 작성합니다.
+app.get('/answer/:id', (req, res) => {
+    const questionId = req.params.id;
+
+    // 질문을 가져옵니다.
+    client.connect((err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('서버 오류');
+            return;
+        }
+        
+        const db = client.db(dbName);
+        const collection = db.collection(collectionName);
+        
+        collection.findOne({ _id: mongodb.ObjectId(questionId) }, (err, doc) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('서버 오류');
+                return;
+            }
+
+            if (!doc) {
+                res.status(404).send('질문을 찾을 수 없습니다.');
+                return;
+            }
+
+            res.send(`
+                <h1>답변 작성</h1>
+                <h2>질문:</h2>
+                <p>${doc.question}</p>
+                <form action="/submit-answer" method="POST">
+                    <input type="hidden" name="questionId" value="${questionId}">
+                    <textarea name="answerInput" rows="5" cols="50"></textarea><br>
+                    <button type="submit">답변 전송</button>
+                </form>
+                <script src="index.js"></script>
+            `);
+        });
+    });
+});
+
+// 답변 등록 요청에 대한 핸들러를 작성합니다.
+app.post('/submit-answer', (req, res) => {
+    const questionId = req.body.questionId;
+    const answer = req.body.answerInput;
+
+    // MongoDB에 답변을 저장합니다.
+    client.connect((err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('서버 오류');
+            return;
+        }
+        
+        const db = client.db(dbName);
+        const collection = db.collection(collectionName);
+        
+        collection.updateOne({ _id: mongodb.ObjectId(questionId) }, { $set: { answer: answer } }, (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('서버 오류');
+                return;
+            }
+
+            res.redirect('/');
+        });
+    });
+});
+
+// 질의응답 게시판 페이지의 GET 요청에 대한 핸들러를 작성합니다.
+app.get('/', (req, res) => {
+    // MongoDB에 저장된 질문과 답변을 가져옵니다.
+    client.connect((err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('서버 오류');
+            return;
+        }
+        
+        const db = client.db(dbName);
+        const collection = db.collection(collectionName);
+        
+        collection.find().toArray((err, docs) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send('서버 오류');
+                return;
+            }
+
+            // 질문과 답변을 페이지에 렌더링합니다.
+            let html = '';
+            for (const doc of docs) {
+                html += `
+                    <h2>질문:</h2>
+                    <p>${doc.question}</p>
+                    <h3>답변:</h3>
+                    <p>${doc.answer ? doc.answer : '답변이 아직 등
+
+록되지 않았습니다.'}</p>
+                    <a href="/answer/${doc._id}">답변 작성</a>
+                    <hr>
+                `;
+            }
+
+            res.send(html);
+        });
+    });
+});
+
+// Express 애플리케이션을 시작합니다.
+app.listen(port, () => {
+    console.log(`애플리케이션이 http://localhost:${port} 에서 실행 중입니다.`);
+});
+```
+
+위의 코드는 사용자가 질문을 작성하고 제출하면 MongoDB에 저장하며, 질의응답 게시판에서 저장된 질문과 답변을 조회합니다. 또한, 각 질문에 대한 답변을 작성하기 위해 해당 질문의 내용이 담긴 페이지로 이동할 수 있습니다. 질문에 대한 답변을 작성하면 MongoDB에서 해당 질문의 답변을 업데이트합니다.
+
+위의 코드는 예시일 뿐이며, 실제 상황에 맞게 수정해야 할 수 있습니다. 또한, 보안과 오류 처리 등 추가 작업이 필요할 수 있습니다.

@@ -1,0 +1,54 @@
+// 컬러 팔레트 변수
+$jDarkGreen: #14402B;
+$jGreen:#0C592E;
+$jWine:#402826;
+$jRed:#8C182D;
+$jBeige:#f7e8bb;
+$jLemon:#F9F69B;
+$jOnion:#FDE390;
+$jKhaki:#E3D681;
+
+// 폰트 이름 변수
+$headline: 'HSBombaram21-Regular';
+$subHeadline:'HallymMjo';
+$context: "Pretendard";
+
+#container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: $jBeige;
+    margin-top:76px;
+    .terms_wrap {
+        color: $jDarkGreen;
+        width: 50%;
+        .title {
+            text-align: center;
+            font-size: 5vw;
+            line-height: 200%;
+            font-family: $headline;
+        }
+        .center {
+            > section {
+                margin-bottom: 2vw; 
+                > h3 {
+                    font-size: 2vw;
+                    line-height: 160%;
+                    font-family: $headline;
+                    color: $jDarkGreen;
+                }
+                > p {
+                    font-size: 1vw;
+                    line-height: 200%;
+                    font-family: $context;
+                    font-weight: 500;
+                    word-break: keep-all;
+                    color: $jDarkGreen;
+                    > a {
+                        color: $jGreen;
+                    }
+                }
+            }
+        }
+    }
+}

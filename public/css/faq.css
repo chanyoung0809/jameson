@@ -1,0 +1,131 @@
+#container {
+  width: 100vw;
+  background-color: #f7e8bb;
+  margin-top: 76px;
+  padding-bottom: 50px;
+}
+#container .faq_wrap {
+  color: #14402B;
+  width: 92%;
+  margin: 0 auto;
+}
+#container .faq_wrap .title {
+  text-align: center;
+  font-size: 5vw;
+  line-height: 200%;
+  font-family: "HSBombaram21-Regular";
+}
+#container .faq_wrap .faqs {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: 2px solid #14402B;
+}
+#container .faq_wrap .faqs .faq {
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1% 1%;
+}
+#container .faq_wrap .faqs .faq .faq_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 2px solid #14402B;
+  transition: all 0.5s;
+}
+#container .faq_wrap .faqs .faq .faq_top > h4 {
+  font-size: 2.8vw;
+  font-family: "HallymMjo";
+  color: #FDE390;
+  font-weight: 700;
+  line-height: 120%;
+  background-color: #14402B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8%;
+  padding-bottom: 1%;
+}
+#container .faq_wrap .faqs .faq .faq_top .faq_top_right {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#container .faq_wrap .faqs .faq .faq_top .faq_top_right > h3 {
+  color: #14402B;
+  font-family: "Pretendard";
+  font-size: 1.5vw;
+  text-indent: 0.5vw;
+  font-weight: 800;
+  transition: all 0.5s;
+}
+#container .faq_wrap .faqs .faq .faq_top .faq_top_right .more {
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  border: none;
+  background-color: transparent;
+  color: #14402B;
+  font-weight: 800;
+  transition: all 0.5s;
+}
+#container .faq_wrap .faqs .faq .faq_bot {
+  width: 100%;
+  font-size: 1vw;
+  line-height: 160%;
+  word-break: keep-all;
+  border-bottom: 2px solid rgba(20, 64, 43, 0);
+  transition: height 0.5s;
+  height: 0;
+  overflow: hidden;
+}
+#container .faq_wrap .faqs .faq .faq_bot > p {
+  margin: 2% 1%;
+  font-family: "Pretendard";
+  font-weight: 600;
+  letter-spacing: 0.01vw;
+}
+#container .faq_wrap .faqs .faq .faq_bot > p > a {
+  color: #0C592E;
+  font-weight: 900;
+  font-family: "Pretendard";
+}
+#container .faq_wrap .faqs .faq .faq_bot > p > a:hover {
+  background-color: #FDE390;
+}
+#container .faq_wrap .faqs .faq:hover .faq_top {
+  background-color: #14402B;
+}
+#container .faq_wrap .faqs .faq:hover .faq_top .faq_top_right > h3 {
+  color: #FDE390;
+}
+#container .faq_wrap .faqs .faq:hover .faq_top .faq_top_right .more {
+  color: #FDE390;
+}
+#container .faq_wrap .faqs .faq.on .faq_top {
+  background-color: #14402B;
+}
+#container .faq_wrap .faqs .faq.on .faq_top .faq_top_right > h3 {
+  color: #FDE390;
+}
+#container .faq_wrap .faqs .faq.on .faq_top .faq_top_right .more {
+  color: #FDE390;
+}
+#container .faq_wrap .faqs .faq.on .faq_bot {
+  border-bottom: 2px solid #14402B;
+  height: auto;
+}
+#container .faq_wrap .faqs .faq.on .faq_bot > p {
+  margin: 2% 1%;
+}

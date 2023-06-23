@@ -185,7 +185,7 @@ body.show {
             display: flex;
             justify-content: space-between;
             .img_wrap {
-                width: 40%;
+                width: 44%;
                 background: linear-gradient($jBeige, $jOnion);
                 object-fit: cover;
                 display: flex;
@@ -318,7 +318,7 @@ body.show {
                         }
                         &.on {
                             .sub_notice {
-                                height: calc(180px - 5vw);
+                                height: calc(190px - 5vw);
                             }
                             .notify {
                                 > .material-symbols-outlined {

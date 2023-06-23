@@ -163,7 +163,7 @@ body.show {
   justify-content: space-between;
 }
 #container > div.product_wrap .img_wrap {
-  width: 40%;
+  width: 44%;
   background: linear-gradient(#f7e8bb, #FDE390);
   -o-object-fit: cover;
      object-fit: cover;
@@ -299,7 +299,7 @@ body.show {
   color: #8C182D;
 }
 #container > div.product_wrap .info_wrap .attention_wrap .title.on .sub_notice {
-  height: calc(180px - 5vw);
+  height: calc(190px - 5vw);
 }
 #container > div.product_wrap .info_wrap .attention_wrap .title.on .notify > .material-symbols-outlined {
   transform: rotate(180deg) translate(10%, 10%);

@@ -22,7 +22,7 @@
                         <% }) %>    
                     </select>
                     <button type="submit" class="submitBtn">검색</button>
-                    <button type="button" class="reset_btn"><a href="/location">검색 초기화</a></button>
+                    <button type="button" class="reset_btn"><a href="/location">모든 매장 보기</a></button>
                 </form>
                 <form class="location_form" id="searchForm" action="/storename" method="get">
                     <select name="search">
@@ -43,15 +43,15 @@
                                             <p class="store_city"><%- store.korName  %></p>
                                             <p class="store_name"><%- store.storeName  %></p>
                                         </div>
-                                        <p class="store_locate"><span class=""></span> <%- store.location  %></p>
-                                        <p class="store_locate">지번 주소 : <%- store.postLocation  %></p>
+                                        <p class="store_locate"><span>도로명 주소</span> <%- store.location  %></p>
+                                        <p class="store_locate"><span>지번 주소</span> <%- store.postLocation  %></p>
                                     </li>
                                 <% }) %>
                             <% } else { %>
-                                <p>검색결과가 없습니다</p>
+                                <p class="err_msg">검색결과가 없습니다. 검색 조건을 바꿔보세요.</p>
                             <% } %>
                         <% } else { %>
-                            <p>검색결과가 없습니다</p>
+                            <p class="err_msg">검색결과가 없습니다. 검색 조건을 바꿔보세요.</p>
                         <% } %>
                     </ul>
                 </div>

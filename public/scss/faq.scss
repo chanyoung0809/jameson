@@ -1,0 +1,154 @@
+// 컬러 팔레트 변수
+$jDarkGreen: #14402B;
+$jGreen:#0C592E;
+$jWine:#402826;
+$jRed:#8C182D;
+$jBeige:#f7e8bb;
+$jLemon:#F9F69B;
+$jOnion:#FDE390;
+$jKhaki:#E3D681;
+
+// 폰트 이름 변수
+$headline: 'HSBombaram21-Regular';
+$subHeadline:'HallymMjo';
+$context: "Pretendard";
+
+#container {
+    width: 100vw;
+    background-color: $jBeige;
+    margin-top:76px;
+    padding-bottom: 50px;
+    .faq_wrap {
+        color: $jDarkGreen;
+        width: 92%;
+        margin: 0 auto;
+        .title {
+            text-align: center;
+            font-size: 5vw;
+            line-height: 200%;
+            font-family: $headline;
+        }
+        .faqs {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            border: 2px solid $jDarkGreen;
+            .faq {
+                width: 98%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 1% 1%;
+                .faq_top {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    border: 2px solid $jDarkGreen;
+                    transition: all .5s;
+                    > h4 {
+                        font-size: 2.8vw;
+                        font-family: $subHeadline;
+                        color: $jOnion;
+                        font-weight: 700;
+                        line-height: 120%;
+                        background-color: $jDarkGreen;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 8%;
+                        padding-bottom: 1%;
+                    }
+                    .faq_top_right {
+                        width: 90%;
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        > h3 {
+                            color: $jDarkGreen;
+                            font-family: $context;
+                            font-size: 1.5vw;
+                            text-indent: .5vw;
+                            font-weight: 800;
+                            transition: all .5s;
+                        }
+                        .more {
+                            font-size: 2vw;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 5%;
+                            border: none;
+                            background-color: transparent;
+                            color:$jDarkGreen;
+                            font-weight: 800;
+                            transition: all .5s;
+                        } 
+                    }
+                }
+                .faq_bot {
+                    width: 100%;
+                    font-size: 1vw;
+                    line-height: 160%;
+                    word-break: keep-all;
+                    border-bottom: 2px solid #14402B00;
+                    transition: height .5s;
+                    height: 0;
+                    overflow: hidden;
+                    > p {
+                        margin: 2% 1%;
+                        font-family: $context;
+                        font-weight: 600;
+                        letter-spacing: 0.01vw;
+                        > a {
+                            color: $jGreen;
+                            font-weight: 900;
+                            font-family: $context;
+                            &:hover {
+                                background-color: $jOnion;
+                            }
+                        } 
+                    }
+                }
+                &:hover {
+                    .faq_top { 
+                        background-color: $jDarkGreen;
+                        .faq_top_right {
+                            > h3{
+                                color: $jOnion;
+                            }
+                            .more {
+                                color: $jOnion;
+                            }
+                        }
+                    }
+                }
+                &.on {
+                    .faq_top { 
+                        background-color: $jDarkGreen;
+                        .faq_top_right {
+                            > h3{
+                                color: $jOnion;
+                            }
+                            .more {
+                                color: $jOnion;
+                            }
+                        }
+                    }
+                    .faq_bot {
+                        border-bottom: 2px solid $jDarkGreen;
+                        height: auto;
+                        > p {
+                            margin: 2% 1%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

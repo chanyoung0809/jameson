@@ -14,18 +14,21 @@
         <div class="sorting_wrap">
             <span class="whiskey"><%- (recipes.length < 4 ) ? recipes[0].whiskey.toUpperCase() : "ALL" %> JAMESON RECIPES</span>
             <ul class="sorts">
-                <li>
-                    <a href="/recipes">모든 레시피 보기</a>
+                <li class="sort1depth">
+                    <a href="/#">모든 레시피 보기</a>
                     <span class="material-symbols-outlined more">expand_more</span>
                 </li>
+                <ul class="sorts2depth">
+                    <li><a href="/recipes">모든 레시피 보기</a></li>
                 <% whiskey.forEach((el, idx) => { %>
                     <li><a href="/recipes/<%- el.link %>"><%- el.name %></a></li>
                 <% }) %>
+                </ul>
             </ul>
         </div>
         <div class="recipes_wrap">
             <% recipes.forEach((recipe, idx)=> { %>
-                <div class="recipes" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="recipes" data-aos="zoom-in" data-aos-duration="1000" onclick="window.location.href=`/recipe/<%- recipe.link %>`">
                     <img src='<%- recipe.imgs %>'>
                     <div class="texts">
                         <h5><%- recipe.name %></h5>
@@ -40,4 +43,4 @@
             <% } %>
         </div>
     </div>   
-<%- include('footer', {jsFiles:["tabMenu.js","recipe.js"]}) %> 
+<%- include('footer', {jsFiles:["tabMenu.js","recipes.js"]}) %> 
