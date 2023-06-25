@@ -161,9 +161,10 @@ body.show {
 #container > div.product_wrap {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 #container > div.product_wrap .img_wrap {
-  width: 44%;
+  width: 50%;
   background: linear-gradient(#f7e8bb, #FDE390);
   -o-object-fit: cover;
      object-fit: cover;
@@ -185,25 +186,24 @@ body.show {
   font-size: 4.8vw;
   line-height: 120%;
   text-align: left;
-  text-indent: 10%;
 }
 #container > div.product_wrap .info_wrap .context {
   font-family: "Pretendard";
   font-weight: 500;
   font-size: 1.5vw;
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
   text-align: left;
   line-height: 160%;
   letter-spacing: 1px;
   word-break: keep-all;
+  margin: 1vw 0;
 }
 #container > div.product_wrap .info_wrap .total_wrap {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 80%;
-  margin: 4% auto;
+  margin: 4% 0;
 }
 #container > div.product_wrap .info_wrap .total_wrap .count_wrap {
   width: -moz-fit-content;
@@ -240,8 +240,8 @@ body.show {
   font-weight: 800;
 }
 #container > div.product_wrap .info_wrap .price_wrap {
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 0;
   font-family: "Pretendard";
   font-weight: 800;
   background-color: #14402B;
@@ -252,8 +252,8 @@ body.show {
   cursor: pointer;
 }
 #container > div.product_wrap .info_wrap .attention_wrap {
-  width: 80%;
-  margin: 4% auto;
+  width: 90%;
+  margin: 4% 0;
 }
 #container > div.product_wrap .info_wrap .attention_wrap .title {
   height: 20%;
@@ -299,7 +299,7 @@ body.show {
   color: #8C182D;
 }
 #container > div.product_wrap .info_wrap .attention_wrap .title.on .sub_notice {
-  height: calc(190px - 5vw);
+  height: auto;
 }
 #container > div.product_wrap .info_wrap .attention_wrap .title.on .notify > .material-symbols-outlined {
   transform: rotate(180deg) translate(10%, 10%);

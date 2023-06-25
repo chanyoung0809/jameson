@@ -184,8 +184,9 @@ body.show {
         &.product_wrap {
             display: flex;
             justify-content: space-between;
+            width: 100%;
             .img_wrap {
-                width: 44%;
+                width: 50%;
                 background: linear-gradient($jBeige, $jOnion);
                 object-fit: cover;
                 display: flex;
@@ -206,25 +207,24 @@ body.show {
                     font-size: 4.8vw;
                     line-height: 120%;
                     text-align: left;
-                    text-indent: 10%;
                 }
                 .context {
                     font-family: $context;
                     font-weight: 500;
                     font-size: 1.5vw;
-                    width: 80%;
-                    margin: 0 auto;
+                    width: 90%;
                     text-align: left;
                     line-height: 160%;
                     letter-spacing: 1px;
                     word-break: keep-all;
+                    margin: 1vw 0;
                 }
                 .total_wrap {
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
                     width: 80%;
-                    margin: 4% auto;
+                    margin: 4% 0;
                     .count_wrap {
                         width:fit-content;
                         border: 4px solid $jDarkGreen;
@@ -260,8 +260,8 @@ body.show {
                     }
                 }
                 .price_wrap {
-                    width: 80%;
-                    margin: 0 auto;
+                    width: 90%;
+                    margin: 0;
                     font-family: $context;
                     font-weight: 800;
                     background-color: $jDarkGreen;
@@ -272,8 +272,8 @@ body.show {
                     cursor: pointer;
                 }
                 .attention_wrap {
-                    width: 80%;
-                    margin: 4% auto;
+                    width:90%;
+                    margin: 4% 0;
                     .title {
                         height: 20%;
                         cursor: pointer;
@@ -318,7 +318,7 @@ body.show {
                         }
                         &.on {
                             .sub_notice {
-                                height: calc(190px - 5vw);
+                                height:auto;
                             }
                             .notify {
                                 > .material-symbols-outlined {

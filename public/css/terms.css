@@ -5,26 +5,26 @@
   background-color: #f7e8bb;
   margin-top: 76px;
 }
-#container .terms_wrap {
+#container > .terms_wrap {
   color: #14402B;
   width: 50%;
 }
-#container .terms_wrap .title {
+#container > .terms_wrap .title {
   text-align: center;
   font-size: 5vw;
   line-height: 200%;
   font-family: "HSBombaram21-Regular";
 }
-#container .terms_wrap .center > section {
+#container > .terms_wrap .center > section {
   margin-bottom: 2vw;
 }
-#container .terms_wrap .center > section > h3 {
+#container > .terms_wrap .center > section > h3 {
   font-size: 2vw;
   line-height: 160%;
   font-family: "HSBombaram21-Regular";
   color: #14402B;
 }
-#container .terms_wrap .center > section > p {
+#container > .terms_wrap .center > section > p {
   font-size: 1vw;
   line-height: 200%;
   font-family: "Pretendard";
@@ -32,6 +32,137 @@
   word-break: keep-all;
   color: #14402B;
 }
-#container .terms_wrap .center > section > p > a {
+#container > .terms_wrap .center > section > p > a {
   color: #0C592E;
+}
+#container .join_wrap {
+  width: 100%;
+}
+#container .join_wrap .title {
+  width: 100%;
+}
+#container .join_wrap .title > h2 {
+  text-align: center;
+  font-size: 5vw;
+  line-height: 200%;
+  font-family: "HSBombaram21-Regular";
+}
+#container .join_wrap .input_area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#container .join_wrap .input_area #join_form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+#container .join_wrap .input_area #join_form > .terms_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > h3 {
+  text-align: left;
+  font-size: 3vw;
+  font-family: "HSBombaram21-Regular";
+  font-weight: 800;
+  color: #14402B;
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > .terms {
+  text-align: left;
+  font-size: 1vw;
+  font-family: "Pretendard";
+  font-weight: 500;
+  color: #14402B;
+  width: calc(99% - 0.6vw);
+  height: 10vw;
+  word-break: keep-all;
+  overflow-y: scroll;
+  line-height: 160%;
+  border: 4px solid #14402B;
+  border-radius: 0.4vw;
+  white-space: pre-line;
+  padding: 1%;
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > .terms::-webkit-scrollbar {
+  width: 1vw;
+  border-radius: 1vw;
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > .terms::-webkit-scrollbar-thumb {
+  background-color: #14402B;
+  border-radius: 0.5vw;
+  border: 0.2vw solid rgba(247, 232, 187, 0.8);
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > .terms::-webkit-scrollbar-track {
+  background-color: rgba(20, 64, 43, 0.2);
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > .memberterms {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  font-family: "Pretendard";
+  line-height: 320%;
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > .memberterms > input {
+  border: 2px solid #14402B;
+  background-color: none;
+  accent-color: #0C592E;
+  margin-right: 0.4vw;
+}
+#container .join_wrap .input_area #join_form > .terms_wrap > .memberterms > label {
+  cursor: pointer;
+  font-size: 1vw;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap {
+  width: 100%;
+  border: 4px solid #14402B;
+  border-radius: 0.5vw;
+  overflow: hidden;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: #f7e8bb;
+  border-bottom: 4px solid #14402B;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div:last-child {
+  border-bottom: none;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > label {
+  color: #FDE390;
+  font-family: "Pretendard";
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 1vw;
+  line-height: 280%;
+  width: 20%;
+  text-align: center;
+  background-color: #14402B;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div {
+  background-color: #f7e8bb;
+  outline: none;
+  line-height: 200%;
+  position: relative;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input {
+  border: none;
+  border-bottom: 2px solid #14402B;
+  margin-left: 1vw;
+  outline: none;
+  background-color: transparent;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > span {
+  color: #0C592E;
+  position: absolute;
+  right: 0;
+  font-size: 0.8vw;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > span {
+  color: #14402B;
+  text-indent: 1vw;
+  font-family: "Pretendard";
 }

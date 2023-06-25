@@ -79,7 +79,7 @@
   position: relative;
 }
 #container > div.sorting_wrap .whiskey {
-  font-size: 30px;
+  font-size: 1.5vw;
   line-height: 200%;
   font-family: "Pretendard";
   font-weight: 800;
@@ -91,7 +91,7 @@
   border-radius: 10px;
   position: absolute;
   overflow: hidden;
-  height: 1.7vw;
+  height: 60%;
   transition: all 0.5s;
   right: 0;
   z-index: 9;
@@ -100,7 +100,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 32px;
   width: 100%;
 }
 #container > div.sorting_wrap .sorts li.sort1depth > span {
@@ -112,7 +111,7 @@
   cursor: pointer;
   width: 10%;
   text-align: center;
-  font-size: 30px;
+  font-size: 1.5vw;
   transition: all 0.5s;
 }
 #container > div.sorting_wrap .sorts li a {
@@ -125,7 +124,7 @@
   font-weight: 800;
 }
 #container > div.sorting_wrap .sorts > .sorts2depth {
-  margin-top: 1.7vw;
+  margin-top: 2.2vw;
 }
 #container > div.sorting_wrap .sorts > .sorts2depth > li {
   background-color: #14402B;
@@ -140,7 +139,7 @@
   color: #14402B;
 }
 #container > div.sorting_wrap .sorts.on {
-  height: 16.7vw;
+  height: auto;
 }
 #container > div.sorting_wrap .sorts.on > .sort1depth > span {
   transform: translateY(-50%) rotate(180deg);

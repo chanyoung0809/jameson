@@ -19,7 +19,8 @@ $context: "Pretendard";
     justify-content: center;
     background-color: $jBeige;
     margin-top:76px;
-    .terms_wrap {
+    // 개인정보 처리 방침 페이지
+    > .terms_wrap {
         color: $jDarkGreen;
         width: 50%;
         .title {
@@ -46,6 +47,139 @@ $context: "Pretendard";
                     color: $jDarkGreen;
                     > a {
                         color: $jGreen;
+                    }
+                }
+            }
+        }
+    }
+    // 회원가입 페이지
+    .join_wrap {
+        width: 100%;
+        .title {
+            width: 100%;
+            > h2 {
+                text-align: center;
+                font-size: 5vw;
+                line-height: 200%;
+                font-family: $headline;
+            }
+        }
+        .input_area {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            #join_form {
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                > .terms_wrap {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+                    > h3 {
+                        text-align: left;
+                        font-size: 3vw;
+                        font-family: $headline;
+                        font-weight: 800;
+                        color: $jDarkGreen;
+                    }
+                    > .terms {
+                        text-align: left;
+                        font-size: 1vw;
+                        font-family: $context;
+                        font-weight: 500;
+                        color: $jDarkGreen;
+                        width: calc(99% - .6vw);
+                        height: 10vw;
+                        word-break: keep-all;
+                        overflow-y: scroll;
+                        line-height: 160%;
+                        border: 4px solid $jDarkGreen;
+                        border-radius: .4vw;
+                        white-space:pre-line;
+                        padding: 1%;
+                        &::-webkit-scrollbar { 
+                            width: 1vw;
+                            border-radius: 1vw;
+                        }
+                        &::-webkit-scrollbar-thumb { 
+                            background-color: #14402B;
+                            border-radius: .5vw;
+                            border: .2vw solid #F7E8BBCC;
+                        }
+                        &::-webkit-scrollbar-track { 
+                            background-color: #14402B33;
+                        }
+                    }
+                    > .memberterms {
+                        display: flex;
+                        width: 100%;
+                        justify-content: flex-end;
+                        font-family: $context;
+                        line-height: 320%;
+                        > input {
+                            border: 2px solid $jDarkGreen;
+                            background-color: none;
+                            accent-color: $jGreen;
+                            margin-right: .4vw;
+                        }
+                        > label {
+                            cursor: pointer;
+                            font-size: 1vw;
+                        }
+                    }
+                }
+                > .memberinfo_wrap {
+                    width: 100%;
+                    border: 4px solid $jDarkGreen;
+                    border-radius: .5vw;
+                    overflow: hidden;
+                    > div {
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+                        color:$jBeige;
+                        border-bottom: 4px solid $jDarkGreen;
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        > label {
+                            color: $jOnion;
+                            font-family: $context;
+                            font-weight: 800;
+                            cursor: pointer;
+                            font-size: 1vw;
+                            line-height: 280%;
+                            width: 20%;
+                            text-align: center;
+                            background-color: $jDarkGreen;
+                        }
+                        > div {
+                            background-color: $jBeige;
+                            outline: none;
+                            line-height: 200%;
+                            position: relative;
+                            > input {
+                                border: none;
+                                border-bottom: 2px solid $jDarkGreen;
+                                margin-left: 1vw;
+                                outline: none;
+                                background-color: transparent;
+                                
+                            }
+                            > span {
+                                color: $jGreen;
+                                position: absolute;
+                                right: 0;
+                                font-size: .8vw;
+                            }
+                        }
+                        > span {
+                            color: $jDarkGreen;
+                            text-indent: 1vw;
+                            font-family: $context;
+                        }
                     }
                 }
             }

@@ -288,3 +288,159 @@
 #container .qna_detail .btn_wrap > a:hover {
   background-color: #FDE390;
 }
+#container .q_submit_wrap {
+  padding-bottom: 4%;
+  width: 100%;
+}
+#container .q_submit_wrap #q_submit {
+  width: 60%;
+  margin: 0 auto;
+  border-top: 4px solid #14402B;
+  border-left: 8px solid #14402B;
+  border-right: 8px solid #14402B;
+}
+#container .q_submit_wrap #q_submit .detail_head {
+  background-color: #14402B;
+  color: #FDE390;
+}
+#container .q_submit_wrap #q_submit .detail_head input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: "Pretendard";
+  font-weight: 500;
+  background-color: #f7e8bb;
+  font-size: 1vw;
+  line-height: 160%;
+  text-indent: 0.4vw;
+}
+#container .q_submit_wrap #q_submit .detail_head input::-moz-placeholder {
+  font-family: "Pretendard";
+  font-weight: 500;
+  color: #0C592E;
+  font-size: 1vw;
+  line-height: 160%;
+  text-indent: 0.4vw;
+}
+#container .q_submit_wrap #q_submit .detail_head input::placeholder {
+  font-family: "Pretendard";
+  font-weight: 500;
+  color: #0C592E;
+  font-size: 1vw;
+  line-height: 160%;
+  text-indent: 0.4vw;
+}
+#container .q_submit_wrap #q_submit .detail_head .q_title_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 4px solid #14402B;
+}
+#container .q_submit_wrap #q_submit .detail_head .q_title_wrap > label {
+  font-family: "Pretendard";
+  font-weight: 700;
+  margin: 0 2%;
+  line-height: 200%;
+  font-size: 1vw;
+  text-align: center;
+  cursor: pointer;
+}
+#container .q_submit_wrap #q_submit .detail_head .q_title_wrap #Q_title {
+  width: 92%;
+}
+#container .q_submit_wrap #q_submit #Q_context {
+  resize: none;
+  display: block;
+  width: 96%;
+  outline: none;
+  border: none;
+  background-color: #f7e8bb;
+  line-height: 160%;
+  font-family: "Pretendard";
+  font-size: 1vw;
+  color: #14402B;
+  padding: 1% 2%;
+  height: 300px;
+  max-height: 1500px;
+  overflow-y: auto;
+  font-weight: 500;
+  margin-bottom: 1%;
+}
+#container .q_submit_wrap #q_submit #Q_context::-moz-placeholder {
+  font-family: "Pretendard";
+  font-size: 1vw;
+  color: #0C592E;
+  font-weight: 500;
+}
+#container .q_submit_wrap #q_submit #Q_context::placeholder {
+  font-family: "Pretendard";
+  font-size: 1vw;
+  color: #0C592E;
+  font-weight: 500;
+}
+#container .q_submit_wrap #q_submit .file_wrap {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 8px solid #14402B;
+  border-bottom: 4px solid #14402B;
+}
+#container .q_submit_wrap #q_submit .file_wrap > label {
+  width: 20%;
+  font-family: "Pretendard";
+  font-weight: 700;
+  padding: 0 2%;
+  line-height: 200%;
+  font-size: 1vw;
+  text-align: center;
+  color: #FDE390;
+  background-color: #14402B;
+  cursor: pointer;
+}
+#container .q_submit_wrap #q_submit .file_wrap #Q_file {
+  width: 75%;
+  font-family: "Pretendard";
+  color: #14402B;
+}
+#container .q_submit_wrap #q_submit .file_wrap #Q_file::file-selector-button {
+  background-color: #14402B;
+  border: none;
+  color: #FDE390;
+  line-height: 160%;
+  font-family: "Pretendard";
+  border-radius: 0.5vw;
+  cursor: pointer;
+}
+#container .q_submit_wrap #q_submit .file_wrap #Q_file::file-selector-button:hover {
+  background-color: #0C592E;
+}
+#container .q_submit_wrap #q_submit .btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Pretendard";
+  font-weight: 700;
+  border-bottom: 2px solid #14402B;
+  background-color: #14402B;
+  border-top: 8px solid #14402B;
+  border-bottom: 8px solid #14402B;
+}
+#container .q_submit_wrap #q_submit .btn_wrap > button {
+  color: #14402B;
+  font-size: 0.8vw;
+  border: 2px solid #14402B;
+  margin-left: 0.5vw;
+  line-height: 200%;
+  padding: 0 0.5vw;
+  border-radius: 0.5vw;
+  transition: all 0.5s;
+  background-color: #f7e8bb;
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-size: 0.8vw;
+  cursor: pointer;
+}
+#container .q_submit_wrap #q_submit .btn_wrap > button:hover {
+  background-color: #FDE390;
+}

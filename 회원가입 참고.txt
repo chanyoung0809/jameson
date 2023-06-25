@@ -1,0 +1,63 @@
+이메일 부분
+
+const emailDomainSelect = document.getElementById('email_domain_select');
+const emailDomainInput = document.querySelector('input[name="email_domain"]');
+
+emailDomainSelect.addEventListener('change', function() {
+  const selectedOption = emailDomainSelect.options[emailDomainSelect.selectedIndex];
+  if (selectedOption.value === '직접입력') {
+    emailDomainInput.value = '';
+    emailDomainInput.removeAttribute('readonly');
+  } else {
+    emailDomainInput.value = selectedOption.value;
+    emailDomainInput.setAttribute('readonly', 'readonly');
+  }
+});
+
+
+비밀번호 보이기/숨기기 토글
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  margin: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 10px;
+}
+
+function togglePasswordVisibility() {
+  const passwordInput = document.getElementById('passwordInput');
+  const passwordToggleIcon = document.querySelector('.password-toggle-icon');
+
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    passwordToggleIcon.classList.add('visible');
+  } else {
+    passwordInput.type = 'password';
+    passwordToggleIcon.classList.remove('visible');
+  }
+}
+
+아이디,비번 정규식 
+const idRgx = /^[\w\-]{6,12}$/;
+const pwRgx = /^(?=.*\d)(?=.*\w)[\w\d!@#$%^&*()-]{8,20}$/;

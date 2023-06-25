@@ -91,7 +91,7 @@ $context: "Pretendard";
             align-items: flex-start;
             position: relative;
             .whiskey {
-                font-size: 30px;
+                font-size: 1.5vw;
                 line-height: 200%;
                 font-family: $context;
                 font-weight: 800;
@@ -103,7 +103,7 @@ $context: "Pretendard";
                 border-radius: 10px;
                 position: absolute;
                 overflow: hidden;
-                height: 1.7vw;
+                height: 60%;
                 transition: all .5s;
                 right: 0;
                 z-index:9;
@@ -112,7 +112,6 @@ $context: "Pretendard";
                         position: absolute;
                         top:0;
                         left: 0;
-                        height: 32px;
                         width: 100%;
                         > span {
                             position: absolute;
@@ -123,7 +122,7 @@ $context: "Pretendard";
                             cursor: pointer;
                             width: 10%;
                             text-align: center;
-                            font-size: 30px;
+                            font-size: 1.5vw;
                             transition: all .5s;
                         }
                     }
@@ -138,7 +137,7 @@ $context: "Pretendard";
                     }
                 }
                 > .sorts2depth { 
-                    margin-top: 1.7vw;
+                    margin-top: 2.2vw;
                     > li {
                         background-color: $jDarkGreen;
                         &:hover {
@@ -153,7 +152,7 @@ $context: "Pretendard";
                     }    
                 }
                 &.on {
-                    height: 16.7vw;
+                    height: auto;
                     >.sort1depth {
                         > span {
                             transform: translateY(-50%) rotate(180deg);

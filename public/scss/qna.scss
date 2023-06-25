@@ -310,4 +310,147 @@ $context: "Pretendard";
             }
         }
     }
+    // qna 질문글쓰기 디자인
+    .q_submit_wrap {
+        padding-bottom: 4%;
+        width: 100%;
+        #q_submit {
+            width:60%;
+            margin: 0 auto;
+            border-top: 4px solid $jDarkGreen;
+            border-left: 8px solid $jDarkGreen;
+            border-right: 8px solid $jDarkGreen;
+            .detail_head {
+                background-color: $jDarkGreen;
+                color:$jOnion;
+                input {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    font-family: $context;
+                    font-weight: 500;
+                    background-color: $jBeige;
+                    font-size: 1vw;
+                    line-height: 160%;
+                    text-indent: .4vw;
+                    &::placeholder {
+                        font-family: $context;
+                        font-weight: 500;
+                        color:$jGreen;
+                        font-size: 1vw;
+                        line-height: 160%;
+                        text-indent: .4vw;
+                    }
+                }
+                .q_title_wrap {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    border-bottom: 4px solid $jDarkGreen;
+                    > label {
+                        font-family: $context;
+                        font-weight: 700;
+                        margin: 0 2%;
+                        line-height: 200%;
+                        font-size: 1vw;
+                        text-align: center;
+                        cursor: pointer;
+                    };
+                    #Q_title {
+                        width: 92%;
+                    }
+                }
+            }
+            #Q_context {
+                resize: none;
+                display: block;
+                width: 96%;
+                outline: none;
+                border: none;
+                background-color: $jBeige;
+                line-height: 160%;
+                font-family: $context;
+                font-size: 1vw;
+                color: $jDarkGreen;
+                padding: 1% 2%;
+                height: 300px;
+                max-height: 1500px;
+                overflow-y: auto;
+                font-weight: 500;
+                margin-bottom: 1%;
+                &::placeholder {
+                    font-family: $context;
+                    font-size: 1vw;
+                    color: $jGreen;
+                    font-weight: 500;
+                }
+            } 
+            .file_wrap {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 8px solid $jDarkGreen;
+                border-bottom: 4px solid $jDarkGreen;
+                > label {
+                    width: 20%;
+                    font-family: $context;
+                    font-weight: 700;
+                    padding: 0 2%;
+                    line-height: 200%;
+                    font-size: 1vw;
+                    text-align: center;
+                    color: $jOnion;
+                    background-color: $jDarkGreen;
+                    cursor: pointer;
+                }
+                #Q_file{
+                    width:75%;
+                    font-family: $context;
+                    color: $jDarkGreen;
+                    &::file-selector-button {
+                        background-color: $jDarkGreen;
+                        border: none;
+                        color: $jOnion;
+                        line-height: 160%;
+                        font-family: $context;
+                        border-radius: .5vw;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: $jGreen;
+                        }
+                    } 
+                }
+            }
+            .btn_wrap {
+                display: flex;
+                justify-content: flex-end;
+                font-family: $context;
+                font-weight: 700;
+                border-bottom: 2px solid $jDarkGreen;
+                background-color: $jDarkGreen;
+                border-top: 8px solid $jDarkGreen;
+                border-bottom: 8px solid $jDarkGreen;
+                > button {
+                    color: $jDarkGreen;
+                    font-size: .8vw;
+                    border: 2px solid $jDarkGreen;
+                    margin-left: .5vw;
+                    line-height: 200%;
+                    padding: 0 .5vw;
+                    border-radius: .5vw;
+                    transition: all .5s;
+                    background-color: $jBeige;
+                    font-family: $context;
+                    font-weight: 700;
+                    font-size: .8vw;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $jOnion;
+                    }
+                }
+            }
+        }
+    }
 }
