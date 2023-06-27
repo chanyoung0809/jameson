@@ -479,13 +479,373 @@ body.show {
         }
     }
 }
+
+/* 미디어쿼리 1000 */
+@media screen and (max-width:1000px){
+    #container {
+        > div {
+            // 전체상품 페이지
+            &.navis_wrap {
+                > h2 {
+                    font-size: 10vw;
+                    line-height: 120%;
+                    letter-spacing: -0.5vw;
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                .sorts {
+                    font-size: 2.5vw;
+                }
+            }
+            &.collections_wrap {
+                padding-bottom: 50px;
+                > div {
+                    .headline_wrap {
+                        background-color: $jDarkGreen;
+                        color: $jBeige;
+                        padding: 2vw 4%;
+                        > h3 {
+                            font-size: 6vw;
+                            line-height: 120%;
+                        }
+                        > p {
+                            font-size: 2vw;
+                        }
+                    }
+                    .collections {
+                        .prdBoxWrap {
+                            .prdBox {
+                                .img_box {
+                                    height: 50vw;
+                                    padding: 20px 0 0;
+                                    margin: 40px 0 20px;
+                                    > img {
+                                        height: 100%;
+                                    }
+                                } 
+                                .prdName {
+                                    font-size: 4vw;
+                                }
+                                .price {
+                                    font-size: 2vw;
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+            // 개별 상품 페이지
+            &.sitemap_wrap {
+                > h3 > a {
+                    font-size: 5vw;
+                }
+                > h5 > a {
+                    font-size: 2.5vw;
+                }
+            }
+            &.product_wrap {
+                .img_wrap {
+                    width: 50%;
+                    background: linear-gradient($jBeige, $jOnion);
+                    object-fit: cover;
+                    display: flex;
+                    justify-content: center;
+                    margin: 4% 5%;
+                    height: min-content;
+                    > img {
+                        margin: 5% 0;
+                        height: 40vw;
+                    }
+                    
+                }
+                .info_wrap {
+                    .name {
+                        font-size: 6vw;
+                        width: 80%;
+                        word-break: keep-all;
+                    }
+                    .attention_wrap {
+                        height: max-content;
+                        .title {
+                            cursor: pointer;
+                            .sub_notice {
+                                > li {
+                                    font-size: 1.2vw;
+                                }
+                            }
+                            &.on {
+                                .sub_notice {
+                                    height:auto;
+                                }
+                                .notify {
+                                    > .material-symbols-outlined {
+                                        transform: rotate(180deg) translate(10%, 10%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.detail_wrap {
+                display: flex;
+                width: 90%;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                > div {
+                    width: 60%;
+                    &:nth-child(2) {
+                        border-left: none;
+                        border-right: none;
+                    }
+                    .flex_box{
+                        > img {
+                            height: 5vw;
+                        }
+                        > h5 {
+                            font-size: 6vw;
+                        }
+                    }
+                    > ul {
+                        > li {
+                            font-size: 3vw;
+                        }
+                    }
+                }
+            }
+            &.recipe_wrap {
+                .title {
+                    font-size: 6vw;
+                    > img {
+                        width: 5.5vw;
+                    }
+                }
+                .swiper.detailSwiper {
+                    padding-top: 50px;
+                    .swiper-slide {
+                        width: 40vw;
+                        height: 50vw;
+                        .texts {
+                            > h5 {
+                                font-size: 3.5vw;
+                            }
+                            > a {
+                                width: 8vw;
+                                height: 8vw;
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                }
+                .toAll {
+                    > a {
+                        font-size: 2vw;
+                        > img {
+                            width: 2vw;
+                        }
+                    }
+                } 
+            }
+        }
+    }  
+}
 /* 미디어쿼리 1000 */
 
-@media screen and (max-width:1000px){
-    
-}    
-
-/* 미디어쿼리 500 */
 @media screen and (max-width:500px){
-   
-}
+    #container {
+        > div {
+            // 전체상품 페이지
+            &.navis_wrap {
+                > h2 {
+                    font-size: 14vw;
+                    line-height: 100%;
+                    margin: 0 auto 4%;
+                    letter-spacing: -.7vw;
+                }
+                .sorts {
+                    font-size: 5vw;
+                    > li {
+                        width: 50%;
+                        line-height: 100%;
+                        letter-spacing: -0.3vw;
+                        > a {
+                            display: block;
+                            color: #14402B;
+                            width: 80%;
+                            word-break: keep-all;
+                            margin: 4% auto;
+                        }
+                    }
+                }
+            }
+            &.collections_wrap {
+                padding-bottom: 50px;
+                > div {
+                    .headline_wrap {
+                        > h3 {
+                            font-size: 12vw;
+                            text-align: center;
+                        }
+                        > p {
+                            font-size: 4vw;
+                            word-break: keep-all;
+                            width: 80%;
+                            text-align: center;
+                            margin: 1% auto;
+                            line-height: 120%;
+                        }
+                    }
+                    .collections {
+                        .prdBoxWrap {
+                            width: 100%;
+                            border-right: none;
+                            .prdBox {
+                                .prdName {
+                                    font-size: 8vw;
+                                }
+                                .price {
+                                    font-size: 4vw;
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+            // 개별 상품 페이지
+            &.sitemap_wrap {
+                text-align: center;
+                > h3 > a {
+                    font-size: 12vw;
+                }
+                > h5 > a {
+                    font-size: 5vw;
+                }
+            }
+            &.product_wrap {
+                flex-direction: column;
+                .img_wrap {
+                    width: 90%;
+                    margin: 4% auto;
+                    height: min-content;
+                    > img {
+                        margin: 5% 0;
+                        height: 80vw;
+                    }
+                    
+                }
+                .info_wrap {
+                    width: 90%;
+                    margin: 0 auto;
+                    .name {
+                        width: 100%;
+                        word-break: keep-all;
+                        text-align: center;
+                        font-size: 14vw;
+                    }
+                    .context {
+                        font-size: 4vw;
+                        width: 100%;
+                        text-align: center;
+                    }
+                    .total_wrap {
+                        justify-content: center;
+                        width: 100%;
+                        .count_wrap {
+                            width: 100%;
+                            > span {
+                                height: 100%;
+                                font-size: 4vw;        
+                                width: 20%;        
+                            }
+                            .count {
+                                width: 60%;
+                                font-size: 4vw;
+                                line-height: 240%;          
+                            }
+                        }
+                    }
+                    .price_wrap {
+                        width: 100%;
+                        font-size: 5vw;
+                        margin: 4vw 0;
+                    }
+                    .attention_wrap {
+                        width: 100%;
+                        height: max-content;
+                        .title {
+                            cursor: pointer;
+                            .notify {
+                                font-size: 6vw;
+                                > .material-symbols-outlined {
+                                    display: flex;
+                                    font-size: 10vw;
+                                }
+                            }
+                            .sub_notice {
+                                > li {
+                                    font-size: 4vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.detail_wrap {
+                width: 90%;
+                > div {
+                    width: 100%;
+                    .flex_box{
+                        > img {
+                            height: 12vw;
+                        }
+                        > h5 {
+                            font-size: 16vw;
+                        }
+                    }
+                    > ul {
+                        > li {
+                            font-size: 6vw;
+                        }
+                    }
+                }
+            }
+            &.recipe_wrap {
+                .title {
+                    font-size: 12vw;
+                    line-height: 120%;
+                    padding: 8% 0 0;
+                    > img {
+                        display: none;
+                    }
+                }
+                .swiper.detailSwiper {
+                    padding-top: 50px;
+                    .swiper-slide {
+                        width: 60vw;
+                        height: 80vw;
+                        .texts {
+                            > h5 {
+                                font-size: 5vw;
+                            }
+                            > a {
+                                width: 12vw;
+                                height: 12vw;
+                                font-size: 3vw;
+                            }
+                        }
+                    }
+                }
+                .toAll {
+                    margin-top: 50px;
+                    > a {
+                        font-size: 4vw;
+                        > img {
+                            width: 4vw;
+                        }
+                    }
+                } 
+            }
+        }
+    }  
+}    

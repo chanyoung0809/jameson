@@ -1,6 +1,5 @@
 const q_submit = document.querySelector("#q_submit"); // 폼태그
 const Q_title = document.querySelector("#Q_title"); // 제목
-const Q_author = document.querySelector("#Q_author"); // 작성자
 const Q_date = document.querySelector("#Q_date"); // 작성날짜
 const Q_file = document.querySelector("#Q_file"); // 첨부파일
 const Q_context = document.querySelector("#Q_context"); // 질문내용
@@ -13,6 +12,7 @@ let validRequest = false; // 파일의 확장자명이 이미지인지 유효성
 let validCount = 0; //체크 시 이미지 파일인 경우에만 카운트가 1씩 증가
 
 Q_submit_btn.addEventListener("click", (e)=>{
+    e.preventDefault(); // 업로드 기능막고
     // 첨부파일이 있는 경우에만, 첨부파일 갯수만큼 반복문 처리
     if(Q_file.files && Q_file.files.length > 0){ 
         for(let i=0; i< Q_file.files.length; i++){
@@ -31,14 +31,13 @@ Q_submit_btn.addEventListener("click", (e)=>{
     
             if(result){ // 파일이 올바른 이미지 확장명인지를 확인
                 validCount++;
-                if(validCount === inputFile.files.length){
+                if(validCount === Q_file.files.length){
                     validRequest = true;
                 }
             }
         }
         if(validRequest){
             // validRequest 값이 true 라면
-            submitAuthor(); // 작성자와
             submitDate(); // 작성날짜 input 태그에 삽입
             q_submit.submit(); //업로드 기능 수행
         }
@@ -50,17 +49,11 @@ Q_submit_btn.addEventListener("click", (e)=>{
         }
     }
     else { //파일을 첨부하지 않은 경우
-        submitAuthor(); // 작성자와
         submitDate(); // 작성날짜 input 태그에 삽입
         q_submit.submit(); //업로드 기능 수행
     }
 });
 
-
-
-let submitAuthor = () => { // 글 작성자 삽입 함수
-    Q_author.value = login.userId;
-}
 
 let submitDate = ()=>{ // 글 작성 날짜 삽입 위한 함수
     let date = new Date(); // Date 생성

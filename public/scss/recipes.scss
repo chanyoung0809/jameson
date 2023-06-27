@@ -106,7 +106,7 @@ $context: "Pretendard";
                 height: 60%;
                 transition: all .5s;
                 right: 0;
-                z-index:9;
+                z-index:8;
                 li {
                     &.sort1depth {
                         position: absolute;
@@ -347,16 +347,19 @@ $context: "Pretendard";
                 display: none;
             }
             > h2 {
-                font-size: 10vw;
+                font-size: 12vw;
                 line-height: 120%;
                 text-align: center;
                 word-break: keep-all;
+                margin: 4% 0;
             }
             img:nth-child(4) {
                 width: 5vw;
+                margin-bottom: 4%;
             }
         }
         > div.sorting_wrap {
+            margin: 4% auto;
             .whiskey {
                 font-size: 3.5vw;
             }

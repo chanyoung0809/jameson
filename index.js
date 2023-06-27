@@ -344,7 +344,11 @@ app.get("/faq",(req,res)=>{
 // 답변 여부도 변수에 저장해야 함.
 app.get("/qna",(req,res)=>{
     if(req.user){
-        res.render("QnA", {login:req.user});
+        db.collection("QnAs").find().sort({Q_num:-1}).toArray((err,result)=>{
+            // find로 찾아온 데이터값은 result에 담긴다
+            // 상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
+            res.render("QnA", {login:req.user, data:result});
+        });
     }
     else {
         res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>")
@@ -353,25 +357,41 @@ app.get("/qna",(req,res)=>{
 
 // Qna 상세 글 페이지 - 공지사항
 app.get("/qna/detail/notice",(req,res)=>{
-    res.render("QnaNotice", {login:req.user});
+    if(req.user){
+        res.render("QnaNotice", {login:req.user});
+    }
+    else {
+        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>")
+    }
+    
 });
 
 // Qna 상세 글 페이지 - 상세 글
 app.get("/qna/detail/:idx",(req,res)=>{
-    db.collection("QnAs").findOne({num:Number(req.params.idx)},(err,result)=>{
-        //find로 찾아온 데이터값은 result에 담긴다
-        //상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
-        res.render("QnaDetail", {login:req.user, data:result});
-    });
+    if(req.user){
+        db.collection("QnAs").findOne({Q_num:Number(req.params.idx)},(err,result)=>{
+            // find로 찾아온 데이터값은 result에 담긴다
+            // 상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
+            res.render("QnaDetail", {login:req.user, data:result});
+        });
+    }
+    else {
+        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>")
+    }
 });
 
 //qna 질문하기 페이지
 app.get("/qna/q_insert", (req, res)=>{
-    res.render("QuestionSubmit", {login:req.user});
+    if(req.user){
+        res.render("QuestionSubmit", {login:req.user});
+    }
+    else {
+        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>")
+    }
 });
 
 //Qna 질문하기 DB 등록 작업
-app.post("/Qsubmit",upload.array("QnAs"),(req,res)=>{
+app.post("/Qsubmit", upload.array("Q_file"),(req,res)=>{
     let fileNames = [];
     if(req.files){ // 첨부파일이 있다면
         for(let i = 0; i < req.files.length; i++){
@@ -381,20 +401,72 @@ app.post("/Qsubmit",upload.array("QnAs"),(req,res)=>{
     }
     else {
         // 첨부파일이 없어도 게시글은 등록되어야 함
+        fileNames = [];
     }
-    db.collection("count").findOne({name:"qna갯수"},(err,countResult)=>{
+    db.collection("count").findOne({'name':"qna 갯수"},(err,countResult)=>{
         db.collection("QnAs").insertOne({
             Q_num:countResult.qnaCount,
             Q_title:req.body.Q_title,
-            Q_author:req.body.Q_author,
+            Q_author:req.user.memberName,
             Q_date:req.body.Q_date,
             Q_context:req.body.Q_context,
             attachfile:fileNames,
+            answer:false
             // 옮겨담은 배열명으로 첨부파일 수정
         },(err,result)=>{
-            db.collection("count").updateOne({name:"qna갯수"},{$inc:{qnaCount:1}},(err,result)=>{
+            db.collection("count").updateOne({'name':"qna 갯수"},{$inc:{qnaCount:1}},(err,result)=>{
                 res.redirect(`/qna/detail/${countResult.qnaCount}`);
             })
         })
     })
+});
+// qna - 답변하기(어드민 전용)
+app.get("/qna/answer/:idx",(req,res)=>{
+    if(req.user.role === 'ADMIN'){
+        db.collection("QnAs").findOne({Q_num:Number(req.params.idx)},(err,result)=>{
+            // find로 찾아온 데이터값은 result에 담긴다
+            // 상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
+            res.render("QnaAnswer", {login:req.user, data:result});
+        });
+    }
+    else {
+        res.send("<script>alert('관리자 전용 기능입니다.'); window.location.href='/';</script>")
+    }
+});
+//Qna 답변하기 DB 등록 작업
+app.post("/Aupdate", upload.array("Q_file"),(req,res)=>{
+    db.collection("QnAs").findOneAndUpdate(
+        // 업데이트할 문서를 찾기 위한 조건
+        { Q_num: Number(req.body.A_num) },
+        {
+          // 업데이트할 필드와 값들을 $set 연산자를 사용하여 지정
+          $set: {
+            answer: true,                    
+            // answer 필드를 true로 업데이트
+            A_date: req.body.A_date,         
+            // A_date 필드에 req.body.A_date 값을 추가
+            A_num: req.body.A_num,           
+            // A_num 필드에 req.body.A_num 값을 추가
+            A_author: req.user.memberName,   
+            // A_author 필드에 req.user.memberName 값을 추가
+            A_text: req.body.A_text,          
+            // A_text 필드에 req.body.A_text 값을 추가
+            }
+        },
+        { 
+          returnOriginal: false   // 업데이트된 문서를 반환하도록 설정
+        },
+        (err, result) => {
+            if (err) {
+                // 업데이트 실패 시 오류 처리
+                console.error("업데이트 실패:", err);
+                // 추가적인 오류 처리 로직을 구현하거나 사용자에게 알림을 제공할 수 있습니다.
+                res.status(500).send("업데이트를 수행하는 동안 오류가 발생했습니다.");
+            } 
+            else {
+                // 업데이트 성공 시 처리
+                res.redirect(`/qna/detail/${req.body.A_num}`);
+            }
+        }
+    );
 });

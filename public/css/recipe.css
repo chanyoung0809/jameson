@@ -97,7 +97,7 @@
   letter-spacing: 0.01vw;
 }
 #container > div .about_recipe_wrap > div > ul > li > a {
-  color: #14402B;
+  color: #0C592E;
 }
 #container > div .share_wrap {
   width: 92%;
@@ -417,3 +417,84 @@
   }
 }
 /* 미디어쿼리 500 */
+@media screen and (max-width: 500px) {
+  #container > div {
+    width: 100%;
+  }
+  #container > div > h2 {
+    font-size: 13vw;
+  }
+  #container > div .img_wrap {
+    width: 95%;
+  }
+  #container > div .img_wrap .thumbnail {
+    height: 50vw;
+  }
+  #container > div .about_recipe_wrap > div > h3 {
+    font-size: 3.5vw;
+  }
+  #container > div .about_recipe_wrap > div > ul > li {
+    font-size: 5vw;
+  }
+  #container > div .about_recipe_wrap > div > p {
+    font-size: 5vw;
+    width: 80%;
+  }
+  #container > div .share_wrap > img {
+    width: 12vw;
+  }
+  #container > div .share_wrap > p {
+    width: 70%;
+    font-size: 4vw;
+  }
+  #container > div .share_wrap > ul > button {
+    width: 8vw;
+    height: 8vw;
+    margin: 1vw;
+  }
+  #container > div .share_wrap > ul > button > i {
+    font-size: 4vw;
+  }
+  #container > div .recipes_slide_wrap .title {
+    font-size: 6vw;
+  }
+  #container > div .recipes_slide_wrap .title > img {
+    width: 4vw;
+    margin: 0 0.5vw;
+  }
+  #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide {
+    width: 50vw;
+    height: 65vw;
+  }
+  #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide > img {
+    height: 60%;
+    width: 92%;
+  }
+  #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide .texts > h5 {
+    font-size: 4vw;
+  }
+  #container > div .recipes_slide_wrap .swiper.recipesSwiper .swiper-slide .texts > a {
+    font-size: 1vw;
+    width: 20vw;
+    height: 8vw;
+    margin-top: 4%;
+  }
+  #container > div .recipes_slide_wrap .toAll {
+    margin-top: 50px;
+  }
+  #container > div .recipes_slide_wrap .toAll > a {
+    font-size: 3vw;
+    line-height: 400%;
+  }
+  #container > div .recipes_slide_wrap .toAll > a > img {
+    width: 3vw;
+    margin: 1vw;
+  }
+  #container > div .recipes_slide_wrap .toAll > a:hover {
+    background-color: #FDE390;
+    color: #14402B;
+  }
+  #container > div .recipes_slide_wrap .toAll > a:hover > img {
+    content: url("/img/star_marquee_DG.svg");
+  }
+}

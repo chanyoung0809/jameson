@@ -300,11 +300,16 @@ body.show {
   #header .center {
     width: 95%;
   }
+  .slide_gnb > ul {
+    top: 55%;
+    left: 47%;
+  }
   .slide_gnb > ul li {
     margin: 60px 0;
     justify-content: center;
   }
   .slide_gnb > ul li a {
+    line-height: 100%;
     font-size: 5vw;
   }
   .slide_gnb > ul li a img {
@@ -403,6 +408,7 @@ body.show {
   }
   .slide_gnb > ul li a {
     font-size: 5vw;
+    line-height: 180%;
   }
   .slide_gnb > ul li a img {
     width: 4.5vw;
@@ -505,7 +511,8 @@ body.show {
     width: 120%;
   }
   .slide_gnb > ul li a {
-    font-size: 10vw;
+    font-size: 8vw;
+    line-height: 120%;
   }
   .slide_gnb > ul li a img {
     width: 6vw;

@@ -20,32 +20,25 @@
                 <img src="/upload/<%- data.attachfile %>">
             <% } %>
         </pre>
-        <% if (data.answer) {%>
-            <div class="detail_head">
-                <p class="Q_num"><%- data.A_num %></p>
-                <p class="Q_title">문의해주신 내용에 대한 답변입니다.</p>
-                <p class="Q_date"><%- data.A_date %></p>
-            </div>
-            <div class="detail_author">
-                <span>Answer</span>
-                <p class="A_author">작성자 : <%- data.A_author %> </p>
-            </div>
-            <pre class="context">
-                <%- data.A_text %>
-            </pre>
-        <% } %>
+        <div class="detail_author">
+            <span>Answer</span>
+            <p class="A_author">작성자 : <%- login.memberName %> </p>
+        </div>
+        <form id="Aupdate" action="/Aupdate" method="post">
+            <textarea name="A_text" id="A_text" placeholder="답변을 입력하세요." ></textarea>
+            <input type="hidden" name="A_date" id="A_date"/>
+            <input type="hidden" name="A_num" id="A_num" value="<%- data.Q_num %>"/>
+            <button id="A_submit_Btn" type="submit">작성완료</button>
+        </form>
         <div class="btn_wrap">
             <% if (login) { %>
             <!-- 운영자만 사용 가능한 답변 기능 -->
-                <% if (login.role === "ADMIN") { %>
-                    <% if (data.answer == false) { %>
-                        <a href="/qna/answer/<%- data.Q_num %>">답변하기</a>
-                    <% } %>
+                <% if (login.role === "ADMIN" || login.memberName === data.Q_author) { %>
+                    <a href="/dbdelete/<%- data.Q_num %>">삭제하기</a>
                 <% } %>
-                <a href="/dbdelete/<%- data.Q_num %>">삭제하기</a>
             <% } %>
             <a href="/qna">뒤로가기</a>
         </div>
     </div>
 </div>
-<%- include('footer', {jsFiles:["tabMenu.js"]}) %> 
+<%- include('footer', {jsFiles:["tabMenu.js", "answer.js"]}) %> 

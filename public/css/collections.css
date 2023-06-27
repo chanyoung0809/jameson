@@ -453,4 +453,309 @@ body.show {
 }
 
 /* 미디어쿼리 1000 */
-/* 미디어쿼리 500 */
+@media screen and (max-width: 1000px) {
+  #container > div.navis_wrap > h2 {
+    font-size: 10vw;
+    line-height: 120%;
+    letter-spacing: -0.5vw;
+    width: 80%;
+    margin: 0 auto;
+  }
+  #container > div.navis_wrap .sorts {
+    font-size: 2.5vw;
+  }
+  #container > div.collections_wrap {
+    padding-bottom: 50px;
+  }
+  #container > div.collections_wrap > div .headline_wrap {
+    background-color: #14402B;
+    color: #f7e8bb;
+    padding: 2vw 4%;
+  }
+  #container > div.collections_wrap > div .headline_wrap > h3 {
+    font-size: 6vw;
+    line-height: 120%;
+  }
+  #container > div.collections_wrap > div .headline_wrap > p {
+    font-size: 2vw;
+  }
+  #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox .img_box {
+    height: 50vw;
+    padding: 20px 0 0;
+    margin: 40px 0 20px;
+  }
+  #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox .img_box > img {
+    height: 100%;
+  }
+  #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox .prdName {
+    font-size: 4vw;
+  }
+  #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox .price {
+    font-size: 2vw;
+  }
+  #container > div.sitemap_wrap > h3 > a {
+    font-size: 5vw;
+  }
+  #container > div.sitemap_wrap > h5 > a {
+    font-size: 2.5vw;
+  }
+  #container > div.product_wrap .img_wrap {
+    width: 50%;
+    background: linear-gradient(#f7e8bb, #FDE390);
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: flex;
+    justify-content: center;
+    margin: 4% 5%;
+    height: -moz-min-content;
+    height: min-content;
+  }
+  #container > div.product_wrap .img_wrap > img {
+    margin: 5% 0;
+    height: 40vw;
+  }
+  #container > div.product_wrap .info_wrap .name {
+    font-size: 6vw;
+    width: 80%;
+    word-break: keep-all;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap {
+    height: -moz-max-content;
+    height: max-content;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title {
+    cursor: pointer;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title .sub_notice > li {
+    font-size: 1.2vw;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title.on .sub_notice {
+    height: auto;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title.on .notify > .material-symbols-outlined {
+    transform: rotate(180deg) translate(10%, 10%);
+  }
+  #container > div.detail_wrap {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #container > div.detail_wrap > div {
+    width: 60%;
+  }
+  #container > div.detail_wrap > div:nth-child(2) {
+    border-left: none;
+    border-right: none;
+  }
+  #container > div.detail_wrap > div .flex_box > img {
+    height: 5vw;
+  }
+  #container > div.detail_wrap > div .flex_box > h5 {
+    font-size: 6vw;
+  }
+  #container > div.detail_wrap > div > ul > li {
+    font-size: 3vw;
+  }
+  #container > div.recipe_wrap .title {
+    font-size: 6vw;
+  }
+  #container > div.recipe_wrap .title > img {
+    width: 5.5vw;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper {
+    padding-top: 50px;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper .swiper-slide {
+    width: 40vw;
+    height: 50vw;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts > h5 {
+    font-size: 3.5vw;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts > a {
+    width: 8vw;
+    height: 8vw;
+    font-size: 2vw;
+  }
+  #container > div.recipe_wrap .toAll > a {
+    font-size: 2vw;
+  }
+  #container > div.recipe_wrap .toAll > a > img {
+    width: 2vw;
+  }
+}
+/* 미디어쿼리 1000 */
+@media screen and (max-width: 500px) {
+  #container > div.navis_wrap > h2 {
+    font-size: 14vw;
+    line-height: 100%;
+    margin: 0 auto 4%;
+    letter-spacing: -0.7vw;
+  }
+  #container > div.navis_wrap .sorts {
+    font-size: 5vw;
+  }
+  #container > div.navis_wrap .sorts > li {
+    width: 50%;
+    line-height: 100%;
+    letter-spacing: -0.3vw;
+  }
+  #container > div.navis_wrap .sorts > li > a {
+    display: block;
+    color: #14402B;
+    width: 80%;
+    word-break: keep-all;
+    margin: 4% auto;
+  }
+  #container > div.collections_wrap {
+    padding-bottom: 50px;
+  }
+  #container > div.collections_wrap > div .headline_wrap > h3 {
+    font-size: 12vw;
+    text-align: center;
+  }
+  #container > div.collections_wrap > div .headline_wrap > p {
+    font-size: 4vw;
+    word-break: keep-all;
+    width: 80%;
+    text-align: center;
+    margin: 1% auto;
+    line-height: 120%;
+  }
+  #container > div.collections_wrap > div .collections .prdBoxWrap {
+    width: 100%;
+    border-right: none;
+  }
+  #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox .prdName {
+    font-size: 8vw;
+  }
+  #container > div.collections_wrap > div .collections .prdBoxWrap .prdBox .price {
+    font-size: 4vw;
+  }
+  #container > div.sitemap_wrap {
+    text-align: center;
+  }
+  #container > div.sitemap_wrap > h3 > a {
+    font-size: 12vw;
+  }
+  #container > div.sitemap_wrap > h5 > a {
+    font-size: 5vw;
+  }
+  #container > div.product_wrap {
+    flex-direction: column;
+  }
+  #container > div.product_wrap .img_wrap {
+    width: 90%;
+    margin: 4% auto;
+    height: -moz-min-content;
+    height: min-content;
+  }
+  #container > div.product_wrap .img_wrap > img {
+    margin: 5% 0;
+    height: 80vw;
+  }
+  #container > div.product_wrap .info_wrap {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #container > div.product_wrap .info_wrap .name {
+    width: 100%;
+    word-break: keep-all;
+    text-align: center;
+    font-size: 14vw;
+  }
+  #container > div.product_wrap .info_wrap .context {
+    font-size: 4vw;
+    width: 100%;
+    text-align: center;
+  }
+  #container > div.product_wrap .info_wrap .total_wrap {
+    justify-content: center;
+    width: 100%;
+  }
+  #container > div.product_wrap .info_wrap .total_wrap .count_wrap {
+    width: 100%;
+  }
+  #container > div.product_wrap .info_wrap .total_wrap .count_wrap > span {
+    height: 100%;
+    font-size: 4vw;
+    width: 20%;
+  }
+  #container > div.product_wrap .info_wrap .total_wrap .count_wrap .count {
+    width: 60%;
+    font-size: 4vw;
+    line-height: 240%;
+  }
+  #container > div.product_wrap .info_wrap .price_wrap {
+    width: 100%;
+    font-size: 5vw;
+    margin: 4vw 0;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title {
+    cursor: pointer;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title .notify {
+    font-size: 6vw;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title .notify > .material-symbols-outlined {
+    display: flex;
+    font-size: 10vw;
+  }
+  #container > div.product_wrap .info_wrap .attention_wrap .title .sub_notice > li {
+    font-size: 4vw;
+  }
+  #container > div.detail_wrap {
+    width: 90%;
+  }
+  #container > div.detail_wrap > div {
+    width: 100%;
+  }
+  #container > div.detail_wrap > div .flex_box > img {
+    height: 12vw;
+  }
+  #container > div.detail_wrap > div .flex_box > h5 {
+    font-size: 16vw;
+  }
+  #container > div.detail_wrap > div > ul > li {
+    font-size: 6vw;
+  }
+  #container > div.recipe_wrap .title {
+    font-size: 12vw;
+    line-height: 120%;
+    padding: 8% 0 0;
+  }
+  #container > div.recipe_wrap .title > img {
+    display: none;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper {
+    padding-top: 50px;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper .swiper-slide {
+    width: 60vw;
+    height: 80vw;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts > h5 {
+    font-size: 5vw;
+  }
+  #container > div.recipe_wrap .swiper.detailSwiper .swiper-slide .texts > a {
+    width: 12vw;
+    height: 12vw;
+    font-size: 3vw;
+  }
+  #container > div.recipe_wrap .toAll {
+    margin-top: 50px;
+  }
+  #container > div.recipe_wrap .toAll > a {
+    font-size: 4vw;
+  }
+  #container > div.recipe_wrap .toAll > a > img {
+    width: 4vw;
+  }
+}

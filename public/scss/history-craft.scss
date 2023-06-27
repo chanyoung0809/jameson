@@ -41,7 +41,7 @@ body.show {
             font-family: $headline;       
             color:$jDarkGreen;
             > h2 {
-                letter-spacing: -8px;
+                letter-spacing: -.3vw;
                 font-size: 6vw;
                 line-height: 150%;
                 text-align: center;
@@ -193,10 +193,284 @@ body.show {
 /* 미디어쿼리 1000 */
 
 @media screen and (max-width:1000px){
-   
+    #container {
+        > div {
+            &.title {
+                > h2 {
+                    font-size: 10vw;
+                    letter-spacing: -.5vw;
+                }
+                > .titles {
+                    &.history {
+                        > li {
+                            width: 33.333333%;
+                        }
+                    }
+                    &.craft {
+                        flex-wrap: wrap;
+                        > li {
+                            width: 33.333333%;
+                            &:nth-child(1) {
+                                width: 50%;
+                            }
+                            &:nth-child(2) {
+                                width: 50%;
+                            }
+                        }
+                    }
+                    > li {
+                        padding: 1% 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        > a {
+                            line-height: 120%;
+                            font-size: 3vw;
+                            width: 29%;
+                            word-break: keep-all;
+                        }
+                    }
+                }
+            }
+            &.wrap {
+                display: flex;
+                justify-content: center;
+                padding: 4% 0;
+                > .center {
+                    width: 92%;
+                    display: flex;
+                    justify-content: space-between;
+                    .image-container {
+                        width:50%;
+                        object-fit: cover;
+                        > img {
+                            display: block;
+                            width: 100%;
+                            margin-right:auto;
+                            margin-left: unset;
+                        }
+                    }
+                    .text-container {
+                        width: 45%;
+                        color: $jDarkGreen;
+                        > h6 {
+                            font-size: 2vw;
+                            line-height: 160%;
+                        }
+                        > h2 {
+                            font-size: 7vw;
+                        }
+                        > p {
+                            font-size: 1.3vw;
+                        }
+                    }
+                } 
+                &.on {
+                    background-color: $jDarkGreen;
+                    > .center {
+                        flex-direction: row-reverse;
+                        justify-content: space-between;
+                        .image-container {
+                            > img {
+                                display: block;
+                                width: 100%;
+                                margin-right:unset;
+                                margin-left: auto;
+                            }
+                        }
+                        .text-container {
+                            width: 45%;
+                            color: $jBeige;
+                        }
+                    }
+                }        
+            }
+            &.move_wrap {
+                width: 92%;
+                margin: 0 auto;
+                padding: 1% 0 2%;
+                a {
+                    &.go_craft {
+                        margin-left: auto;
+                        > img {
+                            width: 7vw;
+                            margin-left: 4vw;
+                        }
+                        &:hover {
+                            > img {
+                                transform: translateY(-25%); 
+                            }
+                        }
+                    }
+                    &.go_history {
+                        margin-right: auto;
+                        > img {
+                            transform:scaleX(-1);
+                            width: 7vw;
+                            margin-right: 4vw;
+                        }
+                        &:hover {
+                            > img {
+                                transform: scaleX(-1) translateY(-25%); 
+                            }
+                        }
+                    }
+                    width: max-content;
+                    display: flex;
+                    align-items: center;
+                    font-family: $headline;
+                    color: $jDarkGreen;
+                    font-size: 2.5vw;
+                    > span {
+                        opacity: 1;
+                        transition: all .5s;
+                    }
+                }
+            }
+        }
+    }
 }    
 
 /* 미디어쿼리 500 */
 @media screen and (max-width:500px){
-    
+    #container {
+        > div {
+            &.title {
+                > h2 {
+                    font-size: 12vw;
+                    letter-spacing: -0.5vw;
+                    width: 80%;
+                    line-height: 100%;
+                    padding: 2% 0;
+                    margin: 0 auto;
+                }
+                > .titles {
+                    &.history {
+                        > li {
+                            width: 33.333333%;
+                        }
+                    }
+                    &.craft {
+                        flex-wrap: wrap;
+                        > li {
+                            width: 33.333333%;
+                            &:nth-child(1) {
+                                width: 50%;
+                            }
+                            &:nth-child(2) {
+                                width: 50%;
+                            }
+                        }
+                    }
+                    > li {
+                        padding: 1% 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        > a {
+                            line-height: 120%;
+                            font-size: 3vw;
+                            width: 29%;
+                            word-break: keep-all;
+                        }
+                    }
+                }
+            }
+            &.wrap {
+                display: flex;
+                justify-content: center;
+                padding: 4% 0;
+                > .center {
+                    width: 92%;
+                    display: flex;
+                    justify-content: space-between;
+                    .image-container {
+                        width:50%;
+                        object-fit: cover;
+                        > img {
+                            display: block;
+                            width: 100%;
+                            margin-right:auto;
+                            margin-left: unset;
+                        }
+                    }
+                    .text-container {
+                        width: 45%;
+                        color: $jDarkGreen;
+                        > h6 {
+                            font-size: 2vw;
+                            line-height: 160%;
+                        }
+                        > h2 {
+                            font-size: 7vw;
+                        }
+                        > p {
+                            font-size: 1.3vw;
+                        }
+                    }
+                } 
+                &.on {
+                    background-color: $jDarkGreen;
+                    > .center {
+                        flex-direction: row-reverse;
+                        justify-content: space-between;
+                        .image-container {
+                            > img {
+                                display: block;
+                                width: 100%;
+                                margin-right:unset;
+                                margin-left: auto;
+                            }
+                        }
+                        .text-container {
+                            width: 45%;
+                            color: $jBeige;
+                        }
+                    }
+                }        
+            }
+            &.move_wrap {
+                width: 92%;
+                margin: 0 auto;
+                padding: 1% 0 2%;
+                a {
+                    &.go_craft {
+                        margin-left: auto;
+                        > img {
+                            width: 7vw;
+                            margin-left: 4vw;
+                        }
+                        &:hover {
+                            > img {
+                                transform: translateY(-25%); 
+                            }
+                        }
+                    }
+                    &.go_history {
+                        margin-right: auto;
+                        > img {
+                            transform:scaleX(-1);
+                            width: 7vw;
+                            margin-right: 4vw;
+                        }
+                        &:hover {
+                            > img {
+                                transform: scaleX(-1) translateY(-25%); 
+                            }
+                        }
+                    }
+                    width: max-content;
+                    display: flex;
+                    align-items: center;
+                    font-family: $headline;
+                    color: $jDarkGreen;
+                    font-size: 2.5vw;
+                    > span {
+                        opacity: 1;
+                        transition: all .5s;
+                    }
+                }
+            }
+        }
+    }
 }

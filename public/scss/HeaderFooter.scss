@@ -336,10 +336,13 @@ body.show {
     }
     .slide_gnb {
         > ul {
+            top: 55%;
+            left: 47%;
             li {
                 margin: 60px 0;
                 justify-content: center;
                 a {
+                    line-height: 100%;
                     font-size: 5vw;
                     img{
                         width:4.5vw;
@@ -446,6 +449,7 @@ body.show {
                 justify-content: center;
                 a {
                     font-size: 5vw;
+                    line-height: 180%;
                     img{
                         width:4.5vw;
                         margin-right: 10px;
@@ -563,7 +567,8 @@ body.show {
             li {
                 width: 120%;
                 a {
-                    font-size: 10vw;
+                    font-size: 8vw;
+                    line-height: 120%;
                     img{
                         width:6vw;
                     }

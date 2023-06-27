@@ -27,7 +27,7 @@ body.show {
   color: #14402B;
 }
 #container > div.title > h2 {
-  letter-spacing: -8px;
+  letter-spacing: -0.3vw;
   font-size: 6vw;
   line-height: 150%;
   text-align: center;
@@ -166,4 +166,256 @@ body.show {
 }
 
 /* 미디어쿼리 1000 */
+@media screen and (max-width: 1000px) {
+  #container > div.title > h2 {
+    font-size: 10vw;
+    letter-spacing: -0.5vw;
+  }
+  #container > div.title > .titles.history > li {
+    width: 33.333333%;
+  }
+  #container > div.title > .titles.craft {
+    flex-wrap: wrap;
+  }
+  #container > div.title > .titles.craft > li {
+    width: 33.333333%;
+  }
+  #container > div.title > .titles.craft > li:nth-child(1) {
+    width: 50%;
+  }
+  #container > div.title > .titles.craft > li:nth-child(2) {
+    width: 50%;
+  }
+  #container > div.title > .titles > li {
+    padding: 1% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #container > div.title > .titles > li > a {
+    line-height: 120%;
+    font-size: 3vw;
+    width: 29%;
+    word-break: keep-all;
+  }
+  #container > div.wrap {
+    display: flex;
+    justify-content: center;
+    padding: 4% 0;
+  }
+  #container > div.wrap > .center {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #container > div.wrap > .center .image-container {
+    width: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #container > div.wrap > .center .image-container > img {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: unset;
+  }
+  #container > div.wrap > .center .text-container {
+    width: 45%;
+    color: #14402B;
+  }
+  #container > div.wrap > .center .text-container > h6 {
+    font-size: 2vw;
+    line-height: 160%;
+  }
+  #container > div.wrap > .center .text-container > h2 {
+    font-size: 7vw;
+  }
+  #container > div.wrap > .center .text-container > p {
+    font-size: 1.3vw;
+  }
+  #container > div.wrap.on {
+    background-color: #14402B;
+  }
+  #container > div.wrap.on > .center {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  #container > div.wrap.on > .center .image-container > img {
+    display: block;
+    width: 100%;
+    margin-right: unset;
+    margin-left: auto;
+  }
+  #container > div.wrap.on > .center .text-container {
+    width: 45%;
+    color: #f7e8bb;
+  }
+  #container > div.move_wrap {
+    width: 92%;
+    margin: 0 auto;
+    padding: 1% 0 2%;
+  }
+  #container > div.move_wrap a {
+    width: -moz-max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    font-family: "HSBombaram21-Regular";
+    color: #14402B;
+    font-size: 2.5vw;
+  }
+  #container > div.move_wrap a.go_craft {
+    margin-left: auto;
+  }
+  #container > div.move_wrap a.go_craft > img {
+    width: 7vw;
+    margin-left: 4vw;
+  }
+  #container > div.move_wrap a.go_craft:hover > img {
+    transform: translateY(-25%);
+  }
+  #container > div.move_wrap a.go_history {
+    margin-right: auto;
+  }
+  #container > div.move_wrap a.go_history > img {
+    transform: scaleX(-1);
+    width: 7vw;
+    margin-right: 4vw;
+  }
+  #container > div.move_wrap a.go_history:hover > img {
+    transform: scaleX(-1) translateY(-25%);
+  }
+  #container > div.move_wrap a > span {
+    opacity: 1;
+    transition: all 0.5s;
+  }
+}
 /* 미디어쿼리 500 */
+@media screen and (max-width: 500px) {
+  #container > div.title > h2 {
+    font-size: 12vw;
+    letter-spacing: -0.5vw;
+    width: 80%;
+    line-height: 100%;
+    padding: 2% 0;
+    margin: 0 auto;
+  }
+  #container > div.title > .titles.history > li {
+    width: 33.333333%;
+  }
+  #container > div.title > .titles.craft {
+    flex-wrap: wrap;
+  }
+  #container > div.title > .titles.craft > li {
+    width: 33.333333%;
+  }
+  #container > div.title > .titles.craft > li:nth-child(1) {
+    width: 50%;
+  }
+  #container > div.title > .titles.craft > li:nth-child(2) {
+    width: 50%;
+  }
+  #container > div.title > .titles > li {
+    padding: 1% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #container > div.title > .titles > li > a {
+    line-height: 120%;
+    font-size: 3vw;
+    width: 29%;
+    word-break: keep-all;
+  }
+  #container > div.wrap {
+    display: flex;
+    justify-content: center;
+    padding: 4% 0;
+  }
+  #container > div.wrap > .center {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #container > div.wrap > .center .image-container {
+    width: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #container > div.wrap > .center .image-container > img {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: unset;
+  }
+  #container > div.wrap > .center .text-container {
+    width: 45%;
+    color: #14402B;
+  }
+  #container > div.wrap > .center .text-container > h6 {
+    font-size: 2vw;
+    line-height: 160%;
+  }
+  #container > div.wrap > .center .text-container > h2 {
+    font-size: 7vw;
+  }
+  #container > div.wrap > .center .text-container > p {
+    font-size: 1.3vw;
+  }
+  #container > div.wrap.on {
+    background-color: #14402B;
+  }
+  #container > div.wrap.on > .center {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  #container > div.wrap.on > .center .image-container > img {
+    display: block;
+    width: 100%;
+    margin-right: unset;
+    margin-left: auto;
+  }
+  #container > div.wrap.on > .center .text-container {
+    width: 45%;
+    color: #f7e8bb;
+  }
+  #container > div.move_wrap {
+    width: 92%;
+    margin: 0 auto;
+    padding: 1% 0 2%;
+  }
+  #container > div.move_wrap a {
+    width: -moz-max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    font-family: "HSBombaram21-Regular";
+    color: #14402B;
+    font-size: 2.5vw;
+  }
+  #container > div.move_wrap a.go_craft {
+    margin-left: auto;
+  }
+  #container > div.move_wrap a.go_craft > img {
+    width: 7vw;
+    margin-left: 4vw;
+  }
+  #container > div.move_wrap a.go_craft:hover > img {
+    transform: translateY(-25%);
+  }
+  #container > div.move_wrap a.go_history {
+    margin-right: auto;
+  }
+  #container > div.move_wrap a.go_history > img {
+    transform: scaleX(-1);
+    width: 7vw;
+    margin-right: 4vw;
+  }
+  #container > div.move_wrap a.go_history:hover > img {
+    transform: scaleX(-1) translateY(-25%);
+  }
+  #container > div.move_wrap a > span {
+    opacity: 1;
+    transition: all 0.5s;
+  }
+}

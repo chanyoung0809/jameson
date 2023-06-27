@@ -212,8 +212,28 @@ $context: "Pretendard";
                 }
                 
             }
+        }   
+        .btn_wrap{
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            background-color: $jDarkGreen;
+            > a {
+                font-family: $context;
+                font-weight: 700;
+                color:$jOnion;
+                font-size: .8vw;
+                border: 2px solid $jBeige;
+                border-radius: .5vw;
+                margin-right: 1vw;
+                line-height: 200%;
+                margin: .5vw 1vw;
+                padding: 0 1%;
+            }
         }
     }
+
     // qna 세부 게시글 디자인
     .qna_detail {
         width: 80%;
@@ -275,6 +295,11 @@ $context: "Pretendard";
         .context {
             padding: 1% 2%;
             border-bottom: 2px solid $jDarkGreen;
+            font-family: $context;
+            font-size: 1vw;
+            line-height: 200%;
+            white-space: pre-line;
+            color: #14402B;
             > p {
                 line-height: 200%;
                 font-family: $context;
@@ -452,6 +477,43 @@ $context: "Pretendard";
                     }
                 }
             }
+        }
+    }
+    #Aupdate {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 98%;
+        margin: 0 auto;
+        #A_text {
+            width: 90%;
+            height: 200px;
+            overflow-y: auto;
+            resize: none;
+            margin: 1% 0;
+            border: 2px solid $jDarkGreen;
+            text-indent: 1%;
+            line-height: 160%;
+            background-color: transparent;
+            font-family: $context;
+            padding: 1% 0;
+            font-size: 1vw;
+            outline: none;
+        }
+        #A_submit_Btn {
+            display: block;
+            width: 8%;
+            margin-bottom: 1%;
+            line-height: 360%;
+            border: none;
+            text-align: center;
+            font-family: $context;
+            background-color: $jDarkGreen;
+            color:$jOnion;
+            font-weight: 800;
+            border-radius: .5vw;
+            cursor: pointer;
+            font-size: .8vw;
         }
     }
 }

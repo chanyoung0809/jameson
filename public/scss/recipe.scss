@@ -115,7 +115,7 @@ $context: "Pretendard";
                 > ul {
                     > li {
                        > a {
-                            color: $jDarkGreen;
+                            color: $jGreen;
                        }
                     }
                 }
@@ -451,5 +451,101 @@ $context: "Pretendard";
 
 /* 미디어쿼리 500 */
 @media screen and (max-width:500px){
-
+    #container {
+        > div {
+            width: 100%;
+            > h2 {
+                font-size: 13vw;
+            }
+            .img_wrap {
+                width: 95%;
+                .thumbnail {
+                    height: 50vw;
+                }
+            }
+            .about_recipe_wrap {
+                > div {
+                    > h3 {
+                        font-size: 3.5vw;
+                    } 
+                    > ul {
+                        > li {
+                            font-size: 5vw;
+                        }
+                    }
+                    > p {
+                        font-size: 5vw;
+                        width: 80%;
+                    }
+                }
+            }
+            .share_wrap {
+                > img {
+                    width: 12vw;
+                }
+                > p {
+                    width:70%;
+                    font-size: 4vw;
+                }
+                > ul {
+                    > button {
+                        width: 8vw;
+                        height: 8vw;
+                        margin: 1vw;
+                        > i {
+                            font-size: 4vw;
+                        }
+                    }
+                }
+            }
+            .recipes_slide_wrap {
+                .title {
+                    font-size: 6vw;
+                    > img {
+                        width: 4vw;
+                        margin: 0 .5vw;
+                    }
+                }
+                .swiper.recipesSwiper {
+                    .swiper-slide {
+                        width: 50vw;
+                        height: 65vw;
+                        > img {
+                            height: 60%;
+                            width: 92%;
+                        }
+                        .texts {
+                            > h5 {
+                                font-size: 4vw;
+                            }
+                            > a {
+                                font-size: 1vw;
+                                width: 20vw;
+                                height: 8vw;
+                                margin-top: 4%;
+                            }
+                        }
+                    }
+                }
+                .toAll {
+                    margin-top: 50px;
+                    > a {
+                        font-size: 3vw;
+                        line-height: 400%;
+                        > img {
+                            width: 3vw;
+                            margin: 1vw;
+                        }
+                        &:hover {
+                            background-color: $jOnion;
+                            color: $jDarkGreen;
+                            > img {
+                                content: url("/img/star_marquee_DG.svg");
+                            }
+                        }
+                    }
+                } 
+            } 
+        }  
+    }
 }
