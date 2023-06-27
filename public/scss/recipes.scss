@@ -275,10 +275,137 @@ $context: "Pretendard";
 /* 미디어쿼리 1000 */
 
 @media screen and (max-width:1000px){
-
+    #container {
+        > div.headlines {
+            img:nth-child(1) {
+                width: 5vw;
+                margin-bottom: 4%;
+            }
+            .sub_headline {
+                font-size: 3vw;
+                width: 64%;
+                text-align: center;
+                word-break: keep-all;
+                line-height: 120%;
+            }
+            > h2 {
+                font-size: 8vw;
+                line-height: 200%;
+            }
+        }
+        > div.sorting_wrap {
+            .whiskey {
+                font-size: 2.5vw;
+            }
+            .sorts {
+                width: 26%;
+                height: 75%;
+                li a {
+                    font-size: 2vw;
+                    line-height: 200%;
+                    font-weight: 600;
+                }
+                li.sort1depth {
+                    > span {
+                        font-size: 2vw;
+                    }
+                }
+                .sorts2depth {
+                    margin-top: 4.2vw;
+                }
+            }
+        }
+        > div.recipes_wrap {
+            .recipes {
+                width: 47%;
+                &:nth-child(3) {
+                    display: none;
+                }
+                >.texts {
+                    padding-bottom: 0%;
+                    > h5 {
+                        font-size: 3.5vw;
+                    }
+                    > a {
+                        width: 8vw;
+                        height: 8vw;
+                    }
+                }
+            }
+        }
+    }
 }    
 
 /* 미디어쿼리 500 */
 @media screen and (max-width:500px){
-
+    #container {
+        > div.headlines {
+            img:nth-child(1) {
+                width: 6vw;
+            }
+            .sub_headline {
+                display: none;
+            }
+            > h2 {
+                font-size: 10vw;
+                line-height: 120%;
+                text-align: center;
+                word-break: keep-all;
+            }
+            img:nth-child(4) {
+                width: 5vw;
+            }
+        }
+        > div.sorting_wrap {
+            .whiskey {
+                font-size: 3.5vw;
+            }
+            .sorts {
+                width: 40%;
+                height: 75%;
+                li a {
+                    font-size: 3vw;
+                    line-height: 200%;
+                    font-weight: 600;
+                }
+                li.sort1depth {
+                    > span {
+                        font-size: 3vw;
+                    }
+                }
+                .sorts2depth {
+                    margin-top: 5vw;
+                }
+            }
+        }
+        > div.recipes_wrap {
+            padding-top: 5vw;
+            padding-bottom: 10vw;
+            .recipes {
+                width: 98%;
+                margin: 0 auto 8%;
+                &:nth-child(3) {
+                    display: none;
+                }
+                >.texts {
+                    padding-bottom: 0%;
+                    > h5 {
+                        font-size: 7vw;
+                    }
+                    > a {
+                        width: 16vw;
+                        height: 16vw;
+                    }
+                }
+            }
+            .more_wrap {
+                > button { 
+                    font-size: 5vw;
+                    > img {
+                        width: 4vw;
+                    }
+                }
+            }
+        }
+    }
 }

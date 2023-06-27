@@ -6,57 +6,73 @@
     </div>
     <form class="qnas">
         <div class="t_header">
-            <p class="Q_checkbox"><input type="checkbox"/></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><input type="checkbox"/></p>
+            <% } %>
             <p class="Q_num">NO</p>
             <p class="Q_title">제목</p>
             <p class="Q_author">작성자</p>
             <p class="Q_date">작성일자</p>
         </div>
         <div class="t_notice">
-            <p class="Q_checkbox"><!-- 삭제되면 안되는 공지사항이므로 체크박스 없이 작업.--></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><!-- 삭제되면 안되는 공지사항이므로 체크박스 없이 작업.--></p>
+            <% } %>
             <p class="Q_num"><img src="/img/star_marquee_onion.svg"></p>
-            <p class="Q_title"><a href="/qna/detail/0">공지사항 (필독)</a></p>
+            <p class="Q_title"><a href="/qna/detail/notice">공지사항 (필독)</a></p>
             <p class="Q_author">관리자</p>
             <p class="Q_date">2022-06-23</p>
         </div>
         <!-- 반복문으로 태그생성해줄 구간 -->
         <div class="t_body">
-            <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% } %>
             <p class="Q_num">6</p>
             <p class="Q_title"><a href="#">질문사항입니다</a></p>
             <p class="Q_author">관리자</p>
             <p class="Q_date">2023-06-23</p>
         </div>
         <div class="t_body">
-            <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% } %>
             <p class="Q_num">5</p>
             <p class="Q_title"><a href="#">질문사항입니다</a></p>
             <p class="Q_author">관리자</p>
             <p class="Q_date">2023-06-23</p>
         </div>
         <div class="t_body">
-            <p class="Q_checkbox"><input type="checkbox"  name="delOk[]"/></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% } %>
             <p class="Q_num">4</p>
             <p class="Q_title"><a href="#">질문사항입니다</a></p>
             <p class="Q_author">관리자</p>
             <p class="Q_date">2023-06-23</p>
         </div>
         <div class="t_body">
-            <p class="Q_checkbox"><input type="checkbox"  name="delOk[]"/></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% } %>
             <p class="Q_num">3</p>
             <p class="Q_title"><a href="#">질문사항입니다</a></p>
             <p class="Q_author">관리자</p>
             <p class="Q_date">2023-06-23</p>
         </div>
         <div class="t_body">
-            <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% } %>
             <p class="Q_num">2</p>
             <p class="Q_title"><a href="#">질문사항입니다</a></p>
             <p class="Q_author">관리자</p>
             <p class="Q_date">2023-06-23</p>
         </div>
         <div class="t_body">
-            <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% if (login.role === "ADMIN") { %>
+                <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+            <% } %>
             <p class="Q_num">1</p>
             <p class="Q_title"><a href="#">질문사항입니다</a></p>
             <p class="Q_author">관리자</p>

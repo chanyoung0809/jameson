@@ -277,7 +277,176 @@ $context: "Pretendard";
 /* 미디어쿼리 1000 */
 
 @media screen and (max-width:1000px){
-
+    #container {
+        /* 레시피 세부 페이지 */
+        > div {
+            width: 100%;
+            > h2 {
+                font-size: 10vw;
+            }
+            .img_wrap {
+                width: 100%;
+                > a {
+                    justify-content: center;
+                    width: 20%;
+                    > img {
+                        height: 8vw;     
+                        margin-bottom: 1vw;    
+                    }
+                    > span {
+                        font-size: 2vw;
+                        width: 50%;
+                        word-break: keep-all;
+                        text-align: center;
+                    }
+                    &:nth-child(1) {
+                        flex-direction: column-reverse;
+                    }
+                    &:nth-child(3) {
+                        flex-direction: column;
+                        > img {
+                            margin-top: 10%;
+                        }
+                    }
+                    &:hover {
+                        > span {
+                            opacity: 1;
+                        }
+                    }
+                }
+                .thumbnail {
+                    height: 50vw;
+                }
+            }
+            .about_recipe_wrap {
+                width: 95%;
+                justify-content: center;
+                flex-direction: column;
+                > div {
+                    width: 100%;
+                    font-size: 1.5vw;
+                    margin-bottom: 4vw;
+                    > h3 {
+                        font-size: 2.5vw;
+                    } 
+                    > p {
+                        width: 50%;
+                        margin: 0 auto;
+                        font-size: 3vw;
+                        line-height: 200%;
+                    }
+                    > ul {
+                        > li {
+                            font-size: 3vw;
+                            line-height: 200%;
+                        }
+                    }
+                }
+            }
+            .share_wrap {
+                width: 95%;
+                > img {
+                    width: 8vw;
+                    margin: 4% auto 8%;
+                }
+                > p {
+                    width:50%;
+                    word-break: keep-all;
+                    font-size: 3vw;
+                    line-height: 120%;
+                }
+                > ul {
+                    > button {
+                        width: 6vw;
+                        height: 6vw;
+                        margin: 1vw 1vw;
+                        > i {
+                            font-size: 2vw;
+                        }
+                    }
+                }
+            }
+            .recipes_slide_wrap {
+                width: 100%;
+                background-color: $jDarkGreen;
+                padding-top: 4%;
+                .title {
+                    font-size: 5vw;
+                    > img {
+                        width: 3.5vw;
+                        vertical-align: middle;
+                        margin: 0 1vw;
+                    }
+                }
+                .swiper.recipesSwiper {
+                    .swiper-slide {
+                        width: 36vw;
+                        height: 48vw;
+                        > img {
+                            height: 60%;
+                            width: 92%;
+                            object-fit: cover;
+                            display: block;
+                            margin: 4% auto;
+                            border-radius: 10px;
+                        }
+                        .texts {
+                            width: 92%;
+                            margin: 4% auto;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            > h5 {
+                                font-size: 3vw;
+                            }
+                            > a {
+                                width: 15vw;
+                                height: 6vw;
+                                font-size: 16px;
+                                margin-top: 4%;
+                            }
+                        }
+                    }
+                }
+                .toAll {
+                    margin-top: 100px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all .5s;
+                    > a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: $context;
+                        background-color: $jDarkGreen;
+                        color: $jOnion;
+                        font-weight: 800;
+                        font-size: 20px;
+                        line-height: 400%;
+                        margin-bottom: 4vw;
+                        border: 4px solid $jOnion;
+                        border-radius: 10px;
+                        transition: all .5s;
+                        > img {
+                            width: 20px;
+                            margin: 0 10px;
+                            transition: all .5s;
+                        }
+                        &:hover {
+                            background-color: $jOnion;
+                            color: $jDarkGreen;
+                            > img {
+                                content: url("/img/star_marquee_DG.svg");
+                            }
+                        }
+                    }
+                } 
+            } 
+        }  
+    }
 }    
 
 /* 미디어쿼리 500 */

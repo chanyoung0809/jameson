@@ -58,6 +58,7 @@ $context: "Pretendard";
             font-weight: 700;
             line-height: 120%;
             color: $jKhaki;
+            word-break: keep-all;
         }
     }
     .input_area {
@@ -101,6 +102,36 @@ $context: "Pretendard";
             > img {
                 opacity: 1;
             }
+        }
+    }
+}
+@media screen and (max-width:1000px){ 
+    .wrap {
+        .title {
+            margin-top: 4%;
+            > h3 {
+                width: 80%;
+                font-size: 6vw;
+            }
+            > p {
+                font-size: 2vw;
+                width: 65%;
+                margin: 1% auto 0;
+            }
+        }
+        .input_area {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            margin: 4% auto;
+            > input {
+                width: 14vw;
+                height: 16vw;
+            }
+        }
+        > a {
+            font-size: 2vw;
+            padding: 2vw 0;
         }
     }
 }

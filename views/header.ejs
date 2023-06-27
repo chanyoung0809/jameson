@@ -33,11 +33,11 @@
             <h1 class="logo_wrap"><a href="/"><img src="/img/Jameson_logo.svg"></a></h1>
             <div class="buy_wrap">
                 <a href="/location">구매처</a>
-                <%# (login) ? '/mypage' : '/login' %>
-                <a href="" class="buy_btn">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
+                <% if (login) { %>
+                    <a href="/mypage"><%- login.memberName %>님</a>
+                <% } %>
+                <a href="<%- (login) ? '/logout' : '/login' %>" class="buy_btn">   
+                    <%- (login) ? 'LOGOUT' : 'LOGIN' %>
                 </a>
             </div>
         </div>

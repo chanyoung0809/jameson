@@ -28,13 +28,13 @@ passport.use(new LocalStrategy({
     passwordField:"memberpass",
     session:true,
     },      //해당 name값은 아래 매개변수에 저장
-    function(userMail, userPW, done) {
+    function(memberid, memberpass, done) {
                     //회원정보 콜렉션에 저장된 아이디랑 입력한 아이디랑 같은지 체크                                 
-      db.collection("cUsers").findOne({ userMail:userMail }, function (err, user) {
+      db.collection("members").findOne({ memberid:memberid }, function (err, user) {
         if (err) { return done(err); } //아이디 체크 시 코드(작업 X)
         if (!user) { return done(null, false); }  //아이디 체크 시 코드(작업 X)
         //비밀번호 체크 여기서 user는 db에 저장된 아이디의 비번값
-        if (userPW == user.userPW) { // 비밀번호 체크 시 코드
+        if (memberpass == user.memberpass) { // 비밀번호 체크 시 코드
             // 저장된 비밀번호가, 유저가 입력한 비밀번호와 같으면 if
             return done(null, user);
           } else {
@@ -44,6 +44,20 @@ passport.use(new LocalStrategy({
       });
     }
 ));
+//처음 로그인 했을 시 세션 생성 memberid는 데이터에 베이스에 로그인된 아이디
+//세션 만들어줌
+passport.serializeUser(function (user, done) {
+    done(null, user.memberid)
+});
+  
+//다른 페이지(서브페이지,게시판 페이지 등 로그인 상태를 계속 표기하기 위한 작업)
+//로그인이 되있는 상태인지 체크
+passport.deserializeUser(function (memberid, done) {
+// memberid<- 찾고자 하는 id : memberid<- 로그인했을 때 id
+    db.collection('members').findOne({memberid:memberid }, function (err,result) {
+        done(null, result);
+    });
+}); 
 
 //데이터 베이스 연결작업
 let db; //데이터베이스 연결을 위한 변수세팅(변수의 이름은 자유롭게 지어도 됨)
@@ -78,10 +92,68 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 //upload는 위의 설정사항을 담은 변수(상수) 
 
+app.get("/login", (req, res)=>{
+    //로그인 페이지
+    res.render("login", {login:req.user});
+});
+app.post("/logincheck", (req, res, next) => {
+    passport.authenticate("local", (err, user, info) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send("서버 오류");
+      }
+      if (!user) {
+        return res.status(401).send("<script>alert('아이디 또는 패스워드가 맞지 않습니다.'); window.location.href='/login';</script>");
+      }
+      req.logIn(user, (err) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send("서버 오류");
+        }
+        return res.redirect("/");
+      });
+    })(req, res, next);
+  });
+  
+app.get("/logout",(req,res)=>{
+    // 로그아웃 함수 적용 후 메인페이지로 이동
+    // 로그아웃 함수는 서버의 세션을 제거해주는 역할
+    req.logout(()=>{
+        res.redirect("/")
+    })  
+})
+
 // 회원가입 페이지
 app.get("/join", (req,res)=>{
-    res.render("join");
+    res.render("join", {login:req.user});
 });
+//회원가입 DB 처리
+app.post("/joindb",(req,res)=>{
+    db.collection("members").findOne({userMail:req.body.memberid},(err,member)=>{
+        if(member){ 
+            // 중복 아이디 있는 경우
+            res.send(`<script> alert("이미 가입된 아이디가 존재합니다."); location.href="/login"; </script>`)
+            // 로그인 페이지로 이동
+        }
+        else{
+            db.collection("count").findOne({name:"회원수"},(err,result)=>{
+                db.collection("members").insertOne({
+                    No:result.memberCount, // 회원번호
+                    memberName:req.body.memberName, // 회원이름
+                    memberid:req.body.memberid, // 아이디
+                    memberpass:req.body.memberpass, // 비밀번호
+                    memberemail:`${req.body.memberemail}@${req.body.email_domain}`, // 이메일
+                    memberphone:`${req.body.memberphone[0]}-${req.body.memberphone[1]}-${req.body.memberphone[2]}`, // 핸드폰 번호
+                    role:"common" // 역할 - 일반회원
+                },(err)=>{
+                    db.collection("count").updateOne({name:"회원수"},{$inc:{memberCount:1}},(err)=>{
+                        res.send(`<script> alert("회원가입이 완료되었습니다."); location.href="/login";  </script>`);
+                    });
+                })
+            })
+        }
+    })
+})
 
 // 성인인증 페이지(추후 첫 세션 접속시에만 등장하게 함)
 app.get("/validAdult",(req,res)=>{
@@ -104,7 +176,7 @@ app.get("/",(req,res)=>{
 
 // 위스키 전체목록 페이지
 app.get("/collections",(req,res)=>{
-    res.render("collections.ejs");
+    res.render("collections.ejs",{login:req.user});
 });
 // 위스키 상세 페이지
 app.get("/product/:link", (req, res)=>{
@@ -271,12 +343,26 @@ app.get("/faq",(req,res)=>{
 // (일반 회원 -  자기가 쓴 글만 보임, 어드민 - 모든 글이 보임)
 // 답변 여부도 변수에 저장해야 함.
 app.get("/qna",(req,res)=>{
-    res.render("QnA", {login:req.user});
+    if(req.user){
+        res.render("QnA", {login:req.user});
+    }
+    else {
+        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>")
+    }
 });
 
 // Qna 상세 글 페이지 - 공지사항
 app.get("/qna/detail/notice",(req,res)=>{
-    res.render("QnaDetail", {login:req.user});
+    res.render("QnaNotice", {login:req.user});
+});
+
+// Qna 상세 글 페이지 - 상세 글
+app.get("/qna/detail/:idx",(req,res)=>{
+    db.collection("QnAs").findOne({num:Number(req.params.idx)},(err,result)=>{
+        //find로 찾아온 데이터값은 result에 담긴다
+        //상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
+        res.render("QnaDetail", {login:req.user, data:result});
+    });
 });
 
 //qna 질문하기 페이지

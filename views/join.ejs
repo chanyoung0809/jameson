@@ -10,6 +10,7 @@
                         <h3>개인정보 처리 약관</h3>
                         <pre class="terms">
                             약관
+
                             이 "사이트"에 액세스하는 사용자, 시청자 및 모든 사람들에게 다음 약관이 적용됩니다. 이 사이트를 사용하거나 시청함으로써 이 약관에 동의하는 것입니다. 동의하지 않는 경우 이 사이트를 사용하지 마십시오. 이 웹사이트의 액세스 또는 사용은 사용자의 자의입니다.
 
                             운영자 정보
@@ -39,31 +40,38 @@
                             IDIL의 제품과 브랜드와 관련된 모든 상표, 로고, 디자인, 라벨, 병 디자인 및 모든 기타 지적 재산은 Irish Distillers International Ltd.의 소유입니다. 이러한 상표의 목록은 아일랜드 디스틸러스 국제 주식회사, Simmonscourt House, Simmonscourt Road, Ballsbridge, Dublin 4, Ireland의 인터넷 담당자로부터 얻을 수 있습니다. 위에서 설명한 것과 다르게 이 사이트의 내용 또는 이러한 상표의 오용은 엄격히 금지됩니다. 다른 모든 상표는 해당 상표 소유자의 재산입니다.
                         </pre>
                         <div class="memberterms">
-                            <input type="checkbox" id="memberterms"/><label for="memberterms">이용약관에 동의합니다.</label>
+                            <input type="checkbox" id="memberterms" /><label for="memberterms">이용약관에 동의합니다.</label>
                         </div>
                     </div>
                     <div class="memberinfo_wrap">
+                        <div class="memberName">
+                            <label for="memberName">이름</label>
+                            <div class="name_wrap">
+                                <input id="memberName" type="text" name="memberName" minlength="2" maxlength="6" placeholder="성함을 입력하세요" required />
+                            </div>
+                            <span>실명으로 기입해주세요.</span>
+                        </div>
                         <div class="memberid">
                             <label for="memberid">아이디</label>
                             <div class="id_wrap">
-                                <input id="memberid" type="text" name="memberid" minlength="6" maxlength="12" placeholder="아이디를 입력하세요"/>
+                                <input id="memberid" type="text" name="memberid" minlength="6" maxlength="12" placeholder="아이디를 입력하세요" required />
                             </div>
-                            <span>6-12자의 영문, 숫자, 기호( - _ )만 사용이 가능합니다.</span>
+                            <span>6-12자의 영문, 숫자, 특수기호(- , _)만 사용해주세요.</span>
                         </div>
                         <div class="memberpass">
                             <label for="memberpass">비밀번호</label>
                             <div class="pw_wrap">
-                                <input id="memberpass" type="password" name="memberpass" placeholder="비밀번호를 입력하세요"/>
+                                <input id="memberpass" type="password" name="memberpass" placeholder="비밀번호를 입력하세요" required />
                                 <span class="password-toggle-icon">
                                     <i class="fa fa-eye fa-lg"></i>
                                 </span>
                             </div>
-                            <span>20자 이내 숫자, 특수문자, 영문자 중 2가지 이상을 조합해야 합니다.</span>
+                            <span>8~20자 이내 숫자, 특수문자, 영문자 중 2가지 이상을 조합해야 합니다.</span>
                         </div>
                         <div class="memberpass_check">
                             <label for="memberpass_check">비밀번호 확인</label>
                             <div class="pwcheck_wrap">
-                                <input id="memberpass_check" type="password" name="memberpass_check"  placeholder=""/>
+                                <input id="memberpass_check" type="password" name="memberpass_check" placeholder="비밀번호를 입력하세요" required />
                                 <span class="password-toggle-icon">
                                     <i class="fa fa-eye fa-lg"></i>
                                 </span>
@@ -73,32 +81,34 @@
                         <div class="memberemail">
                             <label for="memberemail">이메일</label>
                             <div class="memberemail_wrap">
-                                <input id="memberemail" type="text" name="memberemail" />
-                                <span>@</span>
-                                <input type="text" name="email_domain" readonly>
-                                <select id="email_domain_select">
+                                <input id="memberemail" type="text" name="memberemail" placeholder="example123" required />
+                                @
+                                <input type="text" id="email_domain" name="email_domain" readonly placeholder="domain.com">
+                                <select id="domain_select">
                                     <option selected disabled>이메일선택</option>
                                     <option value="naver.com">naver.com</option>
                                     <option value="daum.net">daum.net</option>
                                     <option value="직접입력">직접입력</option>
                                 </select>
                             </div>
+                            <span>이메일 주소를 입력하세요.</span>
                         </div>
                         <div class="memberphone">
                             <label for="memberphone1">핸드폰번호</label>
                             <div class="memberphone_wrap">
-                                <input id="memberphone1" type="text" name="memberphone" maxlength="3"/>
+                                <input id="memberphone1" name="memberphone1" type="text" name="memberphone" maxlength="3"/>
                                 -
                                 <input id="memberphone2" type="text" name="memberphone" maxlength="4"/>
                                 -
                                 <input id="memberphone3" type="text" name="memberphone" maxlength="4"/>
                             </div>
+                            <span>핸드폰 번호를 입력하세요.</span>
                         </div>
                     </div>
-                    <button type="submit">가입하기</button>
+                    <button id="joinBtn" type="submit">가입하기</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <%- include('footer', {jsFiles:["tabMenu.js"]}) %> 
+    <%- include('footer', {jsFiles:["tabMenu.js","join.js"]}) %> 

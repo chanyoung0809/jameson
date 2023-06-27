@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #container {
   width: 100vw;
   display: flex;
@@ -40,12 +41,14 @@
 }
 #container .join_wrap .title {
   width: 100%;
+  margin-bottom: 4%;
 }
 #container .join_wrap .title > h2 {
   text-align: center;
   font-size: 5vw;
   line-height: 200%;
   font-family: "HSBombaram21-Regular";
+  color: #14402B;
 }
 #container .join_wrap .input_area {
   width: 100%;
@@ -128,6 +131,10 @@
   color: #f7e8bb;
   border-bottom: 4px solid #14402B;
 }
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div.memberphone > div > input {
+  text-align: center;
+  width: 3vw;
+}
 #container .join_wrap .input_area #join_form > .memberinfo_wrap > div:last-child {
   border-bottom: none;
 }
@@ -147,22 +154,63 @@
   outline: none;
   line-height: 200%;
   position: relative;
+  color: #14402B;
 }
 #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input {
   border: none;
   border-bottom: 2px solid #14402B;
-  margin-left: 1vw;
+  margin: 0 0.5vw;
   outline: none;
   background-color: transparent;
+  font-size: 0.8vw;
 }
 #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > span {
   color: #0C592E;
   position: absolute;
-  right: 0;
-  font-size: 0.8vw;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4%;
+  font-size: 0.6vw;
+  cursor: pointer;
 }
 #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > span {
+  display: inline-block;
   color: #14402B;
   text-indent: 1vw;
   font-family: "Pretendard";
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > div > input {
+  border-bottom: 2px solid #8C182D;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > span {
+  display: inline-block;
+  color: #8C182D;
+  text-decoration: underline;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > div > input {
+  border-bottom: 2px solid #0C592E;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > span {
+  display: none;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok::after {
+  content: "확인되었습니다.";
+  display: inline-block;
+  color: #0C592E;
+  font-family: "Pretendard";
+  font-size: 0.8vw;
+  font-weight: 500;
+}
+#container .join_wrap .input_area #join_form > #joinBtn {
+  font-family: "Pretendard";
+  background-color: #14402B;
+  width: 20%;
+  margin: 2% auto;
+  display: block;
+  color: #FDE390;
+  font-weight: 800;
+  font-size: 0.8vw;
+  line-height: 320%;
+  cursor: pointer;
+  border-radius: 1vw;
 }

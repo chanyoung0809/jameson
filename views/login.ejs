@@ -1,0 +1,24 @@
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "HeaderFooter.css", "login.css"]}) %> 
+    <div id="container">
+        <div class="title">
+            LOGIN
+        </div>
+        <div class="center">
+            <form action="/logincheck" method="post">
+                <div class="login_wrap">
+                    <div class="left_wrap">
+                        <label for="memberid" >ID</label>
+                        <input type="text" id="memberid" name="memberid" required placeholder="아이디를 입력해주세요">
+                        <label for="memberpass">PASSWORD</label>
+                        <input type="password" id="memberpass" name="memberpass" required placeholder="비밀번호를 입력해주세요" />
+                        <button type="submit">로그인</button>
+                    </div> 
+                </div>
+                <div class="btn_wrap">
+                    <a href="/join">회원가입하기</a>
+                    <a href="#">아이디/비밀번호 찾기</a> 
+                </div>
+            </form>
+        </div>
+    </div>
+<%- include('footer', {jsFiles:["tabMenu.js"]}) %> 

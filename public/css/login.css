@@ -1,0 +1,98 @@
+#container {
+  width: 100vw;
+  background-color: #f7e8bb;
+  margin-top: 76px;
+}
+#container .title {
+  width: 100%;
+  text-align: center;
+  font-size: 5vw;
+  line-height: 200%;
+  font-family: "HSBombaram21-Regular";
+  color: #14402B;
+}
+#container .center {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#container .center > form {
+  width: 100%;
+  border: 4px solid #14402B;
+  border-radius: 1vw;
+  padding: 1vw;
+  margin-bottom: 4%;
+}
+#container .center > form .login_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#container .center > form .login_wrap .left_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#container .center > form .login_wrap .left_wrap > label {
+  font-family: "HSBombaram21-Regular";
+  font-weight: 800;
+  color: #14402B;
+  line-height: 160%;
+  font-size: 2vw;
+}
+#container .center > form .login_wrap .left_wrap > input {
+  font-family: "Pretendard";
+  font-size: 1vw;
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid #14402B;
+  display: block;
+  width: 100%;
+  margin-bottom: 4%;
+  line-height: 200%;
+  outline: none;
+}
+#container .center > form .login_wrap .left_wrap > input::-moz-placeholder {
+  color: #14402B;
+}
+#container .center > form .login_wrap .left_wrap > input::placeholder {
+  color: #14402B;
+}
+#container .center > form .login_wrap .left_wrap > input:focus {
+  border-bottom: 4px solid #0C592E;
+}
+#container .center > form .login_wrap .left_wrap > button {
+  background-color: #14402B;
+  color: #f7e8bb;
+  font-family: "Pretendard";
+  border: none;
+  border-radius: 1vw;
+  font-size: 1vw;
+  text-align: center;
+  width: 20%;
+  margin-left: auto;
+  font-weight: 900;
+  line-height: 360%;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#container .center > form .login_wrap .left_wrap > button:hover {
+  color: #FDE390;
+  background-color: #0C592E;
+}
+#container .center > form .btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+#container .center > form .btn_wrap > a {
+  font-family: "Pretendard";
+  font-weight: 700;
+  margin-left: 1vw;
+  margin-top: 1vw;
+  font-size: 1vw;
+  color: #14402B;
+}
+#container .center > form .btn_wrap > a:hover {
+  color: #0C592E;
+}

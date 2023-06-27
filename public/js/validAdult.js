@@ -30,10 +30,13 @@ function handleInput(event) {
             const maximumAgeYear = currentYear - 100; // 100세 이하까지 입력 가능    
             if (birthYear <= legalAgeYear && birthYear >= maximumAgeYear) {
             // 성인이므로 메인페이지 이동 처리
-                window.location.href="/";
+                // window.location.href="/";
             } 
-            else { // 미성년자이거나 유효하지 않은 값일 경우
-                alert('입력하신 연도를 다시 확인해주세요.');
+            else if (birthYear > legalAgeYear && birthYear < currentYear) { // 미성년자의 경우
+                alert('미성년자는 본 사이트에 접속할 수 없습니다. 하단의 뒤로가기 버튼으로 이전 페이지로 이동하실 수 있습니다.');
+            }
+            else { // 유효하지 않은 값일 경우(100살 초과하는 연도를 입력하는 경우)
+                alert('입력하신 연도가 유효하지 않습니다. 입력한 값을 다시 확인해주세요.');
                 inputFields.forEach((input) => {
                     input.value = ''; // 모든 인풋 태그의 값을 비움
                 });

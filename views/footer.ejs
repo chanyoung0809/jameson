@@ -5,7 +5,11 @@
     <div class="right_wrap" data-aos="fade-up"  data-aos-duration="1000">
         <h4><img src="/img/star_marquee_DG.svg">MemberShips<img src="/img/star_marquee_DG.svg"></h5>
         <h6>지금 멤버로 등록하세요. 오프라인 픽업 서비스, 각종 이벤트와 프로모션이 담긴 뉴스레터를 받아보세요. 연회비가 발생하지 않습니다.</h6>
-        <a href="#">멤버쉽 가입하기</a>
+        <% if (login) { %>
+            <a href="/mypage"><%- login.memberName %>님 마이페이지</a>    
+        <% } else {%>
+            <a href="/join">멤버쉽 가입하기</a>
+        <% } %>
         <ul class="sns_wrap">
             <li>
                 <a href="#">
@@ -31,7 +35,9 @@
         <ul class="bot_menus">
             <li><a href="mailto:info@jamesonwhiskey.co.kr"><img src="/img/star_marquee_DG.svg">이메일</a></li>
             <li><a href="/terms"><img src="/img/star_marquee_DG.svg">개인정보 이용약관</a></li>
-            <li><a href="/qna"><img src="/img/star_marquee_DG.svg">QnA</a></li><!--추후 회원가입 돼있을때만 보이게 처리-->
+            <% if (login) { %>
+                <li><a href="/qna"><img src="/img/star_marquee_DG.svg">QnA</a></li>
+            <% } %>
             <li><a href="/faq"><img src="/img/star_marquee_DG.svg">FAQ</a></li>
         </ul>
     </div>

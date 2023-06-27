@@ -57,11 +57,13 @@ $context: "Pretendard";
         width: 100%;
         .title {
             width: 100%;
+            margin-bottom: 4%;
             > h2 {
                 text-align: center;
                 font-size: 5vw;
                 line-height: 200%;
                 font-family: $headline;
+                color: $jDarkGreen;
             }
         }
         .input_area {
@@ -141,6 +143,14 @@ $context: "Pretendard";
                         align-items: center;
                         color:$jBeige;
                         border-bottom: 4px solid $jDarkGreen;
+                        &.memberphone {
+                            > div {
+                                > input {
+                                    text-align: center;
+                                    width: 3vw;
+                                }
+                            }
+                        }
                         &:last-child {
                             border-bottom: none;
                         }
@@ -160,27 +170,75 @@ $context: "Pretendard";
                             outline: none;
                             line-height: 200%;
                             position: relative;
+                            color: $jDarkGreen;
                             > input {
                                 border: none;
                                 border-bottom: 2px solid $jDarkGreen;
-                                margin-left: 1vw;
+                                margin: 0 .5vw;
                                 outline: none;
                                 background-color: transparent;
-                                
+                                font-size: .8vw;
                             }
                             > span {
                                 color: $jGreen;
                                 position: absolute;
-                                right: 0;
-                                font-size: .8vw;
+                                top:50%;
+                                transform: translateY(-50%);
+                                right: 4%;
+                                font-size: .6vw;
+                                cursor: pointer;
                             }
                         }
                         > span {
+                            display: inline-block;
                             color: $jDarkGreen;
                             text-indent: 1vw;
                             font-family: $context;
                         }
+                        &.error {
+                            > div {
+                                > input {
+                                    border-bottom: 2px solid $jRed;
+                                }
+                            }
+                            > span {
+                                display: inline-block;
+                                color:$jRed;
+                                text-decoration: underline;
+                            }
+                        }
+                        &.ok {
+                            > div {
+                                > input {
+                                    border-bottom: 2px solid $jGreen;
+                                }
+                            }
+                            > span {
+                                display: none;
+                            }
+                            &::after {
+                                content: "확인되었습니다.";
+                                display: inline-block;
+                                color: $jGreen;
+                                font-family: $context;
+                                font-size: .8vw;
+                                font-weight: 500;
+                            }
+                        }
                     }
+                }
+                > #joinBtn {
+                    font-family: $context;
+                    background-color: $jDarkGreen;
+                    width: 20%;
+                    margin: 2% auto;
+                    display: block;
+                    color: $jOnion;
+                    font-weight: 800;
+                    font-size: .8vw;
+                    line-height: 320%;
+                    cursor: pointer;
+                    border-radius: 1vw;
                 }
             }
         }

@@ -9,7 +9,7 @@ let swiper = new Swiper(".c3Swiper", {
     },
     // 자동실행 관련 옵션들
     autoplay: {
-        delay: 5000,
+        delay: 4000,
         pauseOnMouseEnter : true
     },
     effect: 'flip',

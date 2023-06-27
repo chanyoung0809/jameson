@@ -1,0 +1,30 @@
+<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "HeaderFooter.css","qna.css"]}) %> 
+<div id="container">
+    <!--회원일때만 작성 가능한 질의 게시판, 한 달 넘으면 자동 삭제. 운영자가 답변해줌-->
+    <div class="qna_wrap">
+        <h2 class="title">QnA</h2>
+    </div>
+    <form class="qna_detail">
+        <div class="detail_head">
+            <p class="Q_num"><img src="/img/star_marquee_onion.svg"></p>
+            <p class="Q_title">공지사항 (필독)</a></p>
+            <p class="Q_date">2022-06-23</p>
+        </div>
+        <div class="detail_author">
+            <span>Questions</span>
+            <p class="Q_author">작성자 : 관리자 </p>
+        </div>
+        <div class="context">
+             <p>- QnA에 글을 남기기 전에, <a href="/faq">자주 묻는 질문</a>쪽을 참고해주세요.</p>
+             <p>- QnA 페이지의 모든 글은 답변이 달린 시일을 기점으로, 개인정보 보호 방침에 의거하여 90일 후 자동 삭제됩니다. 90일 이후에도 보관하셔야 할 내용이 있다면 개인적으로 저장해주세요.</p>
+             <p>- 재고 유무 등 구매에 관한 부분은 인근의 <a href="/location">공식 오프라인 구매처</a>를 찾아 문의하시면 더 빠르게 답변받으실 수 있습니다.</p>
+        </div>
+        <div class="btn_wrap">
+            <!-- 운영자만 사용 가능한 답변 기능 -->
+            <a href="/qna/answer/0">답변하기</a>
+            <a href="/dbdelete/0">삭제하기</a>
+            <a href="/qna">뒤로가기</a>
+        </div>
+    </form>
+</div>
+<%- include('footer', {jsFiles:["tabMenu.js"]}) %> 
