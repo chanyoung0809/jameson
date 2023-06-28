@@ -108,3 +108,118 @@ $context: "Pretendard";
         }
     } 
 }
+
+@media screen and (max-width:1200px){
+    #container {
+        .title {
+            font-size: 10vw;
+            line-height: 160%;
+        }
+        .center{
+            width: 50%;
+            > form {
+                .login_wrap {
+                    .left_wrap {
+                        > label {
+                            font-size: 4vw;
+                        }
+                        > input {
+                            font-family: $context;
+                            font-size: 2vw;
+                            background-color:transparent;
+                            border: none;
+                            border-bottom: 4px solid $jDarkGreen;
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 4%;
+                            line-height: 200%;
+                            outline: none;
+                            &::placeholder {
+                                color: $jDarkGreen;
+                            }
+                            &:focus {
+                                border-bottom: 4px solid $jGreen;
+                            }
+                        }
+                        > button {
+                            font-size: 2vw;
+                            line-height: 280%;
+                            width: 30%;
+                        }
+                    }
+                } 
+                .btn_wrap {
+                    > a {
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+        } 
+    }
+}
+
+@media screen and (max-width:800px){
+    #container {
+        .center{
+            width: 60%;
+            > form {
+                .login_wrap {
+                    .left_wrap {
+                        > label {
+                            font-size: 5vw;
+                        }
+                        > input {
+                            font-size: 2.5vw;
+                        }
+                        > button {
+                            font-size: 2.5vw;
+                            line-height: 280%;
+                            width: 30%;
+                        }
+                    }
+                } 
+                .btn_wrap {
+                    > a {
+                        font-size: 2vw;
+                        line-height: 200%;
+                    }
+                }
+            }
+        } 
+    }
+}
+
+@media screen and (max-width:500px){
+    #container {
+        .title {
+            font-size: 12vw;
+            line-height: 160%;
+        }
+        .center{
+            width: 70%;
+            > form {
+                .login_wrap {
+                    .left_wrap {
+                        > label {
+                            font-size: 6vw;
+                        }
+                        > input {
+                            font-size: 3vw;
+                        }
+                        > button {
+                            font-size: 3vw;
+                            line-height: 320%;
+                            width: 35%;
+                        }
+                    }
+                } 
+                .btn_wrap {
+                    > a {
+                        font-size: 2.5vw;
+                        line-height: 200%;
+                    }
+                }
+            }
+        } 
+    }
+}

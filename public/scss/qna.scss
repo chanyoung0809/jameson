@@ -53,6 +53,7 @@ $context: "Pretendard";
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    accent-color: $jDarkGreen;
                     // > input {
                     //     display: none;
                     // }
@@ -108,9 +109,6 @@ $context: "Pretendard";
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    // > input {
-                    //     display: none;
-                    // }
                 }
                 &.Q_num {
                     width: 5%;
@@ -174,6 +172,7 @@ $context: "Pretendard";
                     border-right: 2px solid $jDarkGreen;
                     > input {
                         text-align: center;
+                        accent-color: $jDarkGreen;
                     } 
                 }
                 &.Q_num {
@@ -230,6 +229,20 @@ $context: "Pretendard";
                 line-height: 200%;
                 margin: .5vw 1vw;
                 padding: 0 1%;
+            }
+            > button {
+                font-family: $context;
+                font-weight: 700;
+                color:$jOnion;
+                font-size: .8vw;
+                border: 2px solid $jBeige;
+                border-radius: .5vw;
+                margin-right: 1vw;
+                line-height: 200%;
+                margin: .5vw 1vw;
+                padding: 0 1%;
+                background-color: transparent;
+                cursor: pointer;
             }
         }
     }

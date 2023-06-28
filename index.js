@@ -143,7 +143,7 @@ app.post("/joindb",(req,res)=>{
                     memberid:req.body.memberid, // 아이디
                     memberpass:req.body.memberpass, // 비밀번호
                     memberemail:`${req.body.memberemail}@${req.body.email_domain}`, // 이메일
-                    memberphone:`${req.body.memberphone[0]}-${req.body.memberphone[1]}-${req.body.memberphone[2]}`, // 핸드폰 번호
+                    memberphone:`${req.body.memberphone1}-${req.body.memberphone2}-${req.body.memberphone3}`, // 핸드폰 번호
                     role:"common" // 역할 - 일반회원
                 },(err)=>{
                     db.collection("count").updateOne({name:"회원수"},{$inc:{memberCount:1}},(err)=>{

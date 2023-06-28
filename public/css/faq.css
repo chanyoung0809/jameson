@@ -67,6 +67,7 @@
   text-indent: 0.5vw;
   font-weight: 800;
   transition: all 0.5s;
+  word-break: keep-all;
 }
 #container .faq_wrap .faqs .faq .faq_top .faq_top_right .more {
   font-size: 2vw;
@@ -128,4 +129,101 @@
 }
 #container .faq_wrap .faqs .faq.on .faq_bot > p {
   margin: 2% 1%;
+}
+
+@media screen and (max-width: 1000px) {
+  #container .faq_wrap .title {
+    font-size: 8vw;
+    line-height: 160%;
+  }
+  #container .faq_wrap .faqs {
+    width: 80%;
+  }
+  #container .faq_wrap .faqs .faq {
+    width: 98%;
+  }
+  #container .faq_wrap .faqs .faq .faq_top > h4 {
+    font-size: 4vw;
+    line-height: 160%;
+    width: 10%;
+  }
+  #container .faq_wrap .faqs .faq .faq_top .faq_top_right {
+    width: 85%;
+  }
+  #container .faq_wrap .faqs .faq .faq_top .faq_top_right > h3 {
+    font-size: 2vw;
+  }
+  #container .faq_wrap .faqs .faq .faq_top .faq_top_right .more {
+    font-size: 3vw;
+  }
+  #container .faq_wrap .faqs .faq .faq_bot {
+    font-size: 1.5vw;
+  }
+  #container .faq_wrap .faqs .faq .faq_bot > p {
+    margin: 2% 1%;
+    font-family: "Pretendard";
+    font-weight: 600;
+    letter-spacing: 0.01vw;
+  }
+  #container .faq_wrap .faqs .faq .faq_bot > p > a {
+    color: #0C592E;
+    font-weight: 900;
+    font-family: "Pretendard";
+  }
+  #container .faq_wrap .faqs .faq .faq_bot > p > a:hover {
+    background-color: #FDE390;
+  }
+  #container .faq_wrap .faqs .faq:hover .faq_top {
+    background-color: #14402B;
+  }
+  #container .faq_wrap .faqs .faq:hover .faq_top .faq_top_right > h3 {
+    color: #FDE390;
+  }
+  #container .faq_wrap .faqs .faq:hover .faq_top .faq_top_right .more {
+    color: #FDE390;
+  }
+  #container .faq_wrap .faqs .faq.on .faq_top {
+    background-color: #14402B;
+  }
+  #container .faq_wrap .faqs .faq.on .faq_top .faq_top_right > h3 {
+    color: #FDE390;
+  }
+  #container .faq_wrap .faqs .faq.on .faq_top .faq_top_right .more {
+    color: #FDE390;
+  }
+  #container .faq_wrap .faqs .faq.on .faq_bot {
+    border-bottom: 2px solid #14402B;
+    height: auto;
+  }
+  #container .faq_wrap .faqs .faq.on .faq_bot > p {
+    margin: 2% 1%;
+  }
+}
+@media screen and (max-width: 700px) {
+  #container .faq_wrap .title {
+    font-size: 10vw;
+    line-height: 200%;
+  }
+  #container .faq_wrap .faqs {
+    width: 90%;
+  }
+  #container .faq_wrap .faqs .faq .faq_top > h4 {
+    font-size: 8vw;
+    line-height: 160%;
+    width: 16%;
+  }
+  #container .faq_wrap .faqs .faq .faq_top .faq_top_right {
+    width: 80%;
+  }
+  #container .faq_wrap .faqs .faq .faq_top .faq_top_right > h3 {
+    width: 85%;
+    font-size: 3.5vw;
+    text-indent: 0;
+  }
+  #container .faq_wrap .faqs .faq .faq_top .faq_top_right .more {
+    font-size: 4vw;
+  }
+  #container .faq_wrap .faqs .faq .faq_bot {
+    font-size: 2.5vw;
+  }
 }

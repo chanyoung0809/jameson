@@ -96,3 +96,89 @@
 #container .center > form .btn_wrap > a:hover {
   color: #0C592E;
 }
+
+@media screen and (max-width: 1200px) {
+  #container .title {
+    font-size: 10vw;
+    line-height: 160%;
+  }
+  #container .center {
+    width: 50%;
+  }
+  #container .center > form .login_wrap .left_wrap > label {
+    font-size: 4vw;
+  }
+  #container .center > form .login_wrap .left_wrap > input {
+    font-family: "Pretendard";
+    font-size: 2vw;
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid #14402B;
+    display: block;
+    width: 100%;
+    margin-bottom: 4%;
+    line-height: 200%;
+    outline: none;
+  }
+  #container .center > form .login_wrap .left_wrap > input::-moz-placeholder {
+    color: #14402B;
+  }
+  #container .center > form .login_wrap .left_wrap > input::placeholder {
+    color: #14402B;
+  }
+  #container .center > form .login_wrap .left_wrap > input:focus {
+    border-bottom: 4px solid #0C592E;
+  }
+  #container .center > form .login_wrap .left_wrap > button {
+    font-size: 2vw;
+    line-height: 280%;
+    width: 30%;
+  }
+  #container .center > form .btn_wrap > a {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  #container .center {
+    width: 60%;
+  }
+  #container .center > form .login_wrap .left_wrap > label {
+    font-size: 5vw;
+  }
+  #container .center > form .login_wrap .left_wrap > input {
+    font-size: 2.5vw;
+  }
+  #container .center > form .login_wrap .left_wrap > button {
+    font-size: 2.5vw;
+    line-height: 280%;
+    width: 30%;
+  }
+  #container .center > form .btn_wrap > a {
+    font-size: 2vw;
+    line-height: 200%;
+  }
+}
+@media screen and (max-width: 500px) {
+  #container .title {
+    font-size: 12vw;
+    line-height: 160%;
+  }
+  #container .center {
+    width: 70%;
+  }
+  #container .center > form .login_wrap .left_wrap > label {
+    font-size: 6vw;
+  }
+  #container .center > form .login_wrap .left_wrap > input {
+    font-size: 3vw;
+  }
+  #container .center > form .login_wrap .left_wrap > button {
+    font-size: 3vw;
+    line-height: 320%;
+    width: 35%;
+  }
+  #container .center > form .btn_wrap > a {
+    font-size: 2.5vw;
+    line-height: 200%;
+  }
+}

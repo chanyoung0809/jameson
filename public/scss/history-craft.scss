@@ -61,6 +61,7 @@ body.show {
                 justify-content: space-between;
                 border: 2px solid #14402B;
                 > li {
+                    cursor: pointer;
                     transition: all .5s;
                     > a {
                         display: block;
@@ -212,9 +213,11 @@ body.show {
                             width: 33.333333%;
                             &:nth-child(1) {
                                 width: 50%;
+                                border-bottom: 2px solid $jDarkGreen;
                             }
                             &:nth-child(2) {
                                 width: 50%;
+                                border-bottom: 2px solid $jDarkGreen;
                             }
                         }
                     }
@@ -383,9 +386,10 @@ body.show {
                 > .center {
                     width: 92%;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
+                    flex-direction: column;
                     .image-container {
-                        width:50%;
+                        width:100%;
                         object-fit: cover;
                         > img {
                             display: block;
@@ -395,26 +399,31 @@ body.show {
                         }
                     }
                     .text-container {
-                        width: 45%;
+                        width: 100%;
                         color: $jDarkGreen;
+                        text-align: center;
+                        padding: 4% 0;
                         > h6 {
-                            font-size: 2vw;
-                            line-height: 160%;
+                            font-size: 4vw;
+                            line-height: 200%;
                         }
                         > h2 {
-                            font-size: 7vw;
+                            font-size: 12vw;
                         }
                         > p {
-                            font-size: 1.3vw;
+                            font-size: 3vw;
+                            text-align: center;
+                            width: 100%;
                         }
                     }
                 } 
                 &.on {
                     background-color: $jDarkGreen;
                     > .center {
-                        flex-direction: row-reverse;
-                        justify-content: space-between;
+                        flex-direction: column;
+                        justify-content: center;
                         .image-container {
+                            width: 100%;
                             > img {
                                 display: block;
                                 width: 100%;
@@ -423,7 +432,7 @@ body.show {
                             }
                         }
                         .text-container {
-                            width: 45%;
+                            width: 100%;
                             color: $jBeige;
                         }
                     }
@@ -437,7 +446,7 @@ body.show {
                     &.go_craft {
                         margin-left: auto;
                         > img {
-                            width: 7vw;
+                            width: 10vw;
                             margin-left: 4vw;
                         }
                         &:hover {
@@ -450,7 +459,7 @@ body.show {
                         margin-right: auto;
                         > img {
                             transform:scaleX(-1);
-                            width: 7vw;
+                            width: 10vw;
                             margin-right: 4vw;
                         }
                         &:hover {
@@ -464,7 +473,7 @@ body.show {
                     align-items: center;
                     font-family: $headline;
                     color: $jDarkGreen;
-                    font-size: 2.5vw;
+                    font-size: 3vw;
                     > span {
                         opacity: 1;
                         transition: all .5s;

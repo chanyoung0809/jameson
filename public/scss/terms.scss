@@ -129,6 +129,9 @@ $context: "Pretendard";
                         > label {
                             cursor: pointer;
                             font-size: 1vw;
+                            color: $jDarkGreen;
+                            font-family: $context;
+                            font-weight: 500;
                         }
                     }
                 }
@@ -178,6 +181,10 @@ $context: "Pretendard";
                                 outline: none;
                                 background-color: transparent;
                                 font-size: .8vw;
+                                color:$jDarkGreen;
+                                &::placeholder {
+                                    color: $jGreen;
+                                }
                             }
                             > span {
                                 color: $jGreen;
@@ -188,10 +195,25 @@ $context: "Pretendard";
                                 font-size: .6vw;
                                 cursor: pointer;
                             }
+                            > select{
+                                background-color: transparent;
+                                border: none;
+                                border-bottom: 2px solid $jDarkGreen;
+                                font-size: 1vw;
+                                font-family: $context;
+                                font-weight: 400;
+                                color: $jDarkGreen;
+                                > option {
+                                    background-color: $jBeige;
+                                    font-weight: 400;
+                                    line-height: 200%;
+                                }
+                            }
                         }
                         > span {
                             display: inline-block;
                             color: $jDarkGreen;
+                            font-size: 1vw;
                             text-indent: 1vw;
                             font-family: $context;
                         }
@@ -239,6 +261,470 @@ $context: "Pretendard";
                     line-height: 320%;
                     cursor: pointer;
                     border-radius: 1vw;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1124px){
+    #container {
+        // 회원가입 페이지
+        .join_wrap {
+            .title {
+                > h2 {
+                    font-size: 7vw;
+                }
+            }
+            .input_area {
+                #join_form {
+                    width: 80%;
+                    > .terms_wrap {
+                        > h3 {
+                            font-size: 4vw;
+                        }
+                        > .terms {
+                            font-size: 1.5vw;
+                        }
+                        > .memberterms {
+                            > label {
+                                cursor: pointer;
+                                font-size: 1.5vw;
+                            }
+                        }
+                    }
+                    > .memberinfo_wrap {
+                        > div {
+                            &.memberphone {
+                                > div {
+                                    > input {
+                                        width: 6vw;
+                                    }
+                                }
+                            }
+                            &.memberemail {
+                                > div {
+                                    > input {
+                                        &:first-child {
+                                            width: auto;
+                                        }
+                                    }
+                                }
+                            }
+                            > label {
+                                font-size: 1.5vw;
+                                height: auto;
+                            }
+                            > div {
+                                > input {
+                                    font-size: 1.2vw;
+                                }
+                                > span {
+                                    font-size: 1vw;
+                                }
+                            }
+                            &.error {
+                                > div {
+                                    > input {
+                                        border-bottom: 2px solid $jRed;
+                                    }
+                                }
+                                > span {
+                                    display: inline-block;
+                                    color:$jRed;
+                                    text-decoration: underline;
+                                }
+                            }
+                            &.ok {
+                                > div {
+                                    > input {
+                                        border-bottom: 2px solid $jGreen;
+                                    }
+                                }
+                                > span {
+                                    display: none;
+                                }
+                                &::after {
+                                    content: "확인되었습니다.";
+                                    display: inline-block;
+                                    color: $jGreen;
+                                    font-family: $context;
+                                    font-size: .8vw;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                    > #joinBtn {
+                        font-family: $context;
+                        background-color: $jDarkGreen;
+                        width: 20%;
+                        margin: 2% auto;
+                        display: block;
+                        color: $jOnion;
+                        font-weight: 800;
+                        font-size: .8vw;
+                        line-height: 320%;
+                        cursor: pointer;
+                        border-radius: 1vw;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px){
+    #container {
+        // 개인정보 처리 방침 페이지
+        > .terms_wrap {
+            width: 70%;
+            .title {
+                font-size: 8vw;
+            }
+            .center {
+                > section {
+                    margin-bottom: 2vw; 
+                    > h3 {
+                        font-size: 4vw;
+                    }
+                    > p {
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:760px){
+    #container {
+        // 개인정보 처리 방침 페이지
+        > .terms_wrap {
+            width: 70%;
+            .title {
+                font-size: 10vw;
+            }
+            .center {
+                > section {
+                    margin-bottom: 2vw; 
+                    > h3 {
+                        font-size: 5vw;
+                    }
+                    > p {
+                        font-size: 2vw;
+                    }
+                }
+            }
+        }
+        // 회원가입 페이지
+        .join_wrap {
+            width: 100%;
+            .title {
+                width: 100%;
+                margin-bottom: 4%;
+                > h2 {
+                    text-align: center;
+                    font-size: 9vw;
+                    line-height: 200%;
+                    font-family: $headline;
+                    color: $jDarkGreen;
+                }
+            }
+            .input_area {
+                #join_form {
+                    width: 90%;
+                    > .terms_wrap {
+                        > h3 {
+                            font-size: 5vw;
+                        }
+                        > .terms {
+                            font-size: 1.5vw;
+                            
+                        }
+                        > .memberterms {
+                            > label {
+                                font-size: 1.5vw;
+                            }
+                        }
+                    }
+                    > .memberinfo_wrap {
+                        width: 100%;
+                        border: 4px solid $jDarkGreen;
+                        border-radius: .5vw;
+                        overflow: hidden;
+                        > div {
+                            &.memberphone {
+                                > div {
+                                    > input {
+                                        text-align: center;
+                                        width: 7vw;
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                            > label {
+                                font-size: 2vw;
+                                line-height: 400%;
+                            }
+                            > div {
+                                font-size: 1.5vw;
+                                > input {
+                                    font-size: 1.5vw;
+                                }
+                                > select{
+                                    font-size: 1.5vw;
+                                }
+                            }
+                            > span {
+                                display: inline-block;
+                                color: $jDarkGreen;
+                                font-size: 1.5vw;
+                                text-indent: 1.5vw;
+                                font-family: $context;
+                            }
+                            &.error {
+                                > div {
+                                    > input {
+                                        border-bottom: 2px solid $jRed;
+                                    }
+                                }
+                                > span {
+                                    display: inline-block;
+                                    color:$jRed;
+                                    text-decoration: underline;
+                                }
+                            }
+                            &.ok {
+                                > div {
+                                    > input {
+                                        border-bottom: 2px solid $jGreen;
+                                    }
+                                }
+                                > span {
+                                    display: none;
+                                }
+                                &::after {
+                                    content: "확인되었습니다.";
+                                    display: inline-block;
+                                    color: $jGreen;
+                                    font-family: $context;
+                                    font-size: 2vw;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                    > #joinBtn {
+                        font-family: $context;
+                        background-color: $jDarkGreen;
+                        width: 20%;
+                        margin: 2% auto;
+                        display: block;
+                        color: $jOnion;
+                        font-weight: 800;
+                        font-size: 2vw;
+                        line-height: 320%;
+                        cursor: pointer;
+                        border-radius: 1vw;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:640px){
+    #container {
+        // 회원가입 페이지
+        .join_wrap {
+            .title {
+                > h2 {
+                    font-size: 10vw;
+                }
+            }
+            .input_area {
+                #join_form {
+                    width: 90%;
+                    > .terms_wrap {
+                        > h3 {
+                            font-size: 6vw;
+                        }
+                        > .terms {
+                            font-size: 2vw;
+                            
+                        }
+                        > .memberterms {
+                            > label {
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                    > .memberinfo_wrap {
+                        > div {
+                            flex-direction: column;
+                            > label {
+                                font-size: 2vw;
+                                line-height: 320%;
+                                width: 100%;
+                            }
+                            > div {
+                                margin: 2vw 0;
+                                font-size: 2vw;
+                                > input {
+                                    font-size: 2vw;
+                                    font-family: $context;
+                                    text-align: center;
+                                    margin-top: 1vw 0;
+                                }
+                                > select{
+                                    font-size: 2vw;
+                                }
+                            }
+                            > span {
+                                display: inline-block;
+                                color: $jDarkGreen;
+                                font-size: 2vw;
+                                text-indent: 1vw;
+                                font-family: $context;
+                                margin-bottom: 2vw;
+                            }
+                            &.error {
+                                > div {
+                                    > input {
+                                        border-bottom: 2px solid $jRed;
+                                    }
+                                }
+                                > span {
+                                    display: inline-block;
+                                    color:$jRed;
+                                    text-decoration: underline;
+                                }
+                            }
+                            &.ok {
+                                > div {
+                                    > input {
+                                        border-bottom: 2px solid $jGreen;
+                                    }
+                                }
+                                > span {
+                                    display: none;
+                                }
+                                &::after {
+                                    content: "확인되었습니다.";
+                                    display: inline-block;
+                                    color: $jGreen;
+                                    font-family: $context;
+                                    font-size: 2vw;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                    > #joinBtn {
+                        width: 25%;
+                        font-size: 2vw;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px){
+    #container {
+        // 개인정보 처리 방침 페이지
+        > .terms_wrap {
+            width: 90%;
+            .title {
+                font-size: 12vw;
+            }
+            .center {
+                > section {
+                    margin-bottom: 4vw; 
+                    > h3 {
+                        font-size: 6vw;
+                    }
+                    > p {
+                        font-size: 3vw;
+                    }
+                }
+            }
+        }
+        // 회원가입 페이지
+        .join_wrap {
+            .title {
+                > h2 {
+                    font-size: 12vw;
+                }
+            }
+            .input_area {
+                #join_form {
+                    > .terms_wrap {
+                        > h3 {
+                            font-size: 7vw;
+                        }
+                        > .terms {
+                            font-size: 2.5vw;
+                            height: 20vw;
+                        }
+                        > .memberterms {
+                            > label {
+                                font-size: 2.5vw; 
+                            }
+                        }
+                    }
+                    > .memberinfo_wrap {
+                        > div {
+                            flex-direction: column;
+                            > label {
+                                font-size: 3vw;
+                                line-height: 320%;
+                                width: 100%;
+                            }
+                            > div {
+                                margin: 2vw 0;
+                                font-size: 2.5vw;
+                                > input {
+                                    font-size: 2.5vw;
+                                    font-family: $context;
+                                    text-align: center;
+                                    margin-top: 1vw 0;
+                                }
+                                > select{
+                                    font-size: 2.5vw;
+                                }
+                            }
+                            > span {
+                                display: inline-block;
+                                color: $jDarkGreen;
+                                font-size: 2.5vw;
+                                text-indent: 1vw;
+                                font-family: $context;
+                                margin-bottom: 2vw;
+                            }
+                            &.ok {
+                                > div {
+                                    > input {
+                                        border-bottom: 2px solid $jGreen;
+                                    }
+                                }
+                                > span {
+                                    display: none;
+                                }
+                                &::after {
+                                    content: "확인되었습니다.";
+                                    display: inline-block;
+                                    color: $jGreen;
+                                    font-family: $context;
+                                    font-size: 2.5vw;
+                                }
+                            }
+                        }
+                    }
+                    > #joinBtn {
+                        width: 30%;
+                        font-size: 3vw;
+                    }
                 }
             }
         }

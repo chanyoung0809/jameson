@@ -54,7 +54,7 @@ body.show {
   transition: all 0.5s;
 }
 #header .center .menu_wrap > a {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 #header .center .menu_wrap button {
   position: relative;
@@ -62,12 +62,15 @@ body.show {
   cursor: pointer;
   margin-right: 1vw;
 }
+#header .center .menu_wrap button.hbg_menu {
+  width: 36px;
+}
 #header .center .menu_wrap button .line {
   display: block;
   background-color: #14402B;
   height: 4px;
   position: absolute;
-  left: 50%;
+  left: 0%;
 }
 #header .center .menu_wrap button .line.one {
   width: 36px;
@@ -395,6 +398,9 @@ body.show {
   }
   #header .center > div > a {
     font-size: 2.5vw;
+  }
+  #header .center.menu_wrap > a {
+    margin-left: 10px;
   }
   #header .center .buy_wrap > a {
     margin: 0 1vw;

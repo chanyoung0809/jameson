@@ -41,6 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  accent-color: #14402B;
 }
 #container .qnas .t_header > p.Q_num {
   width: 5%;
@@ -157,6 +158,7 @@
 }
 #container .qnas .t_body > p.Q_checkbox > input {
   text-align: center;
+  accent-color: #14402B;
 }
 #container .qnas .t_body > p.Q_num {
   width: 5%;
@@ -210,6 +212,20 @@
   line-height: 200%;
   margin: 0.5vw 1vw;
   padding: 0 1%;
+}
+#container .qnas .btn_wrap > button {
+  font-family: "Pretendard";
+  font-weight: 700;
+  color: #FDE390;
+  font-size: 0.8vw;
+  border: 2px solid #f7e8bb;
+  border-radius: 0.5vw;
+  margin-right: 1vw;
+  line-height: 200%;
+  margin: 0.5vw 1vw;
+  padding: 0 1%;
+  background-color: transparent;
+  cursor: pointer;
 }
 #container .qna_detail {
   width: 80%;

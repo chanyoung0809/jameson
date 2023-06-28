@@ -69,19 +69,22 @@ body.show {
         }
         .menu_wrap {
             > a {
-                margin-left:40px;
+                margin-left:20px;
             }
             button {
                 position: relative;
                 height: 36px;
                 cursor: pointer;
                 margin-right: 1vw;
+                &.hbg_menu {
+                    width: 36px;
+                }
                 .line {
                     display: block;
                     background-color: $jDarkGreen;
                     height: 4px;
                     position: absolute;
-                    left: 50%;
+                    left: 0%;
                     &.one {
                         width:36px;
                         transform: rotate(0deg);
@@ -435,6 +438,9 @@ body.show {
             width: 95%;
             > div > a {
                 font-size: 2.5vw;
+            }
+            &.menu_wrap > a {
+                margin-left: 10px;
             }
             .buy_wrap > a {
                 margin: 0 1vw;

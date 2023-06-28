@@ -75,7 +75,7 @@ select::-ms-expand {
   background-size: cover;
   content: " ";
   display: block;
-  filter: invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(88%) contrast(94%);
+  filter: invert(25%) sepia(76%) saturate(499%) hue-rotate(70deg) brightness(83%) contrast(94%);
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -95,6 +95,7 @@ select::-ms-expand {
   top: 50%;
   left: 50%;
   transition: all 0.5s;
+  word-break: keep-all;
 }
 #container > div .map_wrap .left_map > span:hover::before {
   opacity: 1;
@@ -286,7 +287,7 @@ select::-ms-expand {
   overflow: hidden;
 }
 #container > div .map_wrap .right_find > h4 {
-  font-size: 2vw;
+  font-size: 2.5vw;
   font-family: "HallymMjo";
   font-weight: 700;
   color: #0C592E;
@@ -441,9 +442,239 @@ select::-ms-expand {
   font-weight: 700;
   color: #14402B;
   font-family: "HallymMjo";
-  line-height: 400%;
-  font-size: 1vw;
+  font-size: 2vw;
+  line-height: 120%;
+  word-break: keep-all;
+  margin: 4% auto;
+  width: 54%;
 }
 
 /* 미디어쿼리 1000 */
+@media screen and (max-width: 1000px) {
+  #container > div .title {
+    font-size: 6vw;
+  }
+  #container > div .map_wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50vw;
+  }
+  #container > div .map_wrap .left_map {
+    width: 30%;
+    margin: 0 10%;
+    height: 99%;
+  }
+  #container > div .map_wrap .right_find > h4 {
+    font-size: 3vw;
+    line-height: 200%;
+  }
+  #container > div .map_wrap .right_find .location_form > select {
+    width: 25%;
+    background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png") calc(100% - 5px) center no-repeat;
+  }
+  #container > div .map_wrap .right_find .location_form > input {
+    width: 40%;
+  }
+  #container > div .map_wrap .right_find .location_form > button.reset_btn {
+    background-color: #0C592E;
+    width: 40%;
+  }
+  #container > div .map_wrap .right_find .store_area {
+    height: 100%;
+  }
+  #container > div .map_wrap .right_find .store_area .stores {
+    height: 70%;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap {
+    width: 100%;
+    font-size: 1.5vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate {
+    display: flex;
+    align-items: center;
+    margin: 0.5% 1% 0.5% 0;
+    text-indent: 0;
+    word-break: keep-all;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate > span {
+    line-height: 120%;
+    width: 13%;
+    text-indent: 0;
+    margin-right: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar {
+    width: 2vw;
+    border-radius: 1.5vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-thumb {
+    background-color: #14402B;
+    border-radius: 1.5vw;
+    border: 0.4vw solid rgba(247, 232, 187, 0.8);
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-track {
+    background-color: rgba(20, 64, 43, 0.2);
+  }
+  #container > div .map_wrap .right_find .store_area .stores .err_msg {
+    font-size: 3vw;
+    width: 80%;
+  }
+}
+/* 미디어쿼리 1000 */
+@media screen and (max-width: 750px) {
+  #container > div .title {
+    font-size: 10vw;
+  }
+  #container > div .map_wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 150vw;
+    flex-wrap: wrap;
+  }
+  #container > div .map_wrap .left_map {
+    width: 50%;
+    margin: 0 10%;
+    height: 55.8%;
+    position: relative;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #container > div .map_wrap .right_find {
+    width: 80%;
+    height: 60vw;
+  }
+  #container > div .map_wrap .right_find > h4 {
+    font-size: 5vw;
+    line-height: 200%;
+  }
+  #container > div .map_wrap .right_find .location_form {
+    width: 100%;
+  }
+  #container > div .map_wrap .right_find .location_form > select {
+    width: 25%;
+    background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png") calc(100% - 5px) center no-repeat;
+  }
+  #container > div .map_wrap .right_find .location_form > input {
+    width: 40%;
+  }
+  #container > div .map_wrap .right_find .location_form > button.reset_btn {
+    background-color: #0C592E;
+    width: 40%;
+  }
+  #container > div .map_wrap .right_find .store_area {
+    height: 100%;
+  }
+  #container > div .map_wrap .right_find .store_area .stores {
+    height: 70%;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap {
+    width: 100%;
+    font-size: 2vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate {
+    display: flex;
+    align-items: center;
+    margin: 0.5% 1% 0.5% 0;
+    text-indent: 0;
+    word-break: keep-all;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate > span {
+    line-height: 120%;
+    width: 13%;
+    text-indent: 0;
+    margin-right: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar {
+    width: 1vw;
+    border-radius: 1vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-thumb {
+    background-color: #14402B;
+    border-radius: 0.5vw;
+    border: 0.2vw solid rgba(247, 232, 187, 0.8);
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-track {
+    background-color: rgba(20, 64, 43, 0.2);
+  }
+  #container > div .map_wrap .right_find .store_area .stores .err_msg {
+    font-size: 3vw;
+    width: 50%;
+  }
+}
 /* 미디어쿼리 500 */
+@media screen and (max-width: 500px) {
+  #container > div .title {
+    font-size: 12vw;
+  }
+  #container > div .map_wrap {
+    height: 190vw;
+  }
+  #container > div .map_wrap .left_map {
+    width: 70%;
+    height: 61.5%;
+  }
+  #container > div .map_wrap .right_find {
+    width: 80%;
+    height: 70vw;
+  }
+  #container > div .map_wrap .right_find > h4 {
+    font-size: 5vw;
+    line-height: 200%;
+  }
+  #container > div .map_wrap .right_find .location_form {
+    width: 100%;
+  }
+  #container > div .map_wrap .right_find .location_form > select {
+    width: 25%;
+    background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png") calc(100% - 5px) center no-repeat;
+  }
+  #container > div .map_wrap .right_find .location_form > input {
+    width: 40%;
+  }
+  #container > div .map_wrap .right_find .location_form > button.reset_btn {
+    background-color: #0C592E;
+    width: 40%;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap {
+    font-size: 3.5vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate {
+    display: flex;
+    align-items: center;
+    margin: 0.5% 1% 0.5% 0;
+    text-indent: 0;
+    word-break: keep-all;
+    line-height: 120%;
+  }
+  #container > div .map_wrap .right_find .store_area .stores .store_wrap .store_locate > span {
+    line-height: 120%;
+    width: 30%;
+    text-indent: 0;
+    margin-right: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13.5vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar {
+    width: 1vw;
+    border-radius: 1vw;
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-thumb {
+    background-color: #14402B;
+    border-radius: 0.5vw;
+    border: 0.2vw solid rgba(247, 232, 187, 0.8);
+  }
+  #container > div .map_wrap .right_find .store_area .stores::-webkit-scrollbar-track {
+    background-color: rgba(20, 64, 43, 0.2);
+  }
+}

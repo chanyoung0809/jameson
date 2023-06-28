@@ -117,6 +117,9 @@
 #container .join_wrap .input_area #join_form > .terms_wrap > .memberterms > label {
   cursor: pointer;
   font-size: 1vw;
+  color: #14402B;
+  font-family: "Pretendard";
+  font-weight: 500;
 }
 #container .join_wrap .input_area #join_form > .memberinfo_wrap {
   width: 100%;
@@ -163,6 +166,13 @@
   outline: none;
   background-color: transparent;
   font-size: 0.8vw;
+  color: #14402B;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input::-moz-placeholder {
+  color: #0C592E;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input::placeholder {
+  color: #0C592E;
 }
 #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > span {
   color: #0C592E;
@@ -173,9 +183,24 @@
   font-size: 0.6vw;
   cursor: pointer;
 }
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #14402B;
+  font-size: 1vw;
+  font-family: "Pretendard";
+  font-weight: 400;
+  color: #14402B;
+}
+#container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > select > option {
+  background-color: #f7e8bb;
+  font-weight: 400;
+  line-height: 200%;
+}
 #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > span {
   display: inline-block;
   color: #14402B;
+  font-size: 1vw;
   text-indent: 1vw;
   font-family: "Pretendard";
 }
@@ -213,4 +238,351 @@
   line-height: 320%;
   cursor: pointer;
   border-radius: 1vw;
+  border: none;
+}
+
+@media screen and (max-width: 1124px) {
+  #container .join_wrap .title > h2 {
+    font-size: 7vw;
+  }
+  #container .join_wrap .input_area #join_form {
+    width: 80%;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > h3 {
+    font-size: 4vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .terms {
+    font-size: 1.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .memberterms > label {
+    cursor: pointer;
+    font-size: 1.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.memberphone > div > input {
+    width: 6vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.memberemail > div > input:first-child {
+    width: auto;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > label {
+    font-size: 1.5vw;
+    height: auto;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input {
+    font-size: 1.2vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > span {
+    font-size: 1vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > div > input {
+    border-bottom: 2px solid #8C182D;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > span {
+    display: inline-block;
+    color: #8C182D;
+    text-decoration: underline;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > div > input {
+    border-bottom: 2px solid #0C592E;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > span {
+    display: none;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok::after {
+    content: "확인되었습니다.";
+    display: inline-block;
+    color: #0C592E;
+    font-family: "Pretendard";
+    font-size: 0.8vw;
+    font-weight: 500;
+  }
+  #container .join_wrap .input_area #join_form > #joinBtn {
+    font-family: "Pretendard";
+    background-color: #14402B;
+    width: 20%;
+    margin: 2% auto;
+    display: block;
+    color: #FDE390;
+    font-weight: 800;
+    font-size: 0.8vw;
+    line-height: 320%;
+    cursor: pointer;
+    border-radius: 1vw;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #container > .terms_wrap {
+    width: 70%;
+  }
+  #container > .terms_wrap .title {
+    font-size: 8vw;
+  }
+  #container > .terms_wrap .center > section {
+    margin-bottom: 2vw;
+  }
+  #container > .terms_wrap .center > section > h3 {
+    font-size: 4vw;
+  }
+  #container > .terms_wrap .center > section > p {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 760px) {
+  #container > .terms_wrap {
+    width: 70%;
+  }
+  #container > .terms_wrap .title {
+    font-size: 10vw;
+  }
+  #container > .terms_wrap .center > section {
+    margin-bottom: 2vw;
+  }
+  #container > .terms_wrap .center > section > h3 {
+    font-size: 5vw;
+  }
+  #container > .terms_wrap .center > section > p {
+    font-size: 2vw;
+  }
+  #container .join_wrap {
+    width: 100%;
+  }
+  #container .join_wrap .title {
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  #container .join_wrap .title > h2 {
+    text-align: center;
+    font-size: 9vw;
+    line-height: 200%;
+    font-family: "HSBombaram21-Regular";
+    color: #14402B;
+  }
+  #container .join_wrap .input_area #join_form {
+    width: 90%;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > h3 {
+    font-size: 5vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .terms {
+    font-size: 1.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .memberterms > label {
+    font-size: 1.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap {
+    width: 100%;
+    border: 4px solid #14402B;
+    border-radius: 0.5vw;
+    overflow: hidden;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.memberphone > div > input {
+    text-align: center;
+    width: 7vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div:last-child {
+    border-bottom: none;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > label {
+    font-size: 2vw;
+    line-height: 400%;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div {
+    font-size: 1.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input {
+    font-size: 1.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > select {
+    font-size: 1.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > span {
+    display: inline-block;
+    color: #14402B;
+    font-size: 1.5vw;
+    text-indent: 1.5vw;
+    font-family: "Pretendard";
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > div > input {
+    border-bottom: 2px solid #8C182D;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > span {
+    display: inline-block;
+    color: #8C182D;
+    text-decoration: underline;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > div > input {
+    border-bottom: 2px solid #0C592E;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > span {
+    display: none;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok::after {
+    content: "확인되었습니다.";
+    display: inline-block;
+    color: #0C592E;
+    font-family: "Pretendard";
+    font-size: 2vw;
+    font-weight: 500;
+  }
+  #container .join_wrap .input_area #join_form > #joinBtn {
+    font-family: "Pretendard";
+    background-color: #14402B;
+    width: 20%;
+    margin: 2% auto;
+    display: block;
+    color: #FDE390;
+    font-weight: 800;
+    font-size: 2vw;
+    line-height: 320%;
+    cursor: pointer;
+    border-radius: 1vw;
+  }
+}
+@media screen and (max-width: 640px) {
+  #container .join_wrap .title > h2 {
+    font-size: 10vw;
+  }
+  #container .join_wrap .input_area #join_form {
+    width: 90%;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > h3 {
+    font-size: 6vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .terms {
+    font-size: 2vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .memberterms > label {
+    font-size: 2vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div {
+    flex-direction: column;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > label {
+    font-size: 2vw;
+    line-height: 320%;
+    width: 100%;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div {
+    margin: 2vw 0;
+    font-size: 2vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input {
+    font-size: 2vw;
+    font-family: "Pretendard";
+    text-align: center;
+    margin-top: 1vw 0;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > select {
+    font-size: 2vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > span {
+    display: inline-block;
+    color: #14402B;
+    font-size: 2vw;
+    text-indent: 1vw;
+    font-family: "Pretendard";
+    margin-bottom: 2vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > div > input {
+    border-bottom: 2px solid #8C182D;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.error > span {
+    display: inline-block;
+    color: #8C182D;
+    text-decoration: underline;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > div > input {
+    border-bottom: 2px solid #0C592E;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > span {
+    display: none;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok::after {
+    content: "확인되었습니다.";
+    display: inline-block;
+    color: #0C592E;
+    font-family: "Pretendard";
+    font-size: 2vw;
+    font-weight: 500;
+  }
+  #container .join_wrap .input_area #join_form > #joinBtn {
+    width: 25%;
+    font-size: 2vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  #container > .terms_wrap {
+    width: 90%;
+  }
+  #container > .terms_wrap .title {
+    font-size: 12vw;
+  }
+  #container > .terms_wrap .center > section {
+    margin-bottom: 4vw;
+  }
+  #container > .terms_wrap .center > section > h3 {
+    font-size: 6vw;
+  }
+  #container > .terms_wrap .center > section > p {
+    font-size: 3vw;
+  }
+  #container .join_wrap .title > h2 {
+    font-size: 12vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > h3 {
+    font-size: 7vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .terms {
+    font-size: 2.5vw;
+    height: 20vw;
+  }
+  #container .join_wrap .input_area #join_form > .terms_wrap > .memberterms > label {
+    font-size: 2.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div {
+    flex-direction: column;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > label {
+    font-size: 3vw;
+    line-height: 320%;
+    width: 100%;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div {
+    margin: 2vw 0;
+    font-size: 2.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > input {
+    font-size: 2.5vw;
+    font-family: "Pretendard";
+    text-align: center;
+    margin-top: 1vw 0;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > div > select {
+    font-size: 2.5vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div > span {
+    display: inline-block;
+    color: #14402B;
+    font-size: 2.5vw;
+    text-indent: 1vw;
+    font-family: "Pretendard";
+    margin-bottom: 2vw;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > div > input {
+    border-bottom: 2px solid #0C592E;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok > span {
+    display: none;
+  }
+  #container .join_wrap .input_area #join_form > .memberinfo_wrap > div.ok::after {
+    content: "확인되었습니다.";
+    display: inline-block;
+    color: #0C592E;
+    font-family: "Pretendard";
+    font-size: 2.5vw;
+  }
+  #container .join_wrap .input_area #join_form > #joinBtn {
+    width: 30%;
+    font-size: 3vw;
+  }
 }

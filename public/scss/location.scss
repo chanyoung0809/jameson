@@ -84,7 +84,7 @@ select::-ms-expand {
                         background-size: cover;
                         content: " ";
                         display: block;
-                        filter:invert(25%) sepia(76%) saturate(499%) hue-rotate(94deg) brightness(88%) contrast(94%);
+                        filter:invert(25%) sepia(76%) saturate(499%) hue-rotate(70deg) brightness(83%) contrast(94%);
                         object-fit: cover;
                         width: 100%;
                         height: 100%;
@@ -103,6 +103,7 @@ select::-ms-expand {
                         top:50%;
                         left:50%;
                         transition: all .5s;
+                        word-break: keep-all;
                     }
                     &:hover {
                         &::before {
@@ -300,7 +301,7 @@ select::-ms-expand {
                 padding: 1vw 0;
                 overflow: hidden;
                 > h4 {
-                    font-size: 2vw;
+                    font-size: 2.5vw;
                     font-family: $subHeadline;
                     font-weight: 700;
                     color: $jGreen;
@@ -446,8 +447,11 @@ select::-ms-expand {
                             font-weight: 700;
                             color: $jDarkGreen;
                             font-family: $subHeadline;
-                            line-height: 400%;
-                            font-size: 1vw;
+                            font-size: 2vw;
+                            line-height: 120%;
+                            word-break: keep-all;
+                            margin: 4% auto;
+                            width: 54%;
                         }
                     }
                 }
@@ -456,12 +460,258 @@ select::-ms-expand {
     }
 }
 /* 미디어쿼리 1000 */
-
 @media screen and (max-width:1000px){
-    
+    #container {
+        > div {
+            .title {
+                font-size: 6vw;
+            }
+            .map_wrap {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 50vw;
+                .left_map {
+                    width: 30%;
+                    margin: 0 10%;
+                    height: 99%;
+                }
+                .right_find {
+                    > h4 {
+                        font-size: 3vw;
+                        line-height: 200%;
+                    }
+                    .location_form {
+                        > select {
+                            width: 25%;
+                            background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+                        }
+                        > input {
+                            width: 40%;
+                        }
+                        > button {
+                            &.reset_btn {
+                                background-color: $jGreen;
+                                width: 40%;
+                            }
+                        }
+                    }
+                    .store_area {
+                        height: 100%;
+                        .stores{
+                            height: 70%;
+                            .store_wrap {
+                                width: 100%;
+                                font-size: 1.5vw;
+                                .store_locate {
+                                    display: flex;
+                                    align-items: center;
+                                    margin: .5% 1% .5% 0;
+                                    text-indent: 0;
+                                    word-break: keep-all;
+                                    > span {
+                                        line-height: 120%;
+                                        width: 13%;
+                                        text-indent: 0;
+                                        margin-right: .5%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        height: 6vw;
+                                    }
+                                }
+                            }
+                            &::-webkit-scrollbar { 
+                                width: 2vw;
+                                border-radius: 1.5vw;
+                            }
+                            &::-webkit-scrollbar-thumb { 
+                                background-color: #14402B;
+                                border-radius: 1.5vw;
+                                border: .4vw solid #F7E8BBCC;
+                            }
+                            &::-webkit-scrollbar-track { 
+                                background-color: #14402B33;
+                            }
+                            .err_msg {
+                                font-size: 3vw;
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}    
+/* 미디어쿼리 1000 */
+@media screen and (max-width:750px){
+    #container {
+        > div {
+            .title {
+                font-size: 10vw;
+            }
+            .map_wrap {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 150vw;
+                flex-wrap: wrap;
+                .left_map {
+                    width: 50%;
+                    margin: 0 10%;
+                    height: 55.8%;
+                    position: relative;
+                    object-fit: contain;
+                }
+                .right_find {
+                    width: 80%;
+                    height: 60vw;
+                    > h4 {
+                        font-size: 5vw;
+                        line-height: 200%;
+                    }
+                    .location_form {
+                        width: 100%;
+                        > select {
+                            width: 25%;
+                            background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+                        }
+                        > input {
+                            width: 40%;
+                        }
+                        > button {
+                            &.reset_btn {
+                                background-color: $jGreen;
+                                width: 40%;
+                            }
+                        }
+                    }
+                    .store_area {
+                        height: 100%;
+                        .stores{
+                            height: 70%;
+                            .store_wrap {
+                                width: 100%;
+                                font-size: 2vw;
+                                .store_locate {
+                                    display: flex;
+                                    align-items: center;
+                                    margin: .5% 1% .5% 0;
+                                    text-indent: 0;
+                                    word-break: keep-all;
+                                    > span {
+                                        line-height: 120%;
+                                        width: 13%;
+                                        text-indent: 0;
+                                        margin-right: .5%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        height: 6vw;
+                                    }
+                                }
+                            }
+                            &::-webkit-scrollbar { 
+                                width: 1vw;
+                                border-radius: 1vw;
+                            }
+                            &::-webkit-scrollbar-thumb { 
+                                background-color: #14402B;
+                                border-radius: .5vw;
+                                border: .2vw solid #F7E8BBCC;
+                            }
+                            &::-webkit-scrollbar-track { 
+                                background-color: #14402B33;
+                            }
+                            .err_msg {
+                                font-size: 3vw;
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }    
 
 /* 미디어쿼리 500 */
 @media screen and (max-width:500px){
-    
+    #container {
+        > div {
+            .title {
+                font-size: 12vw;
+            }
+            .map_wrap {
+                height: 190vw;
+                .left_map {
+                    width: 70%;
+                    height: 61.5%;
+                }
+                .right_find {
+                    width: 80%;
+                    height: 70vw;
+                    > h4 {
+                        font-size: 5vw;
+                        line-height: 200%;
+                    }
+                    .location_form {
+                        width: 100%;
+                        > select {
+                            width: 25%;
+                            background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+                        }
+                        > input {
+                            width: 40%;
+                        }
+                        > button {
+                            &.reset_btn {
+                                background-color: $jGreen;
+                                width: 40%;
+                            }
+                        }
+                    }
+                    .store_area {
+                        .stores{
+                            .store_wrap {
+                                font-size: 3.5vw;
+                                .store_locate {
+                                    display: flex;
+                                    align-items: center;
+                                    margin: .5% 1% .5% 0;
+                                    text-indent: 0;
+                                    word-break: keep-all;
+                                    line-height: 120%;
+                                    > span {
+                                        line-height: 120%;
+                                        width: 30%;
+                                        text-indent: 0;
+                                        margin-right: 2.5%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        height: 13.5vw;
+                                    }
+                                }
+                            }
+                            &::-webkit-scrollbar { 
+                                width: 1vw;
+                                border-radius: 1vw;
+                            }
+                            &::-webkit-scrollbar-thumb { 
+                                background-color: #14402B;
+                                border-radius: .5vw;
+                                border: .2vw solid #F7E8BBCC;
+                            }
+                            &::-webkit-scrollbar-track { 
+                                background-color: #14402B33;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

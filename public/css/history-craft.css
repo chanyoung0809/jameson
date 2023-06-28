@@ -44,6 +44,7 @@ body.show {
   width: 20%;
 }
 #container > div.title > .titles > li {
+  cursor: pointer;
   transition: all 0.5s;
 }
 #container > div.title > .titles > li > a {
@@ -182,9 +183,11 @@ body.show {
   }
   #container > div.title > .titles.craft > li:nth-child(1) {
     width: 50%;
+    border-bottom: 2px solid #14402B;
   }
   #container > div.title > .titles.craft > li:nth-child(2) {
     width: 50%;
+    border-bottom: 2px solid #14402B;
   }
   #container > div.title > .titles > li {
     padding: 1% 0;
@@ -335,10 +338,11 @@ body.show {
   #container > div.wrap > .center {
     width: 92%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
   }
   #container > div.wrap > .center .image-container {
-    width: 50%;
+    width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -349,25 +353,32 @@ body.show {
     margin-left: unset;
   }
   #container > div.wrap > .center .text-container {
-    width: 45%;
+    width: 100%;
     color: #14402B;
+    text-align: center;
+    padding: 4% 0;
   }
   #container > div.wrap > .center .text-container > h6 {
-    font-size: 2vw;
-    line-height: 160%;
+    font-size: 4vw;
+    line-height: 200%;
   }
   #container > div.wrap > .center .text-container > h2 {
-    font-size: 7vw;
+    font-size: 12vw;
   }
   #container > div.wrap > .center .text-container > p {
-    font-size: 1.3vw;
+    font-size: 3vw;
+    text-align: center;
+    width: 100%;
   }
   #container > div.wrap.on {
     background-color: #14402B;
   }
   #container > div.wrap.on > .center {
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #container > div.wrap.on > .center .image-container {
+    width: 100%;
   }
   #container > div.wrap.on > .center .image-container > img {
     display: block;
@@ -376,7 +387,7 @@ body.show {
     margin-left: auto;
   }
   #container > div.wrap.on > .center .text-container {
-    width: 45%;
+    width: 100%;
     color: #f7e8bb;
   }
   #container > div.move_wrap {
@@ -391,13 +402,13 @@ body.show {
     align-items: center;
     font-family: "HSBombaram21-Regular";
     color: #14402B;
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
   #container > div.move_wrap a.go_craft {
     margin-left: auto;
   }
   #container > div.move_wrap a.go_craft > img {
-    width: 7vw;
+    width: 10vw;
     margin-left: 4vw;
   }
   #container > div.move_wrap a.go_craft:hover > img {
@@ -408,7 +419,7 @@ body.show {
   }
   #container > div.move_wrap a.go_history > img {
     transform: scaleX(-1);
-    width: 7vw;
+    width: 10vw;
     margin-right: 4vw;
   }
   #container > div.move_wrap a.go_history:hover > img {
