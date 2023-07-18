@@ -1,35 +1,38 @@
-<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "HeaderFooter.css","qna.css"]}) %> 
+<%- include('header', {title:"제임슨 QnA",  cssFiles:["reset.css", "HeaderFooter.css","qna.css"]}) %> 
 <div id="container">
     <!--회원일때만 작성 가능한 질의 게시판, 한 달 넘으면 자동 삭제. 운영자가 답변해줌-->
     <div class="qna_wrap">
         <h2 class="title">QnA</h2>
     </div>
-    <form class="qnas" action="/deleteAll" method="get">
-        <div class="t_header">
+    <form class="qnas" id="qnas" action="/dbseldel" method="get">
+        <div class="t_header table">
             <% if (login.role === "ADMIN") { %>
-                <p class="Q_checkbox"><input type="checkbox"/></p>
+                <p class="Q_checkbox"><input type="checkbox" id="selectToggle"/></p>
             <% } %>
             <p class="Q_num">NO</p>
+            <p class="Answered">답변 유무</p>
             <p class="Q_title">제목</p>
             <p class="Q_author">작성자</p>
             <p class="Q_date">작성일자</p>
         </div>
-        <div class="t_notice">
+        <div class="t_notice table">
             <% if (login.role === "ADMIN") { %>
-                <p class="Q_checkbox"><!-- 삭제되면 안되는 공지사항이므로 체크박스 없이 작업.--></p>
+                <p class="Q_checkbox"><img src="/img/star_marquee_onion.svg"></p>
             <% } %>
             <p class="Q_num"><img src="/img/star_marquee_onion.svg"></p>
+            <p class="Answered">공지</p>
             <p class="Q_title"><a href="/qna/detail/notice">공지사항 (필독)</a></p>
             <p class="Q_author">관리자</p>
             <p class="Q_date">2022-06-23</p>
         </div>
         <!-- 반복문으로 태그생성해줄 구간 -->
         <% data.forEach((el) => { %>
-            <div class="t_body">
+            <div class="t_body table">
                 <% if (login.role === "ADMIN") { %>
-                    <p class="Q_checkbox"><input type="checkbox" name="delOk[]"/></p>
+                    <p class="Q_checkbox"><input type="checkbox" class="delOk" name="delOk[]"/></p>
                 <% } %>
                 <p class="Q_num"><%- el.Q_num %></p>
+                <p class="Answered"><%- (el.answer) ? "답변 완료" : "답변 중" %></p>
                 <p class="Q_title"><a href="/qna/detail/<%- el.Q_num %>"><%- el.Q_title %></a></p>
                 <p class="Q_author"><%- el.Q_author %></p>
                 <p class="Q_date"><%- el.Q_date %></p>
@@ -44,7 +47,6 @@
                 <% }%>
             <% } %>
         </div>
-    </form>
-    
+    </form>   
 </div>
-<%- include('footer', {jsFiles:["tabMenu.js"]}) %> 
+<%- include('footer', {jsFiles:["tabMenu.js","selectDel.js"]}) %> 

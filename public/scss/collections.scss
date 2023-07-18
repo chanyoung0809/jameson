@@ -48,9 +48,8 @@ body.show {
                 display: flex;
                 justify-content: center;
                 font-size: 1.5vw;
-                border: 2px solid $jDarkGreen;
-                border-left: none;
-                border-right: none;
+                border-top: 2px solid $jDarkGreen;
+                border-bottom: 2px solid $jDarkGreen;
                 > li {
                     font-family: $headline;
                     width: 50%;

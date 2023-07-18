@@ -374,6 +374,7 @@ select::-ms-expand {
 #container > div .map_wrap .right_find .location_form > button > a {
   color: #f7e8bb;
   display: block;
+  word-break: keep-all;
 }
 #container > div .map_wrap .right_find .store_area {
   height: 100%;
@@ -441,7 +442,7 @@ select::-ms-expand {
 #container > div .map_wrap .right_find .store_area .stores .err_msg {
   font-weight: 700;
   color: #14402B;
-  font-family: "HallymMjo";
+  font-family: "Pretendard";
   font-size: 2vw;
   line-height: 120%;
   word-break: keep-all;

@@ -1,4 +1,4 @@
-<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "HeaderFooter.css", "recipes.css"]}) %> 
+<%- include('header', {title:"제임슨 칵테일 레시피",  cssFiles:["reset.css", "HeaderFooter.css", "recipes.css"]}) %> 
     <div id="container">
         <div class="flowText" data-aos="fade-up" data-aos-duration="1000">
             <% for( let i = 0; i < 10; i++ ) { %>
@@ -15,7 +15,10 @@
             <span class="whiskey"><%- (recipes.length < 4 ) ? recipes[0].whiskey.toUpperCase() : "ALL" %> JAMESON RECIPES</span>
             <ul class="sorts">
                 <li class="sort1depth">
-                    <a href="/#">모든 레시피 보기</a>
+                    <a href="#">
+                        <!-- 첫번째 재료는 무조건 위스키 이름 + 숫자ml. 숫자 앞에서 자르기 -->
+                        <%- (recipes.length < 4) ? recipes[0].Ingredients[0].slice(0, recipes[0].Ingredients[0].match(/\d/).index) : "모든 레시피 보기" %>
+                      </a>                      
                     <span class="material-symbols-outlined more">expand_more</span>
                 </li>
                 <ul class="sorts2depth">

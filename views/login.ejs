@@ -1,4 +1,4 @@
-<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "HeaderFooter.css", "login.css"]}) %> 
+<%- include('header', {title:"제임슨 사이트 로그인",  cssFiles:["reset.css", "HeaderFooter.css", "login.css"]}) %> 
     <div id="container">
         <div class="title">
             LOGIN
@@ -15,10 +15,10 @@
                     </div> 
                 </div>
                 <div class="btn_wrap">
-                    <a href="/join">회원가입하기</a>
-                    <a href="#">아이디/비밀번호 찾기</a> 
+                    <a id="adminAccountBtn" href="#">관리자 계정으로 로그인</a> 
+                    <a href="/join">회원가입</a>
                 </div>
             </form>
         </div>
     </div>
-<%- include('footer', {jsFiles:["tabMenu.js"]}) %> 
+<%- include('footer', {jsFiles:["tabMenu.js","adminAccount.js"]}) %> 

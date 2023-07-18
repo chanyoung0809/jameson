@@ -21,6 +21,9 @@ table {
     border-collapse:collapse;
 }
 td {padding:0;}
+input[type=hidden] {
+  display: none;
+}
 
 // 제목 폰트 (hs봄바람체) normal
 @font-face {

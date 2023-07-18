@@ -35,7 +35,8 @@ body.show {
 #container > div.title > .titles {
   display: flex;
   justify-content: space-between;
-  border: 2px solid #14402B;
+  border-top: 2px solid #14402B;
+  border-bottom: 2px solid #14402B;
 }
 #container > div.title > .titles.history > li {
   width: 33.333333%;
@@ -98,7 +99,7 @@ body.show {
   text-indent: -1%;
 }
 #container > div.wrap > .center .text-container > p {
-  font-family: "HallymMjo";
+  font-family: "Pretendard";
   font-weight: 500;
   width: 80%;
   text-align: left;
@@ -296,7 +297,7 @@ body.show {
 /* 미디어쿼리 500 */
 @media screen and (max-width: 500px) {
   #container > div.title > h2 {
-    font-size: 12vw;
+    font-size: 16vw;
     letter-spacing: -0.5vw;
     width: 80%;
     line-height: 100%;
@@ -326,8 +327,8 @@ body.show {
   }
   #container > div.title > .titles > li > a {
     line-height: 120%;
-    font-size: 3vw;
-    width: 29%;
+    font-size: 4vw;
+    width: 40%;
     word-break: keep-all;
   }
   #container > div.wrap {

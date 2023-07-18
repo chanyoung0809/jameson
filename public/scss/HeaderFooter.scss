@@ -242,7 +242,7 @@ body.show {
             color: $jDarkGreen;
             padding:1vw 2vw;
             border-radius: 60px;
-            border: 4px solid $jDarkGreen;
+            border: calc(2px + .1vw) solid $jDarkGreen;
             margin-bottom: 3%;
             transition: all .5s;
             &:hover {

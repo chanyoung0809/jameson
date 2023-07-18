@@ -142,6 +142,9 @@
   #container .center {
     width: 60%;
   }
+  #container .center > form {
+    border-radius: 2vw;
+  }
   #container .center > form .login_wrap .left_wrap > label {
     font-size: 5vw;
   }
@@ -165,6 +168,9 @@
   }
   #container .center {
     width: 70%;
+  }
+  #container .center > form {
+    border-radius: 4vw;
   }
   #container .center > form .login_wrap .left_wrap > label {
     font-size: 6vw;

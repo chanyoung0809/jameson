@@ -1,4 +1,4 @@
-<%- include('header', {title:"Jameson",  cssFiles:["reset.css", "HeaderFooter.css", "location.css"]}) %> 
+<%- include('header', {title:"제임슨 구매처 찾기",  cssFiles:["reset.css", "HeaderFooter.css", "location.css"]}) %> 
 <!-- https://yhb.kr/customer-service/national-branch-network/ -->
 <div id="container">
     <div class="center">
@@ -30,7 +30,7 @@
                         <option value="location">도로명주소</option>
                         <option value="postLocation">지번주소</option>
                     </select>
-                    <input type="text" name="searchWord" id="searchWord" placeholder="검색어를 입력해주세요" />
+                    <input type="text" name="searchWord" id="searchWord" placeholder="검색어를 입력해주세요" value="<%- text %>"/>
                     <button type="submit" class="submitBtn btn2">검색</button>
                 </form>
                 <div class="store_area">

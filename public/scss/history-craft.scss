@@ -59,7 +59,8 @@ body.show {
                 }
                 display: flex;
                 justify-content: space-between;
-                border: 2px solid #14402B;
+                border-top: 2px solid $jDarkGreen;
+                border-bottom: 2px solid $jDarkGreen;
                 > li {
                     cursor: pointer;
                     transition: all .5s;
@@ -113,7 +114,7 @@ body.show {
                         text-indent: -1%;
                     }
                     > p {
-                        font-family: $subHeadline;
+                        font-family: $context;
                         font-weight: 500;
                         width: 80%;
                         text-align: left;
@@ -340,7 +341,7 @@ body.show {
         > div {
             &.title {
                 > h2 {
-                    font-size: 12vw;
+                    font-size: 16vw;
                     letter-spacing: -0.5vw;
                     width: 80%;
                     line-height: 100%;
@@ -372,8 +373,8 @@ body.show {
                         align-items: center;
                         > a {
                             line-height: 120%;
-                            font-size: 3vw;
-                            width: 29%;
+                            font-size: 4vw;
+                            width: 40%;
                             word-break: keep-all;
                         }
                     }

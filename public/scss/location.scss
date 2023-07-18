@@ -379,6 +379,7 @@ select::-ms-expand {
                         > a {
                             color: $jBeige;
                             display: block;
+                            word-break: keep-all;
                         }
                     }
                 }
@@ -446,7 +447,7 @@ select::-ms-expand {
                         .err_msg {
                             font-weight: 700;
                             color: $jDarkGreen;
-                            font-family: $subHeadline;
+                            font-family: $context;
                             font-size: 2vw;
                             line-height: 120%;
                             word-break: keep-all;

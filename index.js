@@ -216,8 +216,7 @@ app.get("/recipe/:link",(req,res)=>{
 // 판매처 페이지
 app.get("/location",(req,res)=>{
     db.collection("cities").find().toArray((err, cities)=>{    
-        let citiesSort = cities.slice(); //배열 복제본
-        // cities.clone() 안먹는 이유?
+        let citiesSort = cities.slice(); //배열 복제본. clone은 얕은 복제라서 원본이 수정됨 
         citiesSort = citiesSort.sort((a, b)=>{
             // 오름차순 정렬한 새로운 배열 생성
             if(a.korName > b.korName) return 1;
@@ -225,7 +224,7 @@ app.get("/location",(req,res)=>{
             return 0;
         });
         db.collection("store").find().toArray((err, stores)=>{    
-            res.render("location.ejs", {cities:cities, citiesSort:citiesSort, stores: stores, login:req.user, test:"noselect"});
+            res.render("location.ejs", {cities:cities, citiesSort:citiesSort, stores: stores, login:req.user, test:"noselect", text:""});
         })
     });
 });
@@ -249,7 +248,8 @@ app.get("/storelocation",(req,res)=>{
                     citiesSort:citiesSort,
                     stores: stores,
                     test:req.query.storeLegion,
-                    login:req.user
+                    login:req.user,
+                    text:req.query.searchWord, // 검색값
                 })
             })
         }
@@ -301,7 +301,8 @@ app.get("/storename",(req,res)=>{
                     citiesSort:citiesSort,
                     stores: stores,
                     test:stores[0].engName,
-                    login:req.user
+                    login:req.user,
+                    text:req.query.searchWord, // 검색값
                 })
             }
             else {
@@ -310,7 +311,8 @@ app.get("/storename",(req,res)=>{
                     citiesSort:citiesSort,
                     stores: undefined,
                     test: "noselect",
-                    login:req.user
+                    login:req.user,
+                    text:req.query.searchWord, // 검색값
                 })
             }
         })
@@ -342,18 +344,26 @@ app.get("/faq",(req,res)=>{
 // 회원전용 Qna 페이지 - Qna 모두보기
 // (일반 회원 -  자기가 쓴 글만 보임, 어드민 - 모든 글이 보임)
 // 답변 여부도 변수에 저장해야 함.
-app.get("/qna",(req,res)=>{
-    if(req.user){
-        db.collection("QnAs").find().sort({Q_num:-1}).toArray((err,result)=>{
-            // find로 찾아온 데이터값은 result에 담긴다
-            // 상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
-            res.render("QnA", {login:req.user, data:result});
-        });
-    }
+app.get("/qna", (req, res) => {
+    if (req.user) {
+        if (req.user.role === "ADMIN") {
+        db.collection("QnAs").find().sort({ Q_num: -1 }).toArray((err, result) => {
+            // 어드민 계정은 모든 글을 보여줌
+            res.render("QnA", {login: req.user, data: result});
+          });
+        } 
+        else {
+        db.collection("QnAs").find({ Q_author: req.user.memberName }).sort({ Q_num: -1 }).toArray((err, result) => {
+            // 자신이 작성한 글만 보여줌
+            res.render("QnA", {login: req.user, data: result});
+          });
+        }
+    } 
     else {
-        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>")
+        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>");
     }
-});
+  });
+  
 
 // Qna 상세 글 페이지 - 공지사항
 app.get("/qna/detail/notice",(req,res)=>{
@@ -469,4 +479,29 @@ app.post("/Aupdate", upload.array("Q_file"),(req,res)=>{
             }
         }
     );
+});
+
+// 게시글(단일) 삭제 처리
+// 게시글 상세 페이지 -> 삭제 요청
+app.get("/dbdelete/:num",(req,res)=>{
+    db.collection("QnAs").deleteOne({Q_num:Number(req.params.num)},(err,result)=>{
+        //게시글 삭제후 게시글 목록페이지로 요청
+        res.redirect(`/qna`);
+    })
+})
+
+// 게시글 전체 페이지 -> 선택삭제 요청
+// 체크박스 선택한 게시글들 지우는 처리
+app.get("/dbseldel",(req,res)=>{
+    // delOk안에있는 문자열 데이터들을 정수데이터로 변경
+    let changeNumber = [];
+    req.query.delOk.forEach((item,index)=>{
+        changeNumber[index] = Number(item); 
+        //반복문으로 해당 체크박스 value 값 갯수만큼 숫자로 변환후 배열에 대입
+    })
+    //변환된 게시글 번호 갯수들만큼 실제 데이터베이스에서 삭제처리 deleteMany()
+                                            //배열명에 있는 데이터랑 매칭되는 것들을 삭제
+    db.collection("QnAs").deleteMany({Q_num:{$in:changeNumber}},(err,result)=>{
+        res.redirect(`/qna`); //게시글 목록페이지로 요청
+    })
 });
