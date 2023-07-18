@@ -396,7 +396,7 @@ app.get("/qna/q_insert", (req, res)=>{
         res.render("QuestionSubmit", {login:req.user});
     }
     else {
-        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>")
+        res.send("<script>alert('비회원은 QnA 서비스를 이용하실 수 없습니다.'); window.location.href='/login';</script>");
     }
 });
 
@@ -432,15 +432,30 @@ app.post("/Qsubmit", upload.array("Q_file"),(req,res)=>{
 });
 // qna - 답변하기(어드민 전용)
 app.get("/qna/answer/:idx",(req,res)=>{
-    if(req.user.role === 'ADMIN'){
-        db.collection("QnAs").findOne({Q_num:Number(req.params.idx)},(err,result)=>{
-            // find로 찾아온 데이터값은 result에 담긴다
-            // 상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
-            res.render("QnaAnswer", {login:req.user, data:result});
-        });
+    if(req.user){
+        if(req.user.role === 'ADMIN'){
+            db.collection("QnAs").findOne({Q_num:Number(req.params.idx)},(err,result)=>{
+                // find로 찾아온 데이터값은 result에 담긴다
+                // 상세페이지 보여주기위해서 찾은 데이터값을 함께 전달한다.
+                res.render("QnaAnswer", {login:req.user, data:result});
+            });
+        }
+        else {
+            res.send("<script>alert('관리자 전용 기능입니다.'); window.location.href='/';</script>");
+        }
     }
-    else {
-        res.send("<script>alert('관리자 전용 기능입니다.'); window.location.href='/';</script>")
+    else{
+        res.send(`
+        <script>
+            alert('잘못된 접근입니다.'); 
+            if (document.referrer == "" || document.referrer.includes('qna')) {
+                window.location.href = "/";
+            } 
+            else {
+                window.location.href = document.referrer;
+            }         
+        </script>
+        `);
     }
 });
 //Qna 답변하기 DB 등록 작업
